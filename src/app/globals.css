@@ -1,26 +1,258 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --Primary: hsl(220, 72%, 34%);
+  --PrimaryDark: hsl(220, 72%, 28%);
+  --PrimaryLight: hsl(220, 72%, 40%);
+  --PrimaryDarkness: hsl(220, 34%, 18%);
+  --PrimaryLightness: hsl(220, 34%, 85%);
+  
+  --Secondary: hsl(220, 40%, 34%);
+  --SecondaryDark: hsl(220, 40%, 28%);
+  --SecondaryLight: hsl(220, 40%, 40%);
+  --SecondaryDarkness: hsl(220, 18%, 18%);
+  --SecondaryLightness: hsl(220, 18%, 85%);
+
+  --Success: hsl(120, 40%, 34%);
+  --SuccessDark: hsl(120, 40%, 28%);
+  --SuccessLight: hsl(120, 40%, 40%);
+  --SuccessDarkness: hsl(120, 18%, 18%);
+  --SuccessLightness: hsl(120, 18%, 85%);
+
+  --Error: hsl(0, 72%, 34%);
+  --ErrorDark: hsl(0, 72%, 28%);
+  --ErrorLight: hsl(0, 72%, 40%);
+  --ErrorDarkness: hsl(0, 34%, 18%);
+  --ErrorLightness: hsl(0, 34%, 85%);
+
+  --Warning: hsl(40, 100%, 40%);
+  --WarningDark: hsl(40, 100%, 34%);
+  --WarningLight: hsl(40, 100%, 50%);
+  --WarningDarkness: hsl(40, 50%, 18%);
+  --WarningLightness: hsl(40, 50%, 85%);
+
+  --Text: hsl(220, 10%, 18%);
+  --TextDark: hsl(220, 10%, 10%);
+  --TextLight: hsl(220, 10%, 90%);
+  --TextBlack: hsl(220, 5%, 5%);
+  --TextWhite: hsl(220, 5%, 95%);
+  
+  --Background: hsl(220, 10%, 95%);
+  --BackgroundPanel: hsl(220, 10%, 90%);
+  --BackgroundBorder: hsl(220, 10%, 85%);
+  --BackgroundDark: hsl(220, 5%, 80%);
+  --BackgroundDarkness: hsl(220, 5%, 72%);
+
+  --White: hsl(0, 0%, 100%); 
+  --Black: hsl(0, 0%, 0%); 
+
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --Spacing: 0.125rem /* 2px */ ;
+
+  --spacing-PC-0: calc(var(--Spacing) * 0) ;
+  --spacing-PC-O: calc(var(--Spacing) * 0.5) ;
+  --spacing-PC-T: calc(var(--Spacing) * 1) ;
+  --spacing-PC-1: calc(var(--Spacing) * 2) ;
+  --spacing-PC-2: calc(var(--Spacing) * 4) ;
+  --spacing-PC-3: calc(var(--Spacing) * 6) ;
+  --spacing-PC-H: calc(var(--Spacing) * 8) ;
+  --spacing-PC-4: calc(var(--Spacing) * 9) ;
+  --spacing-PC-5: calc(var(--Spacing) * 12) ;
+  --spacing-PC-6: calc(var(--Spacing) * 14) ;
+  --spacing-PC-7: calc(var(--Spacing) * 17) ;
+  --spacing-PC-8: calc(var(--Spacing) * 20) ; 
+  --spacing-PC-M: calc(var(--Spacing) * 28) ; 
+  --spacing-PC-9: calc(var(--Spacing) * 36) ;
+  --spacing-PC-10: calc(var(--Spacing) * 40) ;
+  --spacing-PC-11: calc(var(--Spacing) * 50) ;
+  --spacing-PC-12: calc(var(--Spacing) * 55) ;
+
+  --radius-PC-0: calc(var(--Spacing) * 0) ;
+  --radius-PC-1: calc(var(--Spacing) * 2) ;
+  --radius-PC-2: calc(var(--Spacing) * 4) ;
+  --radius-PC-3: calc(var(--Spacing) * 6) ;
+  --radius-PC-4: calc(var(--Spacing) * 9) ;
+
+  --border-width-PC-0: calc(var(--Spacing) * 0) ;
+  --border-width-PC-1: calc(var(--Spacing) * 0.5) ;
+  --border-width-PC-2: calc(var(--Spacing) * 1) ;
+  --border-width-PC-3: calc(var(--Spacing) * 2) ;
+  --border-width-PC-4: calc(var(--Spacing) * 4) ;
+  --border-width-PC-5: calc(var(--Spacing) * 6) ;
+  --border-width-PC-M: calc(var(--Spacing) * 28) ; 
+  --border-width-PC-10: calc(var(--Spacing) * 40) ; 
+
+  --color-PC-Primary: var(--Primary);
+  --color-PC-PrimaryDark: var(--PrimaryDark);
+  --color-PC-PrimaryLight: var(--PrimaryLight);
+  --color-PC-PrimaryDarkness: var(--PrimaryDarkness);
+  --color-PC-PrimaryLightness: var(--PrimaryLightness);
+  
+  --color-PC-Secondary: var(--Secondary);
+  --color-PC-SecondaryDark: var(--SecondaryDark);
+  --color-PC-SecondaryLight: var(--SecondaryLight);
+  --color-PC-SecondaryDarkness: var(--SecondaryDarkness);
+  --color-PC-SecondaryLightness: var(--SecondaryLightness);
+
+  --color-PC-Success: var(--Success);
+  --color-PC-SuccessDark: var(--SuccessDark);
+  --color-PC-SuccessLight: var(--SuccessLight);
+  --color-PC-SuccessDarkness: var(--SuccessDarkness);
+  --color-PC-SuccessLightness: var(--SuccessLightness);
+
+  --color-PC-Error: var(--Error);
+  --color-PC-ErrorDark: var(--ErrorDark);
+  --color-PC-ErrorLight: var(--ErrorLight);
+  --color-PC-ErrorDarkness: var(--ErrorDarkness);
+  --color-PC-ErrorLightness: var(--ErrorLightness);
+
+  --color-PC-Warning: var(--Warning);
+  --color-PC-WarningDark: var(--WarningDark);
+  --color-PC-WarningLight: var(--WarningLight);
+  --color-PC-WarningDarkness: var(--WarningDarkness);
+  --color-PC-WarningLightness: var(--WarningLightness);
+
+  --color-PC-Text: var(--Text);
+  --color-PC-TextDark: var(--TextDark);
+  --color-PC-TextLight: var(--TextLight);
+  --color-PC-TextBlack: var(--TextBlack);
+  --color-PC-TextWhite: var(--TextWhite);
+
+  --color-PC-Background: var(--Background);
+  --color-PC-BackgroundPanel: var(--BackgroundPanel);
+  --color-PC-BackgroundBorder: var(--BackgroundBorder);
+  --color-PC-BackgroundDark: var(--BackgroundDark);
+  --color-PC-BackgroundDarkness: var(--BackgroundDarkness);
+
+  --color-PC-White: var(--White);
+  --color-PC-Black: var(--Black);
+
+}
+
+@layer utilities {
+
+  *:focus-visible {
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 3px;
+      outline-color: var(--color-PC-Warning);
+      border-radius: 1px;
+  }
+
+  *::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      background: var(--color-PC-Background3);
+  }
+
+  *::-webkit-scrollbar-thumb {
+      background: var(--color-PC-Primary);
+      border-radius: 2px;
+  }
+
+  *::-webkit-scrollbar-button {
+      display: none;
+      height: 0;
+      width: 0;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+    --Primary: hsl(220, 72%, 50%);
+    --PrimaryDark: hsl(220, 72%, 60%);
+    --PrimaryLight: hsl(220, 72%, 40%);
+    --PrimaryDarkness: hsl(220, 34%, 85%);
+    --PrimaryLightness: hsl(220, 34%, 18%);
+    
+    --Secondary: hsl(220, 40%, 40%);
+    --SecondaryDark: hsl(220, 40%, 50%);
+    --SecondaryLight: hsl(220, 40%, 34%);
+    --SecondaryDarkness: hsl(220, 18%, 85%);
+    --SecondaryLightness: hsl(220, 18%, 18%);
+  
+    --Success: hsl(120, 40%, 34%);
+    --SuccessDark: hsl(120, 40%, 40%);
+    --SuccessLight: hsl(120, 40%, 28%);
+    --SuccessDarkness: hsl(120, 18%, 85%);
+    --SuccessLightness: hsl(120, 18%, 18%);
+  
+    --Error: hsl(0, 72%, 34%);
+    --ErrorDark: hsl(0, 72%, 40%);
+    --ErrorLight: hsl(0, 72%, 28%);
+    --ErrorDarkness: hsl(0, 34%, 85%);
+    --ErrorLightness: hsl(0, 34%, 18%);
+  
+    --Warning: hsl(40, 100%, 40%);
+    --WarningDark: hsl(40, 100%, 34%);
+    --WarningLight: hsl(40, 100%, 50%);
+    --WarningDarkness: hsl(40, 50%, 85%);
+    --WarningLightness: hsl(40, 50%, 18%);
+
+    --Text: hsl(220, 10%, 82%);
+    --TextDark: hsl(220, 10%, 90%);
+    --TextLight: hsl(220, 10%, 10%);
+    --TextBlack: hsl(220, 5%, 5%);
+    --TextWhite: hsl(220, 5%, 95%);
+    
+    --Background: hsl(220, 10%, 5%);
+    --BackgroundPanel: hsl(220, 10%, 10%);
+    --BackgroundBorder: hsl(220, 10%, 15%);
+    --BackgroundDark: hsl(220, 5%, 20%);
+    --BackgroundDarkness: hsl(220, 5%, 25%);
+
   }
 }
 
+@font-face {
+  font-family: 'EnglishFont';
+  src: url('/fonts/en-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EnglishFont';
+  src: url('/fonts/en-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PersianFont';
+  src: url('/fonts/fa-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PersianFont';
+  src: url('/fonts/fa-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html[lang="en"] body {
+  font-family: 'EnglishFont', Arial, Helvetica, sans-serif;
+  direction: ltr;
+}
+
+html[lang="fa"] body {
+  font-family: 'PersianFont', Arial, Helvetica, sans-serif;
+  direction: rtl;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--Background);
+  color: var(--Text);
 }
