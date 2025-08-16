@@ -6,7 +6,7 @@
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/Playout'
+// import * as P from '@/components/Playout'
 import HeroSection from '@/components/Page/HeroSection'
 import SearchSection from '@/components/Page/SearchSection'
 import CategoriesSection from '@/components/Page/CategoriesSection'

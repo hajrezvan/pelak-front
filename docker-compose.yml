@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  pelak:
+    build: .
+    image: pelak:${APP_VERSION:-latest}
+    container_name: pelak-${APP_VERSION:-latest}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - APP_VERSION=${APP_VERSION:-latest}
+    restart: unless-stopped

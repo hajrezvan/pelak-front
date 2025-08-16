@@ -13,7 +13,7 @@ export default function HeroSection() {
           </h1>
           <p className="mt-6 text-xl leading-8 text-blue-100 max-w-3xl mx-auto">
             Connect with verified Iranian suppliers and discover high-quality products for your business. 
-            Find everything you need from Iran's leading manufacturers and exporters.
+            Find everything you need from Iran&apos;s leading manufacturers and exporters.
           </p>
           
           <div className="mt-10 flex items-center justify-center gap-x-6">

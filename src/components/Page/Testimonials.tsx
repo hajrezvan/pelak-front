@@ -68,7 +68,7 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what international buyers say about their experience with Iran Exportal.
+            Don&apos;t just take our word for it. Here&apos;s what international buyers say about their experience with Iran Exportal.
           </p>
         </div>
 
