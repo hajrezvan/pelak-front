@@ -1,29 +1,17 @@
 {
   "name": "pelak",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docker:build": "docker build --no-cache -t pelak:%npm_package_version% -t pelak:latest .",
-    "docker:compose:up": "docker-compose up -d",
-    "docker:compose:down": "docker-compose down",
-    "docker:compose:logs": "docker-compose logs -f",
-    "docker:compose:restart": "docker-compose restart",
-    "docker:run": "docker run -d -p 3000:3000 --name pelak-app --env NODE_ENV=production pelak:%npm_package_version%",
-    "docker:stop": "docker stop pelak-app || true && docker rm pelak-app || true",
-    "docker:clean": "docker stop pelak-app || true && docker rm pelak-app || true && docker image prune -f",
-    "docker:logs": "docker logs -f pelak-app",
-    "docker:test": "npm run docker:build && npm run docker:run && echo 'Container started on http://localhost:3000'",
-    "docker:test:compose": "npm run docker:build && docker-compose up -d && echo 'Container started on http://localhost:3000'",
-    "docker:delete": "docker system prune -a --volumes -f",
-    "docker:health": "curl -f http://localhost:3000 || echo 'Container not responding'",
-    "docker:rebuild": "npm run docker:stop && npm run docker:build && npm run docker:run",
-
-    "version:set": "npm version && git push && git push --tags"
-
+    "version": "npm version && git push && git push --tags",
+    "docker:build": "docker build --no-cache -t $PROJECT_NAME:$VERSION -t $PROJECT_NAME:latest .",
+    "docker:push": "docker push $DOCKER_HUB_USERNAME/$PROJECT_NAME:latest && docker push $DOCKER_HUB_USERNAME/$PROJECT_NAME:$VERSION",
+    "docker:clean": "docker system prune -a --volumes -f && docker image prune -f",
+    "docker:run": "docker run -d -p 3000:3000 --name $PROJECT_NAME-app --env NODE_ENV=production $PROJECT_NAME:%npm_package_version%"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",

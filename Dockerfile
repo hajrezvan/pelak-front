@@ -1,5 +1,5 @@
 # استفاده از Node.js 18 Alpine برای حجم کمتر
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 # نصب dependencies
 FROM base AS deps
