@@ -1,13 +1,12 @@
 {
   "name": "pelak",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "version": "npm version && git push && git push --tags",
     "docker:build": "docker build --no-cache -t $PROJECT_NAME:$VERSION -t $PROJECT_NAME:latest .",
     "docker:push": "docker push $DOCKER_HUB_USERNAME/$PROJECT_NAME:latest && docker push $DOCKER_HUB_USERNAME/$PROJECT_NAME:$VERSION",
     "docker:clean": "docker system prune -a --volumes -f && docker image prune -f",
