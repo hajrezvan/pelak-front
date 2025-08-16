@@ -8,7 +8,7 @@
     "build": "npm run prebuild:manifest && next build",
     "start": "next start",
     "lint": "next lint",
-
+    "version": "npm version && git push && git push --tags",
     "docker:build": "docker build --no-cache -t pelak:$npm_package_version -t pelak:latest .",
     "docker:tag": "docker tag pelak:latest m9020120014/pelak:latest && docker tag pelak:$npm_package_version m9020120014/pelak:$npm_package_version",
     "docker:push": "docker push m9020120014/pelak:latest && docker push m9020120014/pelak:$npm_package_version",
