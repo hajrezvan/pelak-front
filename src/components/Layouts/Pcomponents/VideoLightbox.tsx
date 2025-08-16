@@ -13,7 +13,7 @@ import { PImedia } from "@/type/media";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
+import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
@@ -34,7 +34,7 @@ export default function VideoLightbox({video, poster, className}: Readonly<{ vid
             style={{ width: '100%', height: 'auto' }}
             className="rounded-lg"
             />
-            <SvgIcon svgName="xMark" className='absolute size-12 bg-PC-Accent/80 rounded-full p-1' />
+            <P.SvgIcon svgName="xMark" svgSize="large" svgClassName="text-PC-Background absolute bg-PC-Text/80 rounded-full p-1" />
         </div>
 
         <Dialog 
@@ -72,9 +72,9 @@ export default function VideoLightbox({video, poster, className}: Readonly<{ vid
                         e.stopPropagation();
                         setIsOpen(false);
                         }}
-                        className="absolute top-3 right-3 p-1 bg-PC-Light/40 hover:bg-PC-Accent/40 rounded-full pointer-events-auto"
+                        className="absolute top-3 right-3 p-1 bg-PC-BackgroundDark/72 hover:bg-PC-Background/72 rounded-full pointer-events-auto"
                     >
-                        <SvgIcon svgName="xMark" className="size-8 flex-none" />
+                        <P.SvgIcon svgName="xCircle" svgSize="large" />
                     </button>
 
                 </div>

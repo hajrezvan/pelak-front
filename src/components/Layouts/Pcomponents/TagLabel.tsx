@@ -1,14 +1,14 @@
 
 import { PItag } from "@/type/tag";
 import Link from "next/link";
-import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
+import * as P from '@/components/Playout'
 
 export default function TagLabel({tag}: Readonly<{tag: PItag}>) {
 
     return (
     <div className='inline-flex m-0.5'>
-        <Link href={tag.href} title={tag.description} className='flex items-center px-2 py-1 text-md bg-PC-Light/40 rounded border border-PC-Dark/50'>
-            <SvgIcon svgName={tag.icon} className='mx-1 size-5' />
+        <Link href={tag.href} title={tag.description} className='flex items-center px-1.5 py-0.5 text-md bg-PC-Background/40 rounded border border-PC-Text/40'>
+            <P.SvgIcon svgName={/*tag.icon as P.SvgIconProps['svgName']*/"bookmark"} svgSize='small' svgClassName='mx-PC-0' />
             {tag.name}
         </Link>
     </div>

@@ -61,7 +61,7 @@ export default function HeaderLayout() {
 			</P.Section>
 
 			<P.Section className={
-				"sticky top-0 z-[99991] transition-all duration-313     bg-PC-Background/80    border-b-PC-1 border-b-PC-BackgroundBorder     content-center " +
+				"sticky top-0 z-[99991] transition-all duration-313     bg-PC-Background/40    border-b-PC-1 border-b-PC-BackgroundDarkness     content-center " +
 				(isSmall ? "h-PC-M backdrop-blur-sm" : "h-PC-10 backdrop-blur-none") + " -mb-PC-10"
 			}>
 				<P.Container>
@@ -98,8 +98,8 @@ export default function HeaderLayout() {
 
 									<P.Container className="grid grid-cols-4 pt-PC-0 pb-PC-3 gap-PC-2">
 										{PDheader.popMainItem.map((item) => (
-											<div key={item.name} className="group relative rounded-lg p-PC-5 text-sm/6 bg-PC-BackgroundPanel hover:bg-PC-White ring-1 ring-PC-BackgroundBorder">
-												<div className="flex size-11 items-center justify-center rounded-lg bg-PC-White group-hover:bg-PC-Primary">
+											<div key={item.name} className="group relative rounded-lg p-PC-5 text-sm/6 bg-PC-BackgroundPanel hover:bg-PC-PrimaryLightness ring-1 ring-PC-BackgroundBorder">
+												<div className="flex size-11 items-center justify-center rounded-lg bg-PC-PrimaryLightness group-hover:bg-PC-Primary">
 													<P.SvgIcon svgName={item.icon as P.SvgIconProps['svgName']} svgSize="medium" svgClassName="text-PC-Secondary group-hover:text-PC-TextLight" />
 												</div>
 												<a href={item.href} className="mt-3 block font-semibold text-PC-Text group-hover:text-PC-Primary">
@@ -111,7 +111,7 @@ export default function HeaderLayout() {
 										))}
 									</P.Container>
 
-									<div className="bg-PC-White border-t-PC-1 border-PC-BackgroundBorder">
+									<div className="bg-PC-PrimaryLightness border-t-PC-1 border-PC-BackgroundBorder">
 										<P.Container >
 											<P.Box size="full" className="grid grid-cols-1 divide-x divide-PC-BackgroundBorder border-x border-PC-BackgroundBorder">
 												{PDheader.popSideItem.map((item) => (
@@ -135,7 +135,7 @@ export default function HeaderLayout() {
 
 							{/* [ ] NextVersion : Create menu item
 							{PDheader.menuItem.map((item) => (
-								<P.Button key={item.name} href={item.href} className="text-sm/6 font-semibold px-5 py-2 rounded-md bg-PC-White/15 text-PC-Text hover:bg-PC-White/40">
+								<P.Button key={item.name} href={item.href} className="text-sm/6 font-semibold px-5 py-2 rounded-md bg-PC-PrimaryLightness/15 text-PC-Text hover:bg-PC-PrimaryLightness/40">
 									{item.name}
 								</P.Button>
 							))}*/}
@@ -158,7 +158,7 @@ export default function HeaderLayout() {
 
 				<P.Section className="fixed inset-0 z-[99991] bg-PC-Secondary/40 backdrop-blur-xs flex justify-end" >
 
-					<DialogPanel className="fixed inset-y-0 w-full flex flex-col justify-between overflow-y-auto bg-PC-White p-5 sm:max-w-sm sm:ring-1 sm:ring-PC-Secondary/10">
+					<DialogPanel className="fixed inset-y-0 w-full flex flex-col justify-between overflow-y-auto bg-PC-PrimaryLightness p-5 sm:max-w-sm sm:ring-1 sm:ring-PC-Secondary/10">
 
 						<div className="flex items-center justify-between pb-5 border-b border-PC-Primary/20">
 

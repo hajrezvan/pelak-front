@@ -5,7 +5,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/re
 import { IFormProduct } from '@/type/formProduct';
 import FormStep1 from '@/components/Layouts/Pcomponents/FormStep1';
 import FormStep2 from '@/components/Layouts/Pcomponents/FormStep2';
-import SvgIcon from '@/components/Layouts/Pcomponents/SvgIcon';
+import * as P from '@/components/Playout'
 
 interface FormPopupProps {
   isOpen: boolean;
@@ -31,20 +31,36 @@ export default function FormPopup({ isOpen, onClose, productTitle }: FormPopupPr
         ...step1Data,
         description: ''
       };
-      
+
       setFormData(dataToSend);
 
-      // Corrected URL to formProduct
+      // استفاده از endpoint محلی
       const response = await fetch('/api/formProduct', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dataToSend)
       });
-      
+
       if (response.ok) {
         setCurrentStep(2);
       } else {
-        const errorData = await response.json();
+        // Check if response has content before parsing JSON
+        const contentType = response.headers.get('content-type');
+        let errorData = null;
+        
+        if (contentType && contentType.includes('application/json')) {
+          try {
+            errorData = await response.json();
+          } catch (parseError) {
+            console.error('Failed to parse error response:', parseError);
+            errorData = { message: 'Unknown error occurred' };
+          }
+        } else {
+          // Handle non-JSON responses
+          const textResponse = await response.text();
+          errorData = { message: textResponse || 'Request failed' };
+        }
+        
         console.error('Error in sending:', errorData);
         alert('Error sending information. Please try again.');
       }
@@ -63,14 +79,14 @@ export default function FormPopup({ isOpen, onClose, productTitle }: FormPopupPr
         ...formData,
         description: description
       };
-      
+
       // Corrected URL to formProduct
       const response = await fetch('/api/formProduct', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(completeData)
       });
-      
+
       if (response.ok) {
         onClose();
         alert('Your information has been sent successfully!');
@@ -83,7 +99,23 @@ export default function FormPopup({ isOpen, onClose, productTitle }: FormPopupPr
           description: ''
         });
       } else {
-        const errorData = await response.json();
+        // Check if response has content before parsing JSON
+        const contentType = response.headers.get('content-type');
+        let errorData = null;
+        
+        if (contentType && contentType.includes('application/json')) {
+          try {
+            errorData = await response.json();
+          } catch (parseError) {
+            console.error('Failed to parse error response:', parseError);
+            errorData = { message: 'Unknown error occurred' };
+          }
+        } else {
+          // Handle non-JSON responses
+          const textResponse = await response.text();
+          errorData = { message: textResponse || 'Request failed' };
+        }
+        
         console.error('Error in final submission:', errorData);
         alert('Error in final submission. Please try again.');
       }
@@ -99,35 +131,35 @@ export default function FormPopup({ isOpen, onClose, productTitle }: FormPopupPr
 
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-[99993]">
-      <DialogBackdrop className="fixed inset-0 bg-PC-Black/90 backdrop-blur-sm" />
-      
+      <DialogBackdrop className="fixed inset-0 bg-PC-Black/80 backdrop-blur-sm" />
+
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <DialogPanel className="bg-white rounded-lg p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <DialogPanel className="bg-PC-Background rounded-lg p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
           <div className="flex justify-between items-start mb-4">
             <DialogTitle className="font-bold">
-              Request 
+              Request
               <p className='font-medium'>
                 {productTitle}
               </p>
             </DialogTitle>
             <button
-                onClick={onClose}
-                className="p-1 bg-PC-Gray/40 hover:bg-PC-Accent/40 rounded-full pointer-events-auto"
+              onClick={onClose}
+              className="top-3 right-3 p-1 bg-PC-BackgroundPanel hover:bg-PC-Background border border-PC-BackgroundBorder rounded-full pointer-events-auto"
             >
-                <SvgIcon svgName="xMark" className="size-8 flex-none" />
+              <P.SvgIcon svgName="xMark" svgSize="large" />
             </button>
           </div>
 
           {currentStep === 1 && (
-            <FormStep1 
-              onSubmit={handleStep1Complete} 
+            <FormStep1
+              onSubmit={handleStep1Complete}
               isLoading={isLoading}
             />
           )}
 
           {currentStep === 2 && (
-            <FormStep2 
-              onSubmit={handleStep2Complete} 
+            <FormStep2
+              onSubmit={handleStep2Complete}
               isLoading={isLoading}
             />
           )}

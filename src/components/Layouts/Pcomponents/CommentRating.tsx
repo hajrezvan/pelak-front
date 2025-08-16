@@ -64,7 +64,7 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
   const CommentRatingGlobal = useTranslations().raw("other");
 
   return (
-    <div className=" max-w-4xl mx-auto px-2 py-8">
+    <div className=" max-w-4xl mx-auto px-2 py-PC-3">
       <h2 className="my-5">{CommentRatingGlobal.CommentRatingTitle}</h2>
       <ul role="list" className="space-y-6">
         {comments.items.map((item, index) => (
@@ -81,23 +81,23 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
               src="https://exportal.storage.c2.liara.space/products/1/f.jpg" // TODO alt
               width={24}
               height={24}
-              className="relative mt-3 size-6 flex-none rounded-full bg-gray-50"
+              className="relative mt-3 size-6 flex-none rounded-full bg-PC-BackgroundPanel"
             />
-            <div className="flex-auto rounded-md p-3 ring-1 ring-gray-200 ring-inset">
+            <div className="flex-auto rounded-md p-3 ring-1 ring-PC-BackgroundBorder ring-inset">
               <div className="flex justify-between gap-x-4">
-                <div className="py-0.5 text-xs/5 text-gray-500">
-                  <span className="font-medium text-gray-900">
+                <div className="py-0.5 text-xs/5 text-PC-TextMiddle">
+                  <span className="font-medium text-PC-Text">
                     {item.user_name}
                   </span>
                 </div>
                 <time
                   dateTime={item.created_at}
-                  className="flex-none py-0.5 text-xs/5 text-gray-500"
+                  className="flex-none py-0.5 text-xs/5 text-PC-TextMiddle"
                 >
                   {item.created_at}
                 </time>
               </div>
-              <p className="text-sm/6 text-gray-500">{item.message}</p>
+              <p className="text-sm/6 text-PC-TextMiddle">{item.message}</p>
             </div>
           </li>
         ))}
@@ -107,13 +107,13 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
       <div className="mt-6 flex gap-x-3">
         <Image
           alt=""
-          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          src="https://exportal.storage.c2.liara.space/products/1/f.jpg"
           width={24}
           height={24}
-          className="size-6 flex-none rounded-full bg-gray-50"
+          className="size-6 flex-none rounded-full bg-PC-BackgroundPanel"
         />
         <form action="#" className="relative flex-auto">
-          <div className="bg-PC-Light overflow-hidden rounded-lg pb-12 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-PC-Accent">
+          <div className="bg-PC-BackgroundPanel overflow-hidden rounded-lg pb-12 outline-1 -outline-offset-1 outline-PC-BackgroundDark focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-PC-Primary">
             <label htmlFor="comment" className="sr-only">
               {CommentRatingGlobal.CommentRatingNewCommentText}
             </label>
@@ -122,7 +122,7 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
               name="comment"
               rows={2}
               placeholder="Add your comment..."
-              className="block w-full resize-none bg-transparent px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+              className="block w-full resize-none bg-transparent px-3 py-1.5 text-base text-PC-Text placeholder:text-PC-TextMiddle focus:outline-none sm:text-sm/6"
               defaultValue={""}
             />
           </div>
@@ -132,7 +132,7 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="-m-2.5 flex size-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500"
+                  className="-m-2.5 flex size-10 items-center justify-center rounded-full text-PC-TextMiddle hover:text-PC-Text"
                 >
                   <SvgIcon
                     svgName="xMark"
@@ -149,7 +149,7 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
                     {CommentRatingGlobal.CommentRatingYourRating}
                   </Label>
                   <div className="relative">
-                    <ListboxButton className="relative -m-2.5 flex size-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500">
+                    <ListboxButton className="relative -m-2.5 flex size-10 items-center justify-center rounded-full text-PC-TextMiddle hover:text-PC-Text">
                       <span className="flex items-center justify-center">
                         {selected.value === null ? (
                           <span>
@@ -177,13 +177,13 @@ export default function CommentRating({ comments }: { comments: PIcomments }) {
 
                     <ListboxOptions
                       transition
-                      className="absolute bottom-10 z-10 -ml-6 w-60 rounded-lg bg-white py-3 text-base ring-1 shadow-sm ring-black/5 focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:ml-auto sm:w-64 sm:text-sm"
+                      className="absolute bottom-10 z-10 -ml-6 w-60 rounded-lg bg-PC-BackgroundPanel py-3 text-base ring-1 shadow-sm ring-PC-BackgroundBorder focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:ml-auto sm:w-64 sm:text-sm"
                     >
                       {moods.map((mood) => (
                         <ListboxOption
                           key={mood.value}
                           value={mood}
-                          className="relative cursor-default bg-white px-3 py-2 select-none data-focus:bg-gray-100"
+                          className="relative cursor-default bg-PC-BackgroundPanel px-3 py-2 select-none data-focus:bg-PC-Background"
                         >
                           <div className="flex items-center">
                             <div className="flex size-8 items-center justify-center rounded-full">

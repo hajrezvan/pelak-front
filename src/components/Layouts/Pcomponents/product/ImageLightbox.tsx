@@ -15,7 +15,7 @@ import { PImedia } from "@/type/media"
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
+import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
@@ -39,7 +39,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
     return (
     <>        
 
-        <div className="aspect-square size-full bg-PC-Gray sm:rounded-lg">
+        <div className="aspect-square size-full bg-PC-BackgroundPanel sm:rounded-lg">
             <Image 
                 alt={item[current].alt} 
                 src={item[current].src} 
@@ -59,7 +59,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
 
             {/* Background Overlay */}
 
-            <div className="fixed inset-0 bg-PC-Black/90 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+            <div className="fixed inset-0 bg-PC-Black/80 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
 
 
             <DialogPanel className="relative">
@@ -68,7 +68,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
 
                     {/* Main Image */}
 
-                    <div className="bg-PC-light">
+                    <div className="bg-PC-BackgroundDarkness">
                         <Image 
                             alt={item[current].alt} 
                             src={item[current].src} 
@@ -86,9 +86,9 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                         e.stopPropagation();
                         setCurrent((current - 1 + item.length) % item.length);
                     }}
-                    className="absolute left-2 p-1 bg-PC-Light/40 hover:bg-PC-Accent/40 rounded-full pointer-events-auto"
+                    className="absolute left-2 p-1 bg-PC-BackgroundDark/72 hover:bg-PC-Background/72 rounded-full pointer-events-auto"
                     >
-                        <SvgIcon svgName="arrowLeft" className="size-8 flex-none" />
+                        <P.SvgIcon svgName="arrowCircleLeft" svgSize="large" />
                     </button>
                     
                     <button
@@ -96,9 +96,9 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                         e.stopPropagation();
                         setCurrent((current + 1) % item.length);
                     }}
-                    className="absolute right-2 p-1 bg-PC-Light/40 hover:bg-PC-Accent/40 rounded-full pointer-events-auto"
+                    className="absolute right-2 p-1 bg-PC-BackgroundDark/72 hover:bg-PC-Background/72 rounded-full pointer-events-auto"
                     >
-                        <SvgIcon svgName="arrowRight" className="size-8 flex-none" />
+                        <P.SvgIcon svgName="arrowCircleRight" svgSize="large" />
                     </button>
 
                     {/* Close button */}
@@ -108,9 +108,9 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                         e.stopPropagation();
                         setIsOpen(false);
                         }}
-                        className="absolute top-3 right-3 p-1 bg-PC-Light/40 hover:bg-PC-Accent/40 rounded-full pointer-events-auto"
+                        className="absolute top-3 right-3 p-1 bg-PC-BackgroundDark/72 hover:bg-PC-Background/72 rounded-full pointer-events-auto"
                     >
-                        <SvgIcon svgName="xMark" className="size-8 flex-none" />
+                        <P.SvgIcon svgName="xCircle" svgSize="large" />
                     </button>
 
                 </div>
@@ -120,12 +120,12 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 max-w-[80vw] hide-scrollbar">
                     <div
                         ref={thumbnailsRef}
-                        className="flex gap-2 justify-center items-center bg-white/10 p-2 rounded-lg backdrop-blur-sm overflow-x-auto"
+                        className="flex gap-2 justify-center items-center bg-PC-Background/40 p-2 rounded-lg backdrop-blur-sm overflow-x-auto"
                     >
                         {item.map((image, idx) => (
 
                         <div key={idx} className={`relative w-16 h-16 rounded cursor-pointer
-                            ${current === idx ? "border-2 border-PC-Accent" : "opacity-50"}
+                            ${current === idx ? "border-2 border-PC-PrimaryLight" : "opacity-50"}
                             hover:opacity-100 transition-all duration-200`}
                             >
                                 <Image 

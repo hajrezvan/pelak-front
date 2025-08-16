@@ -35,6 +35,7 @@
   --Text: hsl(220, 10%, 18%);
   --TextDark: hsl(220, 10%, 10%);
   --TextLight: hsl(220, 10%, 90%);
+  --TextMiddle: hsl(220, 10%, 40%);
   --TextBlack: hsl(220, 5%, 5%);
   --TextWhite: hsl(220, 5%, 95%);
   
@@ -119,6 +120,7 @@
   --color-PC-Text: var(--Text);
   --color-PC-TextDark: var(--TextDark);
   --color-PC-TextLight: var(--TextLight);
+  --color-PC-TextMiddle: var(--TextMiddle);
   --color-PC-TextBlack: var(--TextBlack);
   --color-PC-TextWhite: var(--TextWhite);
 
@@ -198,6 +200,7 @@
     --Text: hsl(220, 10%, 82%);
     --TextDark: hsl(220, 10%, 90%);
     --TextLight: hsl(220, 10%, 10%);
+    --TextMiddle: hsl(220, 10%, 60%);
     --TextBlack: hsl(220, 5%, 5%);
     --TextWhite: hsl(220, 5%, 95%);
     

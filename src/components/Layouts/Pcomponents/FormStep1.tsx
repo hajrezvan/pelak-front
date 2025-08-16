@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { IFormProduct } from '@/type/formProduct';
+import * as P from '@/components/Playout'
 
 interface FormStep1Props {
   onSubmit: (data: Omit<IFormProduct, 'description'>) => void;
@@ -79,74 +80,74 @@ export default function FormStep1({ onSubmit, isLoading }: FormStep1Props) {
     <form onSubmit={handleSubmit} className="space-y-4">
       {/* Name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-PC-Text mb-1">
           Name *
         </label>
         <input
           type="text"
           value={formData.name}
           onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-PC-BackgroundBorder rounded-md focus:outline-none focus:ring-2 focus:ring-PC-Primary"
           placeholder="Enter your name"
         />
-        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-PC-Error text-sm mt-1">{errors.name}</p>}
       </div>
 
       {/* Email */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-PC-Text mb-1">
           Email *
         </label>
         <input
           type="email"
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-PC-BackgroundBorder rounded-md focus:outline-none focus:ring-2 focus:ring-PC-Primary"
           placeholder="Enter your email"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-PC-Error text-sm mt-1">{errors.email}</p>}
       </div>
 
       {/* Phone Number */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-PC-Text mb-1">
           Phone Number *
         </label>
         <input
           type="tel"
           value={formData.phone}
           onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-PC-BackgroundBorder rounded-md focus:outline-none focus:ring-2 focus:ring-PC-Primary"
           placeholder="09123456789"
         />
-        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+        {errors.phone && <p className="text-PC-Error text-sm mt-1">{errors.phone}</p>}
       </div>
 
       {/* Contact Methods */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-PC-Text mb-2">
           Preferred Contact Method *
         </label>
         <select
           value={formData.contactMethods[0] || ''}
           onChange={handleContactMethodChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-PC-BackgroundBorder rounded-md focus:outline-none focus:ring-2 focus:ring-PC-Primary"
         >
           <option value="">Select contact method</option>
           <option value="t">Telegram</option>
           <option value="w">WhatsApp</option>
         </select>
-        {errors.contactMethods && <p className="text-red-500 text-sm mt-1">{errors.contactMethods}</p>}
+        {errors.contactMethods && <p className="text-PC-Error text-sm mt-1">{errors.contactMethods}</p>}
       </div>
 
       {/* Submit Button */}
-      <button
+      <P.Button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full"
       >
         {isLoading ? 'Sending...' : 'Next Step'}
-      </button>
+      </P.Button>
     </form>
   );
 }
