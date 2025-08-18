@@ -8,14 +8,17 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black opacity-20"></div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Export from Iran
+          <h1 className="text-4xl font-bold tracking-tight text-white">
+            Iran Exportal : Надёжные иранские : ایران اکسًپُورتال
           </h1>
+          <p className='text-4xl font-bold tracking-tight text-white'>
+            Iran Exportal : Надёжные иранские : ایران اکسًپُورتال
+          </p>
           <p className="mt-6 text-xl leading-8 text-blue-100 max-w-3xl mx-auto">
-            Connect with verified Iranian suppliers and discover high-quality products for your business. 
+            Connect with verified Iranian suppliers and discover high-quality products for your business.
             Find everything you need from Iran&apos;s leading manufacturers and exporters.
           </p>
-          
+
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <button className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-gray-100 focus-visible:outline-offset-2 focus-visible:outline-white">
               Start Searching
@@ -25,7 +28,7 @@ export default function HeroSection() {
             </button>
           </div>
         </div>
-        
+
         {/* Stats */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="text-center">

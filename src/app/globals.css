@@ -162,6 +162,32 @@
       width: 0;
   }
 
+  /* TODO : remove this */
+
+  .max-w-container-md {
+      max-width: 1200px;
+  }
+
+  .line-clamp-2 {
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+  } /* -webkit-line-clamp: 2; */
+  
+
+  .bg-size-200 {
+      background-size: 200% 100%;
+  }
+
+  .bg-pos-0 {
+      background-position: 0% 50%;
+  }
+
+  .hover\:bg-pos-100:hover {
+      background-position: 100% 50%;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -213,46 +239,84 @@
   }
 }
 
+/* EN and RU fonts */
+
 @font-face {
-  font-family: 'EnglishFont';
-  src: url('/fonts/en-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'en-text';
+  src: url('/fonts/en-text.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'EnglishFont';
-  src: url('/fonts/en-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'en-title';
+  src: url('/fonts/en-title.woff2') format('woff2');
+}
+
+/* FA and AR fonts */
+
+@font-face {
+  font-family: 'fa-text';
+  src: url('/fonts/fa-text.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'PersianFont';
-  src: url('/fonts/fa-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'fa-title';
+  src: url('/fonts/fa-title.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'PersianFont';
-  src: url('/fonts/fa-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* EN and RU settings */
 
-html[lang="en"] body {
-  font-family: 'EnglishFont', Arial, Helvetica, sans-serif;
+html[lang="en"] body,
+html[lang="en"] .textFont,
+html[lang="ru"] body,
+html[lang="ru"] .textFont {
+  font-family: 'en-text', Arial, Helvetica, sans-serif;
   direction: ltr;
 }
 
-html[lang="fa"] body {
-  font-family: 'PersianFont', Arial, Helvetica, sans-serif;
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6,
+html[lang="en"] .titleFont,
+html[lang="ru"] h1,
+html[lang="ru"] h2,
+html[lang="ru"] h3,
+html[lang="ru"] h4,
+html[lang="ru"] h5,
+html[lang="ru"] h6,
+html[lang="ru"] .titleFont {
+  font-family: 'en-title', Arial, Helvetica, sans-serif;
+}
+
+/* FA and AR settings */
+
+html[lang="fa"] body,
+html[lang="fa"] .textFont,
+html[lang="ar"] body,
+html[lang="ar"] .textFont {
+  font-family: 'fa-text', Arial, Helvetica, sans-serif;
   direction: rtl;
+}
+
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4,
+html[lang="fa"] h5,
+html[lang="fa"] h6,
+html[lang="fa"] .titleFont,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar"] .titleFont {
+  font-family: 'fa-title', Arial, Helvetica, sans-serif;
 }
 
 body {

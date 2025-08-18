@@ -1,5 +1,4 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 /* ------------------------------------------JS--------------------*/
@@ -39,10 +38,8 @@ export default async function RootLayout({
     notFound();
   }
 
-  const direction = (await getTranslations()).raw('direction');
-
   return (
-    <html lang={locale} dir={direction}>
+    <html lang={locale}>
       <body>
         <NextIntlClientProvider>
 

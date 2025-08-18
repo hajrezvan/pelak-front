@@ -6,7 +6,7 @@
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-// import * as P from '@/components/Playout'
+import Hero from '@/components/pages/home/Hero'
 import HeroSection from '@/components/Page/HeroSection'
 import SearchSection from '@/components/Page/SearchSection'
 import CategoriesSection from '@/components/Page/CategoriesSection'
@@ -21,6 +21,7 @@ export default function HomePage() {
   return (
   <>
       <main>
+        <Hero />
         <HeroSection />
         <SearchSection />
         <CategoriesSection />

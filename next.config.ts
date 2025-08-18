@@ -19,7 +19,12 @@ const nextConfig: NextConfig = {
 				pathname: '/**',
 			}, {
 				protocol: 'https',
-				hostname: 'api.majidgoodini.ir/', // XXX : Configure your own storage hostname
+				hostname: 'api.majidgoodini.ir', // XXX : Configure your own storage hostnameimages.unsplash.com
+				port: '',
+				pathname: '/**',
+			}, {
+				protocol: 'https',
+				hostname: 'images.unsplash.com', // XXX : Configure your own storage hostname
 				port: '',
 				pathname: '/**',
 			}

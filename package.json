@@ -10,6 +10,7 @@
     "lint": "next lint",
     "version": "npm version && git push && git push --tags",
     "docker:build": "docker build --no-cache -t pelak:$npm_package_version -t pelak:latest .",
+    "docker:build:arm64": "docker buildx build --platform linux/arm64 --no-cache -t pelak:$npm_package_version -t pelak:latest .",
     "docker:tag": "docker tag pelak:latest m9020120014/pelak:latest && docker tag pelak:$npm_package_version m9020120014/pelak:$npm_package_version",
     "docker:push": "docker push m9020120014/pelak:latest && docker push m9020120014/pelak:$npm_package_version",
     "docker:dockerhub": "npm run docker:tag && npm run docker:push",
@@ -19,8 +20,10 @@
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
+    "embla-carousel-react": "^8.6.0",
     "next": "15.4.6",
     "next-intl": "^4.3.4",
+    "next-seo": "^6.8.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

@@ -1,8 +1,166 @@
 {
-    "language": "فارسی",
-    "lang": "fa",
-    "direction": "rtl",
-    "Main": {
-        "title": "ایران اکسپورتال"
-    }
+	"language": "فارسی",
+	"lang": "fa",
+	"direction": "rtl",
+	"Main": {
+		"title": "ایران اکسپورتال"
+	},
+	"mainLayout": {
+		"mainUrl": "http://localhost:3000",
+		"lang": "en",
+		"siteName": "Iran Exportal",
+		"url": "/",
+		"imgLogo": "/Logo.png",
+		"imgAlt": "iranExportal Logo",
+		"menuButtonOpen": "Open menu",
+		"menuButtonClose": "Close menu",
+		"topNumber": "+98-2178581122",
+		"copyText": " 2025 IranExportal, Inc. All rights reserved.",
+		"newsletterTitle": "Subscribe to our newsletter",
+		"newsletterDescription": "The latest news, articles, and resources, sent to your inbox weekly.",
+		"emailLabel": "Email address",
+		"emailSubscribeText": "Subscribe",
+		"emailSubscribePlaceholder": "Enter your email"
+	},
+	"header": {
+		"popName": "Categories",
+		"popMainItem": [
+			{
+				"name": "Food & Beverages",
+				"description": "Fresh produce, processed foods, and quality beverages",
+				"href": "/products/Food&Beverages",
+				"icon": "food"
+			},
+			{
+				"name": "Chemicals & Petrochemicals",
+				"description": "Industrial chemicals and petroleum derivatives",
+				"href": "/products/Chemicals&Petrochemicals",
+				"icon": "beaker"
+			},
+			{
+				"name": "Building Materials",
+				"description": "Construction materials and building supplies",
+				"href": "/products/Building_Materials",
+				"icon": "building"
+			},
+			{
+				"name": "Textiles & Apparel",
+				"description": "Fabrics, clothing, and fashion accessories",
+				"href": "/products/Textiles&Apparel",
+				"icon": "apparel"
+			},
+			{
+				"name": "Machinery & Tools",
+				"description": "Industrial equipment and professional tools",
+				"href": "/products/Machinery&Tools",
+				"icon": "tool"
+			},
+			{
+				"name": "Medical & Health Products",
+				"description": "Healthcare equipment and medical supplies",
+				"href": "/products/Medical&HealthProducts",
+				"icon": "medical"
+			},
+			{
+				"name": "Home & Kitchen Products",
+				"description": "Household items and kitchen essentials",
+				"href": "/products/Home&KitchenProducts",
+				"icon": "home"
+			},
+			{
+				"name": "Handicrafts & Art",
+				"description": "Traditional crafts and artistic creations",
+				"href": "/products/Handicrafts&Art",
+				"icon": "palette"
+			}
+		],
+		"popSideItem": [
+			{
+				"name": "See All Product",
+				"href": "/products/",
+				"icon": "menu"
+			}
+		],
+		"menuItem": [
+			{
+				"name": "Product Majid",
+				"href": "/product/premium-roasted-salted-saffron-pistachios"
+			},
+			{
+				"name": "Editor",
+				"href": "/editor"
+			}
+		],
+		"login": {
+			"name": "Log in",
+			"href": "#",
+			"icon": "box"
+		}
+	},
+	"footer": {
+		"solutions": [
+			{
+				"name": "Marketing",
+				"href": "#"
+			},
+			{
+				"name": "Analytics",
+				"href": "#"
+			},
+			{
+				"name": "Automation",
+				"href": "#"
+			},
+			{
+				"name": "Commerce",
+				"href": "#"
+			},
+			{
+				"name": "Insights",
+				"href": "#"
+			}
+		],
+		"social": [
+			{
+				"name": "Facebook",
+				"href": "#",
+				"icon": "circle"
+			},
+			{
+				"name": "Instagram",
+				"href": "#",
+				"icon": "circle"
+			},
+			{
+				"name": "X",
+				"href": "#",
+				"icon": "circle"
+			},
+			{
+				"name": "GitHub",
+				"href": "#",
+				"icon": "circle"
+			},
+			{
+				"name": "YouTube",
+				"href": "#",
+				"icon": "circle"
+			}
+		]
+	},
+	"product": {
+		"callToActionTitle": "Buy Now",
+		"callToActionText": "Get your product now",
+		"otherCompanyProductsTitle": "Other Products"
+	},
+	"other": {
+		"faqTitle": "FAQ (Frequently Asked Questions)",
+		"CommentRatingTitle": "Comment & Rating",
+		"CommentRatingNewCommentTitle": "Add a new comment",
+		"CommentRatingNewCommentText": "Write your comment here...",
+		"CommentRatingSubmitButton": "Submit",
+		"CommentRatingAttachFile": "Attach a file",
+		"CommentRatingYourRating": "Your rating",
+		"CommentRatingAddYourRating": "Add your rating"
+	}
 }

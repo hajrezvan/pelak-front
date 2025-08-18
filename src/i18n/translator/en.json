@@ -28,56 +28,56 @@
       {
         "name": "Food & Beverages",
         "description": "Fresh produce, processed foods, and quality beverages",
-        "href": "products/Food&Beverages",
+        "href": "/products/Food&Beverages",
         "icon": "food"
       },
       {
         "name": "Chemicals & Petrochemicals",
         "description": "Industrial chemicals and petroleum derivatives",
-        "href": "products/Chemicals&Petrochemicals",
+        "href": "/products/Chemicals&Petrochemicals",
         "icon": "beaker"
       },
       {
         "name": "Building Materials",
         "description": "Construction materials and building supplies",
-        "href": "products/Building_Materials",
+        "href": "/products/Building_Materials",
         "icon": "building"
       },
       {
         "name": "Textiles & Apparel",
         "description": "Fabrics, clothing, and fashion accessories",
-        "href": "products/Textiles&Apparel",
+        "href": "/products/Textiles&Apparel",
         "icon": "apparel"
       },
       {
         "name": "Machinery & Tools",
         "description": "Industrial equipment and professional tools",
-        "href": "products/Machinery&Tools",
+        "href": "/products/Machinery&Tools",
         "icon": "tool"
       },
       {
         "name": "Medical & Health Products",
         "description": "Healthcare equipment and medical supplies",
-        "href": "products/Medical&HealthProducts",
+        "href": "/products/Medical&HealthProducts",
         "icon": "medical"
       },
       {
         "name": "Home & Kitchen Products",
         "description": "Household items and kitchen essentials",
-        "href": "products/Home&KitchenProducts",
+        "href": "/products/Home&KitchenProducts",
         "icon": "home"
       },
       {
         "name": "Handicrafts & Art",
         "description": "Traditional crafts and artistic creations",
-        "href": "products/Handicrafts&Art",
+        "href": "/products/Handicrafts&Art",
         "icon": "palette"
       }
     ],
     "popSideItem": [
       {
         "name": "See All Product",
-        "href": "products/",
+        "href": "/products/",
         "icon": "menu"
       }
     ],
