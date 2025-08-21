@@ -21,24 +21,34 @@ const UIs = {
 	boxFull: "px-PC-2 sm:px-PC-0 -mx-PC-2 sm:-mx-PC-0    sm:rounded-PC-1    box-content sm:box-border",
 }
 
+const OrientationStyles = {
+	horizontal: "flex-row",
+	vertical: "flex-col",
+	verticalReverse: "flex-col-reverse",
+	horizontalReverse: "flex-row-reverse",
+	wrap: "flex-wrap",
+}
+
 export interface BoxProps {
 	UI?: keyof typeof UIs;
 	size?: keyof typeof sizes;
 	children: React.ReactNode;
 	className?: string;
+	Orientation?: keyof typeof OrientationStyles;
 }
 
 export default function Box({
 	UI = "box",
 	size = "full",
 	children,
-	className
+	className,
+	Orientation = "vertical"
 }: Readonly<BoxProps>) {
 
 	const baseStyles = "flex"
 
 	return (
-		<div className={baseStyles + " " + sizes[size] + " " + UIs[UI] + " " + className}>
+		<div className={baseStyles + " " + OrientationStyles[Orientation] + " " + sizes[size] + " " + UIs[UI] + " " + className}>
 			{children}
 		</div>
 	);

@@ -10,6 +10,7 @@ import "@/app/globals.css";
 
 /* ------------------------------------------Components------------*/
 import { Header } from '@/components/Layouts'
+import Footer from '@/components/Page/Footer'
 /* ------------------------------------------Function--------------*/
 export const metadata: Metadata = {
   verification: { google: "1234567890", yandex: "1234567890", "me": "1234567890" },
@@ -48,6 +49,8 @@ export default async function RootLayout({
           <div>
             {children}
           </div>
+
+          <Footer />
 
         </NextIntlClientProvider>
       </body>

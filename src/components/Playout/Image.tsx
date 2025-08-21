@@ -13,8 +13,8 @@ export default function Image({
   LinkClassName,
   src,
   alt,
-  width,
-  height,
+  width = 313,
+  height = 313,
   className,
   ...props
 }: Readonly<ImageProps>) {

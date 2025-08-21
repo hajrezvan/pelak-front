@@ -53,7 +53,7 @@ export default function HeaderLayout() {
 
 			<P.Section className="bg-PC-Background border-b-PC-1 border-PC-BackgroundBorder">
 				<P.Container className="h-PC-8">
-					<P.Box className="justify-between">
+					<P.Box className="justify-between" Orientation="horizontal">
 						<p>{PDmainLayout.topNumber}</p>
 						<p>{PDmainLayout.lang}</p>
 					</P.Box>
@@ -65,7 +65,7 @@ export default function HeaderLayout() {
 				(isSmall ? "h-PC-M backdrop-blur-sm" : "h-PC-10 backdrop-blur-none") + " -mb-PC-10"
 			}>
 				<P.Container>
-					<P.Box className="justify-between items-center">
+					<P.Box className="justify-between items-center" Orientation="horizontal">
 
 						<P.Image
 							href={PDmainLayout.url}

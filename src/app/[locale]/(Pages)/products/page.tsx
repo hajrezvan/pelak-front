@@ -9,9 +9,7 @@ import { Metadata } from "next";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/Playout'
 import CategoryCard from "@/components/Layouts/Pcomponents/CategoryCard";
-
 /* ------------------------------------------Function--------------*/
 
 export async function generateMetadata({

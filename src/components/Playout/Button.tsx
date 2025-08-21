@@ -10,6 +10,7 @@ const UIs = {
   warning: "bg-PC-Warning hover:bg-PC-WarningDark    text-PC-White",
   disabled: "bg-PC-BackgroundDarkness    text-PC-TextLight",
   light: "bg-PC-BackgroundPanel hover:bg-PC-BackgroundBorder    text-PC-Text hover:text-PC-TextDark",
+  lightGlow: "bg-PC-BackgroundPanel hover:bg-PC-Background    text-PC-Text hover:text-PC-TextDark", // FIX : glow
   dark: "bg-PC-Text hover:bg-PC-TextDark    text-PC-TextLight",
   link: "text-PC-Primary hover:text-PC-PrimaryDark    underline-offset-4 hover:underline",
   linkPanel: "bg-PC-BackgroundPanel    text-PC-Primary hover:text-PC-PrimaryDark     underline-offset-4 hover:underline",
@@ -20,6 +21,7 @@ const UIs = {
   errorOutline: "border-PC-1 border-PC-Error    text-PC-Error hover:text-PC-ErrorDark    hover:bg-PC-ErrorLightness",
   warningOutline: "border-PC-1 border-PC-Warning    text-PC-Warning hover:text-PC-WarningDark    hover:bg-PC-WarningLightness",
   lightOutline: "border-PC-1 border-PC-BackgroundDark    text-PC-Text hover:text-PC-TextDark   hover:bg-PC-BackgroundPanel",
+  lightOutlineGlow: "border-PC-1 border-PC-BackgroundDark    text-PC-Text hover:text-PC-TextDark   hover:bg-PC-Background", // FIX : glow
   darkOutline: "border-PC-1 border-PC-Text    text-PC-Text hover:text-PC-TextDark   hover:bg-PC-BackgroundPanel",
   linkHoverOutline: "ring-0 ring-PC-Primary hover:ring-1    text-PC-Primary hover:text-PC-PrimaryDark    underline-offset-4 hover:underline",
   white: "bg-PC-TextWhite hover:bg-PC-White    text-PC-Primary",

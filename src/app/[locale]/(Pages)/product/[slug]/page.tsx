@@ -15,7 +15,6 @@ import * as P from '@/components/Playout'
 import Container from "@/components/Layouts/Pcomponents/product/Container";
 import ImageGallery from "@/components/Layouts/Pcomponents/product/ImageGallery";
 import HeroHeader from "@/components/Layouts/Pcomponents/product/HeroHeader";
-import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
 import TagLabel from "@/components/Layouts/Pcomponents/TagLabel";
 import ProductPageClient from "@/components/Layouts/Pcomponents/ProductPageClient";
 import VideoLightbox from "@/components/Layouts/Pcomponents/VideoLightbox";

@@ -2,34 +2,37 @@
 /* ------------------------------------------JS--------------------*/
 
 /* ------------------------------------------Type------------------*/
-
+import { PIcategories } from '@/data/categories'
 /* ------------------------------------------Data------------------*/
-
+import { categories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
 import Hero from '@/components/pages/home/Hero'
-import HeroSection from '@/components/Page/HeroSection'
-import SearchSection from '@/components/Page/SearchSection'
-import CategoriesSection from '@/components/Page/CategoriesSection'
+import Categories from '@/components/pages/home/Categories'
+import About from '@/components/pages/home/About'
 import FeaturedSuppliers from '@/components/Page/FeaturedSuppliers'
 import HowItWorks from '@/components/Page/HowItWorks'
 import Testimonials from '@/components/Page/Testimonials'
-import Footer from '@/components/Page/Footer'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function HomePage() {
+export default async function HomePage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+
+  const { locale } = await params;
+
   return (
-  <>
+    <>
       <main>
-        <Hero />
-        <HeroSection />
-        <SearchSection />
-        <CategoriesSection />
-        <FeaturedSuppliers />
-        <HowItWorks />
-        <Testimonials />
+        <Hero locale={locale} />
+        <Categories categories={categories[locale]} />
+        <About locale={locale}/>
+        {/* <FeaturedSuppliers locale={locale}/>
+        <HowItWorks locale={locale}/>
+        <Testimonials locale={locale}/> */}
       </main>
-      <Footer />
-  </>
+    </>
   )
 }

@@ -50,7 +50,7 @@
 
 }
 
-@theme inline {
+@theme {
 
   --Spacing: 0.125rem /* 2px */ ;
 
@@ -60,6 +60,7 @@
   --spacing-PC-1: calc(var(--Spacing) * 2) ;
   --spacing-PC-2: calc(var(--Spacing) * 4) ;
   --spacing-PC-3: calc(var(--Spacing) * 6) ;
+  --spacing-PC-Z: calc(var(--Spacing) * 7) ;
   --spacing-PC-H: calc(var(--Spacing) * 8) ;
   --spacing-PC-4: calc(var(--Spacing) * 9) ;
   --spacing-PC-5: calc(var(--Spacing) * 12) ;
@@ -71,6 +72,8 @@
   --spacing-PC-10: calc(var(--Spacing) * 40) ;
   --spacing-PC-11: calc(var(--Spacing) * 50) ;
   --spacing-PC-12: calc(var(--Spacing) * 55) ;
+  --spacing-PC-13: calc(var(--Spacing) * 72) ;
+  --spacing-PC-14: calc(var(--Spacing) * 90) ;
 
   --radius-PC-0: calc(var(--Spacing) * 0) ;
   --radius-PC-1: calc(var(--Spacing) * 2) ;
@@ -132,6 +135,9 @@
 
   --color-PC-White: var(--White);
   --color-PC-Black: var(--Black);
+
+  --inset-shadow-in: inset 0px 0px 34px; 
+  --shadow-out: drop 0px 0px 72px; 
 
 }
 

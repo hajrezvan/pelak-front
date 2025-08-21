@@ -2,7 +2,7 @@ const OrientationStyles = {
 	vertical: "flex-col",
 	verticalReverse: "flex-col-reverse",
 	horizontal: "flex-col sm:flex-row",
-	horizontalReverse: "flex-col sm:flex-row-reverse",
+	horizontalReverse: "flex-col-reverse sm:flex-row-reverse",
 	wrap: "flex-wrap",
 }
 
