@@ -24,7 +24,7 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # ایجاد user غیر root برای امنیت
 RUN addgroup --system --gid 1001 nodejs
