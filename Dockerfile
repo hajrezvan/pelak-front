@@ -9,7 +9,7 @@ WORKDIR /app
 # کپی package files
 COPY package.json package-lock.json* ./
 # برای build کردن، همه dependencies رو نصب کن
-RUN npm ci
+RUN npm ci --only=production
 
 # Build stage
 FROM base AS builder
@@ -24,7 +24,7 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
+ENV NODE_ENV production
 
 # ایجاد user غیر root برای امنیت
 RUN addgroup --system --gid 1001 nodejs

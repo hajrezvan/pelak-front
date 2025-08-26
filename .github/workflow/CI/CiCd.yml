@@ -1,0 +1,141 @@
+name: Frontend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_IMAGE: m9020120014/pelak
+  SERVICE_NAME: front
+
+jobs:
+  # Build and Test Job
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build application
+      run: npm run build
+
+  # Build and Push Docker Image
+  build-and-push:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.DOCKER_IMAGE }}
+        tags: |
+          type=ref,event=branch
+          type=sha,prefix={{branch}}-,suffix={{sha}},format=short
+          type=raw,value=latest,enable={{is_default_branch}}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Save commit SHA
+      run: echo "COMMIT_SHA=${{ github.sha }}" >> $GITHUB_ENV
+
+  # Deploy to Production Server
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Deploy to production server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        script: |
+          # Navigate to the project directory
+          cd /opt/docker-app
+          
+          # Use sudo for Docker commands if needed
+          # Pull the latest image for the specific service
+          sudo docker compose pull ${{ env.SERVICE_NAME }}
+          
+          # Restart only the specific service
+          sudo docker compose up -d ${{ env.SERVICE_NAME }}
+          
+          # Wait for the service to be healthy
+          echo "Waiting for ${{ env.SERVICE_NAME }} to be healthy..."
+          timeout 60 bash -c 'until sudo docker compose ps ${{ env.SERVICE_NAME }} | grep -q "healthy"; do sleep 2; done'
+          
+          # Show service status
+          sudo docker compose ps ${{ env.SERVICE_NAME }}
+          
+          echo "✅ ${{ env.SERVICE_NAME }} deployed successfully!"
+
+    - name: Health check
+      run: |
+        echo "Performing health check..."
+        sleep 30
+        # You can add actual health check logic here if needed
+
+  # Rollback Job (Manual trigger)
+  rollback:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.commit_sha != ''
+    
+    steps:
+    - name: Rollback to specific commit
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        script: |
+          cd /opt/docker-app
+          
+          # Update the image tag to the specific commit SHA
+          sudo docker compose pull ${{ env.SERVICE_NAME }}:${{ github.event.inputs.commit_sha }}
+          
+          # Update the docker-compose.yml to use the specific tag
+          sed -i "s|${{ env.DOCKER_IMAGE }}:latest|${{ env.DOCKER_IMAGE }}:${{ github.event.inputs.commit_sha }}|g" docker-compose.yml
+          
+          # Restart the service
+          sudo docker compose up -d ${{ env.SERVICE_NAME }}
+          
+          echo "✅ Rolled back ${{ env.SERVICE_NAME }} to commit ${{ github.event.inputs.commit_sha }}"
