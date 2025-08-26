@@ -12,8 +12,8 @@
     "docker:build:amd64": "docker buildx build --platform linux/amd64 --no-cache -t pelak:$npm_package_version-amd64 -t pelak:latest .",
     "docker:build:arm64": "docker buildx build --platform linux/arm64 --no-cache -t pelak:$npm_package_version-arm64 .",
     "docker:build": "npm run docker:build:amd64 && npm run docker:build:arm64",
-    "docker:tag": "docker login &&docker tag pelak:latest m9020120014/pelak:latest && docker tag pelak:$npm_package_version-amd64 m9020120014/pelak:$npm_package_version-amd64 && docker tag pelak:$npm_package_version-arm64 m9020120014/pelak:$npm_package_version-arm64",
-    "docker:push": "docker push m9020120014/pelak:latest && docker push m9020120014/pelak:$npm_package_version-amd64  && docker push m9020120014/pelak:$npm_package_version-arm64",
+    "docker:tag": "docker tag pelak:latest m9020120014/pelak:latest && docker tag pelak:$npm_package_version-amd64 m9020120014/pelak:$npm_package_version-amd64 && docker tag pelak:$npm_package_version-arm64 m9020120014/pelak:$npm_package_version-arm64",
+    "docker:push": "docker login && docker push m9020120014/pelak:latest && docker push m9020120014/pelak:$npm_package_version-amd64  && docker push m9020120014/pelak:$npm_package_version-arm64",
     "docker:dockerhub": "npm run docker:tag && npm run docker:push",
     "docker:clean": "docker system prune -a --volumes -f && docker image prune -f",
     "docker:run": "docker run -d -p 3000:3000 --name pelak-$npm_package_version --env NODE_ENV=production pelak:$npm_package_version-amd64"
