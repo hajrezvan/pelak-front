@@ -1,12 +1,11 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const ExternalApiBase = "https://api.majidgoodini.ir/api";
 
-export async function GET({
-  params
-}: {
-  params: Promise<{ slug: string[] }>
-}) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string[] }> }
+): Promise<NextResponse> {
   const { slug } = await params;
 
   const url = ExternalApiBase + "/" + slug.join('/');
@@ -15,5 +14,4 @@ export async function GET({
   const data = await response.json();
 
   return NextResponse.json(data);
-
 }
