@@ -1,6 +1,6 @@
 {
   "name": "pelak",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "scripts": {
     "prebuild:manifest": "node -e \"const pkg=require('./package.json');const manifest=require('./public/manifest.json');manifest.version=pkg.version;require('fs').writeFileSync('./public/manifest.json',JSON.stringify(manifest,null,2));\"",
