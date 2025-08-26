@@ -7,7 +7,7 @@ import "@/app/globals.css";
 /* ------------------------------------------Type------------------*/
 
 /* ------------------------------------------Data------------------*/
-
+import { layout } from '@/data/layout'
 /* ------------------------------------------Components------------*/
 import { Header } from '@/components/Layouts'
 import Footer from '@/components/Page/Footer'
@@ -44,13 +44,11 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
 
-          <Header aria-label="Global" />
+          <Header data={layout[locale]} aria-label="Global" />
 
-          <div>
-            {children}
-          </div>
+          {children}
 
-          <Footer />
+          <Footer data={layout[locale]} aria-label="Footer" />
 
         </NextIntlClientProvider>
       </body>

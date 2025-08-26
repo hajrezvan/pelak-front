@@ -34,7 +34,10 @@ export default function VideoDialog({video, poster, className}: Readonly<{ video
             style={{ width: '100%', height: 'auto' }}
             className="rounded-lg"
             />
-            <P.SvgIcon svgName="xMark" svgSize="large" svgClassName="text-PC-Background absolute bg-PC-Text/80 rounded-full p-1" />
+            <p className="text-PC-Background absolute flex items-center gap-PC-2 bg-PC-Text/80 rounded-PC-4 p-PC-2"> 
+            <P.SvgIcon svgName="video" svgSize="large" />
+            {video.title}
+            </p>
         </div>
 
         <Dialog 
@@ -72,7 +75,7 @@ export default function VideoDialog({video, poster, className}: Readonly<{ video
                         }}
                         className="absolute top-3 right-3 p-1 bg-PC-BackgroundDark/72 hover:bg-PC-Background/72 rounded-full pointer-events-auto"
                     >
-                        <P.SvgIcon svgName="xCircle" svgSize="large" />
+                        <P.SvgIcon svgName="xCircle" svgSize="large" svgClassName=" p-PC-1" />
                     </button>
 
                 </div>

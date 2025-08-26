@@ -17,7 +17,7 @@ interface CategoryCardProps {
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
-      href={`/products/${category.href}`}
+      href={category.href}
       className="group bg-PC-BackgroundPanel rounded-lg shadow-sm border border-PC-BackgroundBorder p-6 hover:shadow-md transition-shadow cursor-pointer"
     >
       <div className="relative w-[72%] mx-auto overflow-hidden rounded-lg mb-4">

@@ -1,6 +1,5 @@
 "use client"
 
-import { useTranslations } from "next-intl";
 /* ------------------------------------------JS--------------------*/
 import { useEffect, useState } from 'react'
 import React from "react";
@@ -16,20 +15,18 @@ import {
 	PopoverPanel
 } from '@headlessui/react'
 /* ------------------------------------------Type------------------*/
-import { PImainLayout, PIheader } from "@/type/data";
+import { PIlayout } from "@/data/layout";
 /* ------------------------------------------Data------------------*/
-
+import { categories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 import Link from "next/link";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function HeaderLayout() {
+export default function HeaderLayout({ data }: { data: PIlayout[keyof PIlayout] }) {
 
-	const messages = useTranslations()
-	const PDmainLayout = messages.raw('mainLayout') as PImainLayout;
-	const PDheader = messages.raw('header') as PIheader;
+	const PDcategories = categories[data.lang];
 
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isSmall, setIsSmall] = useState(false);
@@ -54,8 +51,8 @@ export default function HeaderLayout() {
 			<P.Section className="bg-PC-Background border-b-PC-1 border-PC-BackgroundBorder">
 				<P.Container className="h-PC-8">
 					<P.Box className="justify-between" Orientation="horizontal">
-						<p>{PDmainLayout.topNumber}</p>
-						<p>{PDmainLayout.lang}</p>
+						<p>{data.header.phoneNumber}</p>
+						<p>{data.lang}</p>
 					</P.Box>
 				</P.Container >
 			</P.Section>
@@ -68,25 +65,25 @@ export default function HeaderLayout() {
 					<P.Box className="justify-between items-center" Orientation="horizontal">
 
 						<P.Image
-							href={PDmainLayout.url}
-							title={PDmainLayout.siteName}
+							href={data.main.url}
+							title={data.main.siteName}
 							LinkClassName="rounded-md"
-							alt={PDmainLayout.imgAlt}
-							src={PDmainLayout.imgLogo}
+							alt={data.main.logo.alt}
+							src={data.main.logo.src}
 							width={110}
 							height={48}
 							style={{ width: 'auto', height: (isSmall ? '34px' : '40px'), transitionProperty: 'all', transitionDuration: '313ms' }}
 						/>
 
 						<P.Button onClick={() => setMobileMenuOpen(true)} svgIcon="menu" svgIconSize="medium" UI="light" className="lg:hidden p-PC-2! border-PC-1 border-PC-BackgroundDark">
-							<span className="sr-only">{PDmainLayout.menuButtonOpen}</span>
+							<span className="sr-only">{data.header.menuButtonOpen}</span>
 						</P.Button>
 
 						<PopoverGroup className="hidden lg:flex lg:gap-x-5">
 							<Popover>
 
 								<PopoverButton className="group flex items-center    px-PC-4 py-PC-2    rounded-PC-2    transition    bg-PC-BackgroundPanel hover:bg-PC-Background    text-PC-Primary hover:text-PC-PrimaryDark     underline-offset-4 hover:underline    justify-between    gap-2    cursor-pointer    border-PC-1 border-PC-BackgroundBorder">
-									{PDheader.popName}
+									{PDcategories.name}
 									<P.SvgIcon svgName="chevronDown" svgClassName="group-data-open:rotate-180" />
 								</PopoverButton>
 
@@ -97,7 +94,8 @@ export default function HeaderLayout() {
 								>
 
 									<P.Container className="grid grid-cols-4 pt-PC-0 pb-PC-3 gap-PC-2">
-										{PDheader.popMainItem.map((item) => (
+										{PDcategories.categories.map((item) => (
+
 											<div key={item.name} className="group relative rounded-lg p-PC-5 text-sm/6 bg-PC-BackgroundPanel hover:bg-PC-PrimaryLightness ring-1 ring-PC-BackgroundBorder">
 												<div className="flex size-11 items-center justify-center rounded-lg bg-PC-PrimaryLightness group-hover:bg-PC-Primary">
 													<P.SvgIcon svgName={item.icon as P.SvgIconProps['svgName']} svgSize="medium" svgClassName="text-PC-Secondary group-hover:text-PC-TextLight" />
@@ -108,13 +106,14 @@ export default function HeaderLayout() {
 												</a>
 												<p className="mt-1 text-PC-Text group-hover:text-PC-Secondary">{item.description}</p>
 											</div>
+
 										))}
 									</P.Container>
 
 									<div className="bg-PC-PrimaryLightness border-t-PC-1 border-PC-BackgroundBorder">
 										<P.Container >
 											<P.Box size="full" className="grid grid-cols-1 divide-x divide-PC-BackgroundBorder border-x border-PC-BackgroundBorder">
-												{PDheader.popSideItem.map((item) => (
+												{PDcategories.otherItem.map((item) => (
 													<Link
 														target="_blank"
 														key={item.name}
@@ -158,17 +157,17 @@ export default function HeaderLayout() {
 
 				<P.Section className="fixed inset-0 z-[99991] bg-PC-Secondary/40 backdrop-blur-xs flex justify-end" >
 
-					<DialogPanel className="fixed inset-y-0 w-full flex flex-col justify-between overflow-y-auto bg-PC-PrimaryLightness p-5 sm:max-w-sm sm:ring-1 sm:ring-PC-Secondary/10">
+					<DialogPanel className="fixed inset-y-0 w-full flex flex-col justify-between overflow-y-auto bg-PC-Background p-5 sm:max-w-sm sm:ring-1 sm:ring-PC-Secondary/10">
 
 						<div className="flex items-center justify-between pb-5 border-b border-PC-Primary/20">
 
 							<div className="flex items-start ">
 								<P.Image
-									href={PDmainLayout.url}
-									title={PDmainLayout.siteName}
+									href={data.main.url}
+									title={data.main.siteName}
 									LinkClassName="p-1 rounded-md"
-									alt={PDmainLayout.imgAlt}
-									src={PDmainLayout.imgLogo}
+									alt={data.main.logo.alt}
+									src={data.main.logo.src}
 									width={110}
 									height={48}
 									style={{ width: 'auto', height: '40px', transitionProperty: 'all', transitionDuration: '313ms' }}
@@ -176,7 +175,7 @@ export default function HeaderLayout() {
 							</div>
 
 							<P.Button onClick={() => setMobileMenuOpen(false)} svgIcon="xMark" svgIconSize="medium" UI="lightOutline" className="p-PC-2!">
-								<span className="sr-only">{PDmainLayout.menuButtonClose}</span>
+								<span className="sr-only">{data.header.menuButtonClose}</span>
 							</P.Button>
 
 						</div>
@@ -186,12 +185,12 @@ export default function HeaderLayout() {
 							<Disclosure as="div">
 
 								<DisclosureButton className="group flex w-full items-center justify-between rounded-lg p-2 text-base/7 font-semibold text-PC-Text hover:bg-PC-BackgroundPanel">
-									{PDheader.popName}
+									{PDcategories.name}
 									<P.SvgIcon svgName="chevronDown" svgClassName="group-data-open:rotate-180" />
 								</DisclosureButton>
 
 								<DisclosurePanel className="mt-2 space-y-3">
-									{[...PDheader.popMainItem, ...PDheader.popSideItem].map((item) => (
+									{[...PDcategories.categories].map((item) => (
 										<DisclosureButton
 											key={item.name}
 											as="a"
@@ -203,6 +202,18 @@ export default function HeaderLayout() {
 										</DisclosureButton>
 									))}
 								</DisclosurePanel>
+
+								{PDcategories.otherItem.map((item) => (
+										<DisclosureButton
+											key={item.name}
+											as="a"
+											href={item.href}
+											className="block align-top rounded-lg p-2 text-sm/7 font-semibold text-PC-Text hover:bg-PC-BackgroundPanel"
+										>
+											<P.SvgIcon svgName={item.icon as P.SvgIconProps['svgName']} svgClassName="inline-block mx-2 group-hover:text-PC-Gray" />
+											{item.name}
+										</DisclosureButton>
+									))}
 
 							</Disclosure>
 
@@ -220,8 +231,8 @@ export default function HeaderLayout() {
 
 						<div className="pt-5 border-t border-PC-Primary/20">
 
-							<P.Button href={PDheader.login.href} svgIcon="user" className="lg:flex">
-								{PDheader.login.name}
+							<P.Button href={data.header.login.href} svgIcon="user" className="lg:flex">
+								{data.header.login.name}
 							</P.Button>
 
 						</div>

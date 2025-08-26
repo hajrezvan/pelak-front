@@ -10,6 +10,7 @@ const sizes = {
     small: "size-PC-4",
     medium: "size-PC-5",
     large: "size-PC-7",
+    xLarge: "size-PC-10",
 }
 
 const strokes = {

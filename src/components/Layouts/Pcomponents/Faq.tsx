@@ -1,5 +1,4 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import SvgIcon from '@/components/Layouts/Pcomponents/SvgIcon'
 import { PIfaq } from '@/type/faq';
 import { getTranslations } from 'next-intl/server';
 import * as P from '@/components/Playout'

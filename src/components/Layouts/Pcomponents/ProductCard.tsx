@@ -1,12 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PIproducts } from "@/type/products";
+import { PIcategoryProducts } from "@/data/product/productPage";
 
-interface ProductCardProps {
-  product: PIproducts;
-}
+// products: {
+//   id: number
+//   title: string
+//   description: string
+//   slug: string
+//   price: {
+//     rial: string
+//     local: string
+//   }
+//   rating: number
+//   isVerified: boolean
+//   createdAt: string
+//   images: {
+//     main: string
+//     cover: string
+//   }
+//   category: {
+//     name: string
+//     slug: string
+//   }
+//   author: {
+//     name: string
+//     username: string
+//   }
+//   stats: {
+//     commentCount: number
+//   }
+// }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product }: {product: PIcategoryProducts["products"][number]}) {
   return (
     <Link
       className="group flex w-full flex-col overflow-hidden rounded-lg h-full"
@@ -15,13 +40,13 @@ export default function ProductCard({ product }: ProductCardProps) {
     >
       <div className="relative aspect-square overflow-hidden">
         <Image
-          alt={product.title}
+          alt={product.description}
           loading="lazy"
           decoding="async"
           data-nimg="fill"
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
           sizes="100vw"
-          src={product.media.src}
+          src={product.images.main}
           fill
           style={{ position: 'absolute', height: '100%', width: '100%', inset: '0px', color: 'transparent' }}
         />

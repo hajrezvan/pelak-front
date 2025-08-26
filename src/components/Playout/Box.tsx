@@ -2,9 +2,9 @@ const sizes = {
 	"1/5": "w-full sm:w-1/3 md:w-1/5",
 	"1/4": "w-full sm:w-1/3 md:w-1/4",
 	"1/3": "w-full sm:w-1/2 md:w-1/3",
-	"2/5": "w-full sm:w-1/2 md:w-2/5",
+	"2/5": "w-full lg:w-2/5",
 	"1/2": "w-full sm:w-1/2",
-	"3/5": "w-full sm:w-1/2 md:w-3/5",
+	"3/5": "w-full lg:w-3/5",
 	"2/3": "w-full sm:w-1/2 md:w-2/3",
 	"3/4": "w-full sm:w-2/3 md:w-3/4",
 	"4/5": "w-full sm:w-2/3 md:w-4/5",
@@ -27,11 +27,20 @@ const OrientationStyles = {
 	verticalReverse: "flex-col-reverse",
 	horizontalReverse: "flex-row-reverse",
 	wrap: "flex-wrap",
+	wrapReverse: "flex-wrap-reverse",
+}
+
+const Gaps = {
+	none: "gap-0",
+	small: "gap-PC-2",
+	medium: "gap-PC-4",
+	large: "gap-PC-6",
 }
 
 export interface BoxProps {
 	UI?: keyof typeof UIs;
 	size?: keyof typeof sizes;
+	gap?: keyof typeof Gaps;
 	children: React.ReactNode;
 	className?: string;
 	Orientation?: keyof typeof OrientationStyles;
@@ -40,6 +49,7 @@ export interface BoxProps {
 export default function Box({
 	UI = "box",
 	size = "full",
+	gap = "none",
 	children,
 	className,
 	Orientation = "vertical"
@@ -48,7 +58,7 @@ export default function Box({
 	const baseStyles = "flex"
 
 	return (
-		<div className={baseStyles + " " + OrientationStyles[Orientation] + " " + sizes[size] + " " + UIs[UI] + " " + className}>
+		<div className={baseStyles + " " + OrientationStyles[Orientation] + " " + sizes[size] + " " + UIs[UI] + " " + Gaps[gap] + " " + className}>
 			{children}
 		</div>
 	);

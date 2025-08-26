@@ -31,7 +31,7 @@ async function getProductGallery(productMedia: PImedia[]) {
 }
 
 const getCachedProduct = cache(async (slug: string, locale: string) => {
-  return await GetPelaktAPI(slug, locale, "product");
+  return await GetPelaktAPI(slug.toLowerCase().replace(/%20/g, "-"), locale, "product");
 });
 
 export async function generateMetadata({
@@ -210,7 +210,7 @@ export default async function productPage({
             <div className=" h-34 bg-PC-Background rounded-xl">
               <div className="flex items-center py-2 px-1.5 overflow-x-scroll scroll-smooth">
                 <div className="inline-flex gap-2">
-                  {PDproduct.otherProducts.map((product) => (
+                  {PDproduct.otherProducts.length > 0 && PDproduct.otherProducts.map((product) => (
                     <Link
                       key={product.id}
                       href={product.slug}
@@ -218,8 +218,8 @@ export default async function productPage({
                     >
                       <div className="relative w-30 h-30 row-span-3">
                         <Image
-                          alt={product.media.title}
-                          src={product.media.src || ""} //todo {product.media.src}
+                          alt={product.media?.title || ""}
+                          src={product.media?.src || ""} //todo {product.media.src}
                           className="object-cover rounded"
                           fill
                         />

@@ -1,34 +1,33 @@
 @import "tailwindcss";
 
 :root {
-
   --Primary: hsl(220, 72%, 34%);
   --PrimaryDark: hsl(220, 72%, 28%);
-  --PrimaryLight: hsl(220, 72%, 40%);
+  --PrimaryLight: hsl(220, 72%, 72%);
   --PrimaryDarkness: hsl(220, 34%, 18%);
   --PrimaryLightness: hsl(220, 34%, 85%);
-  
+
   --Secondary: hsl(220, 40%, 34%);
   --SecondaryDark: hsl(220, 40%, 28%);
-  --SecondaryLight: hsl(220, 40%, 40%);
+  --SecondaryLight: hsl(220, 40%, 72%);
   --SecondaryDarkness: hsl(220, 18%, 18%);
   --SecondaryLightness: hsl(220, 18%, 85%);
 
   --Success: hsl(120, 40%, 34%);
   --SuccessDark: hsl(120, 40%, 28%);
-  --SuccessLight: hsl(120, 40%, 40%);
+  --SuccessLight: hsl(120, 40%, 72%);
   --SuccessDarkness: hsl(120, 18%, 18%);
   --SuccessLightness: hsl(120, 18%, 85%);
 
   --Error: hsl(0, 72%, 34%);
   --ErrorDark: hsl(0, 72%, 28%);
-  --ErrorLight: hsl(0, 72%, 40%);
+  --ErrorLight: hsl(0, 72%, 72%);
   --ErrorDarkness: hsl(0, 34%, 18%);
   --ErrorLightness: hsl(0, 34%, 85%);
 
   --Warning: hsl(40, 100%, 40%);
   --WarningDark: hsl(40, 100%, 34%);
-  --WarningLight: hsl(40, 100%, 50%);
+  --WarningLight: hsl(40, 100%, 72%);
   --WarningDarkness: hsl(40, 50%, 18%);
   --WarningLightness: hsl(40, 50%, 85%);
 
@@ -38,64 +37,118 @@
   --TextMiddle: hsl(220, 10%, 40%);
   --TextBlack: hsl(220, 5%, 5%);
   --TextWhite: hsl(220, 5%, 95%);
-  
+
   --Background: hsl(220, 10%, 95%);
   --BackgroundPanel: hsl(220, 10%, 90%);
   --BackgroundBorder: hsl(220, 10%, 85%);
   --BackgroundDark: hsl(220, 5%, 80%);
   --BackgroundDarkness: hsl(220, 5%, 72%);
 
-  --White: hsl(0, 0%, 100%); 
-  --Black: hsl(0, 0%, 0%); 
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
 
+  --Size-0-000: 0rem /* 0px */;
+  --Size-O-001: 0.0625rem /* 1px */;
+  --Size-T-002: 0.125rem /* 2px */;
+  --Size-1-004: 0.25rem /* 4px */;
+  --Size-2-008: 0.5rem /* 8px */;
+  --Size-3-012: 0.75rem /* 12px */;
+  --Size-Z-014: 0.875rem /* 14px */;
+  --Size-H-016: 1rem /* 16px */;
+  --Size-4-018: 1.125rem /* 18x */;
+  --Size-5-024: 1.5rem /* 24px */;
+  --Size-6-028: 1.75rem /* 28px */;
+  --Size-7-034: 2.125rem /* 34px */;
+  --Size-8-040: 2.5rem /* 40px */;
+  --Size-M-056: 3.5rem /* 56px */;
+  --Size-9-072: 4.5rem /* 72px */;
+  --Size-A-080: 5rem /* 80px */;
+  --Size-B-100: 6.25rem /* 100px */;
+  --Size-C-110: 6.875rem /* 110px */;
+  --Size-D-144: 9rem /* 144px */;
+  --Size-E-180: 11.25rem /* 180px */;
+
+  --Text-H1: 2.5rem /* 40px */;
+  --Text-H2: 2.125rem /* 34px */;
+  --Text-H3: 1.5rem /* 24px */;
+  --Text-H4: 1.125rem /* 18x */;
+  --Text-H5: 1rem /* 16px */;
+  --Text-H6: 0.875rem /* 14px */;
+  --Text-P: 1rem /* 16px */;
 }
 
 @theme {
+  /* XXX : Next Version Features
+--color-*	Color utilities like bg-red-500, text-sky-300, and many more
+--font-*	Font family utilities like font-sans
+--text-*	Font size utilities like text-xl
+--font-weight-*	Font weight utilities like font-bold
+--tracking-*	Letter spacing utilities like tracking-wide
+--leading-*	Line height utilities like leading-tight
+--breakpoint-*	Responsive breakpoint variants like sm:*
+--container-*	Container query variants like @sm:* and size utilities like max-w-md
+--spacing-*	Spacing and sizing utilities like px-4, max-h-16, and many more
+--radius-*	Border radius utilities like rounded-sm
+--shadow-*	Box shadow utilities like shadow-md
+--inset-shadow-*	Inset box shadow utilities like inset-shadow-xs
+--drop-shadow-*	Drop shadow filter utilities like drop-shadow-md
+--blur-*	Blur filter utilities like blur-md
+--perspective-*	Perspective utilities like perspective-near
+--aspect-*	Aspect ratio utilities like aspect-video
+--ease-*	Transition timing function utilities like ease-out
+--animate-*	Animation utilities like animate-spin
+ */
 
-  --Spacing: 0.125rem /* 2px */ ;
+  --spacing-PC-0: var(--Size-0-000) /* 0px */;
+  --spacing-PC-O: var(--Size-O-001) /* 1px */;
+  --spacing-PC-T: var(--Size-T-002) /* 2px */;
+  --spacing-PC-1: var(--Size-1-004) /* 4px */;
+  --spacing-PC-2: var(--Size-2-008) /* 8px */;
+  --spacing-PC-3: var(--Size-3-012) /* 12px */;
+  --spacing-PC-Z: var(--Size-Z-014) /* 14px */;
+  --spacing-PC-H: var(--Size-H-016) /* 16px */;
+  --spacing-PC-4: var(--Size-4-018) /* 18px */;
+  --spacing-PC-5: var(--Size-5-024) /* 24px */;
+  --spacing-PC-6: var(--Size-6-028) /* 28px */;
+  --spacing-PC-7: var(--Size-7-034) /* 34px */;
+  --spacing-PC-8: var(--Size-8-040) /* 40px */;
+  --spacing-PC-M: var(--Size-M-056) /* 56px */;
+  --spacing-PC-9: var(--Size-9-072) /* 72px */;
+  --spacing-PC-10: var(--Size-A-080) /* 80px */;
+  --spacing-PC-11: var(--Size-B-100) /* 100px */;
+  --spacing-PC-12: var(--Size-C-110) /* 110px */;
+  --spacing-PC-13: var(--Size-D-144) /* 144px */;
+  --spacing-PC-14: var(--Size-E-180) /* 180px */;
 
-  --spacing-PC-0: calc(var(--Spacing) * 0) ;
-  --spacing-PC-O: calc(var(--Spacing) * 0.5) ;
-  --spacing-PC-T: calc(var(--Spacing) * 1) ;
-  --spacing-PC-1: calc(var(--Spacing) * 2) ;
-  --spacing-PC-2: calc(var(--Spacing) * 4) ;
-  --spacing-PC-3: calc(var(--Spacing) * 6) ;
-  --spacing-PC-Z: calc(var(--Spacing) * 7) ;
-  --spacing-PC-H: calc(var(--Spacing) * 8) ;
-  --spacing-PC-4: calc(var(--Spacing) * 9) ;
-  --spacing-PC-5: calc(var(--Spacing) * 12) ;
-  --spacing-PC-6: calc(var(--Spacing) * 14) ;
-  --spacing-PC-7: calc(var(--Spacing) * 17) ;
-  --spacing-PC-8: calc(var(--Spacing) * 20) ; 
-  --spacing-PC-M: calc(var(--Spacing) * 28) ; 
-  --spacing-PC-9: calc(var(--Spacing) * 36) ;
-  --spacing-PC-10: calc(var(--Spacing) * 40) ;
-  --spacing-PC-11: calc(var(--Spacing) * 50) ;
-  --spacing-PC-12: calc(var(--Spacing) * 55) ;
-  --spacing-PC-13: calc(var(--Spacing) * 72) ;
-  --spacing-PC-14: calc(var(--Spacing) * 90) ;
+  --text-PC-H1: var(--Text-H1) /* 40px */;
+  --text-PC-H2: var(--Text-H2) /* 34px */;
+  --text-PC-H3: var(--Text-H3) /* 28px */;
+  --text-PC-H4: var(--Text-H4) /* 24px */;
+  --text-PC-H5: var(--Text-H5) /* 18px */;
+  --text-PC-H6: var(--Text-H6) /* 14px */;
+  --text-PC-P: var(--Text-P) /* 16px */;
 
-  --radius-PC-0: calc(var(--Spacing) * 0) ;
-  --radius-PC-1: calc(var(--Spacing) * 2) ;
-  --radius-PC-2: calc(var(--Spacing) * 4) ;
-  --radius-PC-3: calc(var(--Spacing) * 6) ;
-  --radius-PC-4: calc(var(--Spacing) * 9) ;
+  --radius-PC-0: var(--Size-0-000) /* 0px */;
+  --radius-PC-1: var(--Size-T-002) /* 2px */;
+  --radius-PC-2: var(--Size-2-008) /* 8px */;
+  --radius-PC-3: var(--Size-3-012) /* 12px */;
+  --radius-PC-4: var(--Size-4-018) /* 18px */;
 
-  --border-width-PC-0: calc(var(--Spacing) * 0) ;
-  --border-width-PC-1: calc(var(--Spacing) * 0.5) ;
-  --border-width-PC-2: calc(var(--Spacing) * 1) ;
-  --border-width-PC-3: calc(var(--Spacing) * 2) ;
-  --border-width-PC-4: calc(var(--Spacing) * 4) ;
-  --border-width-PC-5: calc(var(--Spacing) * 6) ;
-  --border-width-PC-M: calc(var(--Spacing) * 28) ; 
-  --border-width-PC-10: calc(var(--Spacing) * 40) ; 
+  --border-width-PC-0: var(--Size-0-000) /* 0px */;
+  --border-width-PC-1: var(--Size-O-001) /* 1px */;
+  --border-width-PC-2: var(--Size-T-002) /* 2px */;
+  --border-width-PC-3: var(--Size-1-004) /* 4px */;
+  --border-width-PC-4: var(--Size-2-008) /* 8px */;
+  --border-width-PC-5: var(--Size-3-012) /* 12px */;
+  --border-width-PC-M: var(--Size-M-056) /* 56px */;
+  --border-width-PC-10: var(--Size-A-080) /* 80px */;
 
   --color-PC-Primary: var(--Primary);
   --color-PC-PrimaryDark: var(--PrimaryDark);
   --color-PC-PrimaryLight: var(--PrimaryLight);
   --color-PC-PrimaryDarkness: var(--PrimaryDarkness);
   --color-PC-PrimaryLightness: var(--PrimaryLightness);
-  
+
   --color-PC-Secondary: var(--Secondary);
   --color-PC-SecondaryDark: var(--SecondaryDark);
   --color-PC-SecondaryLight: var(--SecondaryLight);
@@ -136,93 +189,102 @@
   --color-PC-White: var(--White);
   --color-PC-Black: var(--Black);
 
-  --inset-shadow-in: inset 0px 0px 34px; 
-  --shadow-out: drop 0px 0px 72px; 
+  --inset-shadow-in: inset 0 0 2.125rem /* 34px */;
+  --shadow-out: drop 0 0 4.5rem /* 72px */;
+}
 
+@media (min-width: 1280px) {
+  :root {
+
+    --Text-H1: 3.5rem /* 56px */;
+    --Text-H2: 2.5rem /* 40px */;
+    --Text-H3: 1.75rem /* 28px */;
+    --Text-H4: 1.5rem /* 24px */;
+    --Text-H5: 1.125rem /* 18x */;
+    --Text-H6: 1rem /* 16px */;
+    --Text-P: 1.125rem /* 18x */;
+
+  }
 }
 
 @layer utilities {
-
   *:focus-visible {
-      outline-style: solid;
-      outline-width: 2px;
-      outline-offset: 3px;
-      outline-color: var(--color-PC-Warning);
-      border-radius: 1px;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 3px;
+    outline-color: var(--color-PC-Warning);
+    border-radius: 1px;
   }
 
   *::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
-      background: var(--color-PC-Background3);
+    width: 5px;
+    height: 5px;
+    background: var(--color-PC-Background3);
   }
 
   *::-webkit-scrollbar-thumb {
-      background: var(--color-PC-Primary);
-      border-radius: 2px;
+    background: var(--color-PC-Primary);
+    border-radius: 2px;
   }
 
   *::-webkit-scrollbar-button {
-      display: none;
-      height: 0;
-      width: 0;
+    display: none;
+    height: 0;
+    width: 0;
   }
 
   /* TODO : remove this */
 
   .max-w-container-md {
-      max-width: 1200px;
+    max-width: 1200px;
   }
 
   .line-clamp-2 {
-      display: -webkit-box;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   } /* -webkit-line-clamp: 2; */
-  
 
   .bg-size-200 {
-      background-size: 200% 100%;
+    background-size: 200% 100%;
   }
 
   .bg-pos-0 {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 
   .hover\:bg-pos-100:hover {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
-
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-
     --Primary: hsl(220, 72%, 50%);
     --PrimaryDark: hsl(220, 72%, 60%);
-    --PrimaryLight: hsl(220, 72%, 40%);
+    --PrimaryLight: hsl(220, 72%, 24%);
     --PrimaryDarkness: hsl(220, 34%, 85%);
     --PrimaryLightness: hsl(220, 34%, 18%);
-    
+
     --Secondary: hsl(220, 40%, 40%);
     --SecondaryDark: hsl(220, 40%, 50%);
-    --SecondaryLight: hsl(220, 40%, 34%);
+    --SecondaryLight: hsl(220, 40%, 24%);
     --SecondaryDarkness: hsl(220, 18%, 85%);
     --SecondaryLightness: hsl(220, 18%, 18%);
-  
+
     --Success: hsl(120, 40%, 34%);
     --SuccessDark: hsl(120, 40%, 40%);
-    --SuccessLight: hsl(120, 40%, 28%);
+    --SuccessLight: hsl(120, 40%, 24%);
     --SuccessDarkness: hsl(120, 18%, 85%);
     --SuccessLightness: hsl(120, 18%, 18%);
-  
+
     --Error: hsl(0, 72%, 34%);
     --ErrorDark: hsl(0, 72%, 40%);
-    --ErrorLight: hsl(0, 72%, 28%);
+    --ErrorLight: hsl(0, 72%, 24%);
     --ErrorDarkness: hsl(0, 34%, 85%);
     --ErrorLightness: hsl(0, 34%, 18%);
-  
+
     --Warning: hsl(40, 100%, 40%);
     --WarningDark: hsl(40, 100%, 34%);
     --WarningLight: hsl(40, 100%, 50%);
@@ -235,40 +297,39 @@
     --TextMiddle: hsl(220, 10%, 60%);
     --TextBlack: hsl(220, 5%, 5%);
     --TextWhite: hsl(220, 5%, 95%);
-    
+
     --Background: hsl(220, 10%, 5%);
     --BackgroundPanel: hsl(220, 10%, 10%);
     --BackgroundBorder: hsl(220, 10%, 15%);
     --BackgroundDark: hsl(220, 5%, 20%);
     --BackgroundDarkness: hsl(220, 5%, 25%);
-
   }
-}
+} */
 
 /* EN and RU fonts */
 
 @font-face {
-  font-family: 'en-text';
-  src: url('/fonts/en-text.woff2') format('woff2');
+  font-family: "en-text";
+  src: url("/fonts/en-text.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'en-title';
-  src: url('/fonts/en-title.woff2') format('woff2');
+  font-family: "en-title";
+  src: url("/fonts/en-title.woff2") format("woff2");
 }
 
 /* FA and AR fonts */
 
 @font-face {
-  font-family: 'fa-text';
-  src: url('/fonts/fa-text.woff2') format('woff2');
+  font-family: "fa-text";
+  src: url("/fonts/fa-text.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'fa-title';
-  src: url('/fonts/fa-title.woff2') format('woff2');
+  font-family: "fa-title";
+  src: url("/fonts/fa-title.woff2") format("woff2");
 }
 
 /* EN and RU settings */
@@ -277,7 +338,7 @@ html[lang="en"] body,
 html[lang="en"] .textFont,
 html[lang="ru"] body,
 html[lang="ru"] .textFont {
-  font-family: 'en-text', Arial, Helvetica, sans-serif;
+  font-family: "en-text", Arial, Helvetica, sans-serif;
   direction: ltr;
 }
 
@@ -295,7 +356,7 @@ html[lang="ru"] h4,
 html[lang="ru"] h5,
 html[lang="ru"] h6,
 html[lang="ru"] .titleFont {
-  font-family: 'en-title', Arial, Helvetica, sans-serif;
+  font-family: "en-title", Arial, Helvetica, sans-serif;
 }
 
 /* FA and AR settings */
@@ -304,7 +365,7 @@ html[lang="fa"] body,
 html[lang="fa"] .textFont,
 html[lang="ar"] body,
 html[lang="ar"] .textFont {
-  font-family: 'fa-text', Arial, Helvetica, sans-serif;
+  font-family: "fa-text", Arial, Helvetica, sans-serif;
   direction: rtl;
 }
 
@@ -322,10 +383,121 @@ html[lang="ar"] h4,
 html[lang="ar"] h5,
 html[lang="ar"] h6,
 html[lang="ar"] .titleFont {
-  font-family: 'fa-title', Arial, Helvetica, sans-serif;
+  font-family: "fa-title", Arial, Helvetica, sans-serif;
 }
 
 body {
   background: var(--Background);
   color: var(--Text);
+}
+
+h1 {
+  font-size: var(--text-PC-H1);
+  line-height: 110%;
+}
+
+h2 {
+  font-size: var(--text-PC-H2);
+  line-height: 110%;
+}
+
+h3 {
+  font-size: var(--text-PC-H3);
+  line-height: 110%;
+}
+
+h4 {
+  font-size: var(--text-PC-H4);
+  line-height: 110%;
+}
+
+h5 {
+  font-size: var(--text-PC-H5);
+  line-height: 110%;
+}
+
+h6 {
+  font-size: var(--text-PC-H6);
+  line-height: 110%;
+}
+
+p {
+  font-size: var(--text-PC-P);
+  line-height: 140%;
+}
+
+
+/* Embla Carousel Styles */
+.embla {
+  max-width: 100%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: calc(var(--embla-spacing) * -1);
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  padding-left: var(--embla-spacing);
+  position: relative;
+}
+
+.embla__slide__img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.embla__slide__number {
+  width: 4.6rem;
+  height: 4.6rem;
+  z-index: 1;
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  line-height: 4.6rem;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+}
+
+.embla__slide__number > span {
+  color: var(--Background);
+  background-image: linear-gradient(45deg, var(--Text) 25%, transparent 25%, transparent 75%, var(--Text) 75%, var(--Text));
+  background-clip: text;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.6rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.embla__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.embla__buttons {
+  display: flex;
+  gap: 0.5rem;
 }
