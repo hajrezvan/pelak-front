@@ -1,5 +1,8 @@
+export type PTcategoriesExample = {
+  [key: string]: PIcategories
+}
+
 export interface PIcategories {
-  [key: string]: {
     name:string
     title: React.ReactNode
     description: React.ReactNode
@@ -18,10 +21,9 @@ export interface PIcategories {
       href: string
       icon: string
     }[]
-  };
 }
 
-export const categories: PIcategories = {
+export const categories: PTcategoriesExample = {
   "en": {
     name: "Categories",
     title: (<>

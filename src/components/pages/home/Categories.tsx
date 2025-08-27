@@ -1,16 +1,14 @@
 
 /* ------------------------------------------JS--------------------*/
 
-/* ------------------------------------------Type------------------*/
+/* ------------------------------------------Data & Type-----------*/
 import { PIcategories } from '@/data/categories'
-/* ------------------------------------------Data------------------*/
-
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function Categories({ categories }: { categories: PIcategories[keyof PIcategories] }) {
+export default function Categories({ categories }: { categories: PIcategories }) {
 
   return (
     <P.Section className="bg-PC-BackgroundPanel py-PC-10">

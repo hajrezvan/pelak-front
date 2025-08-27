@@ -14,9 +14,8 @@ import {
 	PopoverGroup,
 	PopoverPanel
 } from '@headlessui/react'
-/* ------------------------------------------Type------------------*/
+/* ------------------------------------------Data & Type ----------*/
 import { PIlayout } from "@/data/layout";
-/* ------------------------------------------Data------------------*/
 import { categories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
@@ -24,7 +23,7 @@ import Link from "next/link";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function HeaderLayout({ data }: { data: PIlayout[keyof PIlayout] }) {
+export default function HeaderLayout({ data }: { data: PIlayout}) {
 
 	const PDcategories = categories[data.lang];
 

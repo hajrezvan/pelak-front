@@ -1,8 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { IFormProduct } from '@/type/formProduct';
 import * as P from '@/components/Playout'
+
+interface IFormProduct {
+  name: string;
+  email: string;
+  phone: string;
+  contactMethods: ("t" | "w")[];
+  description: string; // در مرحله اول خالی، در مرحله دوم پر
+}
 
 interface FormStep1Props {
   onSubmit: (data: Omit<IFormProduct, 'description'>) => void;

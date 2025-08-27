@@ -1,8 +1,14 @@
 "use client";
-
+/* ------------------------------------------JS--------------------*/
 import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
 import Link from 'next/link';
+/* ------------------------------------------Data & Type-----------*/
+
+/* ------------------------------------------Components------------*/
+import useEmblaCarousel from 'embla-carousel-react';
+/* ------------------------------------------Function--------------*/
+
+/* ------------------------------------------Run-------------------*/
 
 const OpenSource: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -81,7 +87,7 @@ const OpenSource: React.FC = () => {
       rating: '9.5/10',
       learnMoreUrl: '/trade-practices/logistics-support'
     }
-  ];
+  ]
 
   return (
     <section className="bg-PC-BackgroundPanel">

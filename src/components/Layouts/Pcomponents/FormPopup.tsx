@@ -2,10 +2,17 @@
 
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import { IFormProduct } from '@/type/formProduct';
 import FormStep1 from '@/components/Layouts/Pcomponents/FormStep1';
 import FormStep2 from '@/components/Layouts/Pcomponents/FormStep2';
 import * as P from '@/components/Playout'
+
+interface IFormProduct {
+  name: string;
+  email: string;
+  phone: string;
+  contactMethods: ("t" | "w")[];
+  description: string; // در مرحله اول خالی، در مرحله دوم پر
+}
 
 interface FormPopupProps {
   isOpen: boolean;

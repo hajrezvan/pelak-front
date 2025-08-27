@@ -1,10 +1,7 @@
 
 /* ------------------------------------------JS--------------------*/
 import Image from "next/image";
-
-/* ------------------------------------------Type------------------*/
-
-/* ------------------------------------------Data------------------*/
+/* ------------------------------------------Data & Type-----------*/
 import { categories } from "@/data/categories";
 /* ------------------------------------------Components------------*/
 import CategoryCard from "@/components/Layouts/Pcomponents/CategoryCard";
@@ -18,7 +15,6 @@ export default async function ProductsPage({
 }) {
   const { locale } = await params;
   const data = categories[locale];
-
 
   return (
     <>

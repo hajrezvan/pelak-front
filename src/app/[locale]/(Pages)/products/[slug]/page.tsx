@@ -2,19 +2,24 @@
 import Image from "next/image";
 import { cache } from "react";
 import { redirect } from "next/navigation";
-/* ------------------------------------------Type------------------*/
-import { PIcategories } from "@/data/categories";
-import { PIcategoryProducts } from "@/data/product/productPage";
-/* ------------------------------------------Data------------------*/
-import { categories } from "@/data/categories";
+/* ------------------------------------------Data & Type-----------*/
+import { PIcategoryProducts } from "@/data/products/categoryProducts";
+import { GetAPI } from "@/components/function/getAPI";
+
+const getCachedCategoryProducts = cache(async (slug: string, locale: string) => {
+  // example // import { example } from "@/data/products/categoryProducts.tsx";
+  // const test = "dev"
+  // if (test == "dev") {
+  //   return example[locale as keyof typeof example];
+  // }
+  const baseUrl = process.env.API_PUBLIC_BASE_URL ;
+  const url = baseUrl + "/products/category/" + slug.toLowerCase().replace(/%20/g, "-") + "?language=" + locale;
+  return await GetAPI(url);
+});
 /* ------------------------------------------Components------------*/
 import ProductCard from "@/components/Layouts/Pcomponents/ProductCard";
 /* ------------------------------------------Function--------------*/
-import { GetPelaktAPI } from "@/components/function/getPelaktAPI";
 
-const getCachedCategoryProducts = cache(async (slug: string, locale: string) => {
-  return await GetPelaktAPI(slug.toLowerCase().replace(/%20/g, "-"), locale, "products");
-});
 /* ------------------------------------------Run-------------------*/
 export default async function CategoryProductsPage({
   params
@@ -26,12 +31,12 @@ export default async function CategoryProductsPage({
 
   const PDcategoryProducts: PIcategoryProducts = await getCachedCategoryProducts(slug, locale);
 
-  const categoryInfo: PIcategories[keyof PIcategories]["categories"][number] | undefined = categories[locale].categories.find((categorydata) => categorydata.slug === slug
-);
-
-  if (!categoryInfo || PDcategoryProducts === null) {
+  if (PDcategoryProducts === null) {
     redirect("/products");
+    // XXX : notFound category ans redirect to products page
   }
+  
+  const categoryImageSrc = "/image/category/" + PDcategoryProducts.category.slug + ".png"
 
   return (
     <>
@@ -40,19 +45,19 @@ export default async function CategoryProductsPage({
 
         <div className="relative aspect-[3/1] w-full overflow-hidden rounded-b-xl md:aspect-[4/1]">
           <Image
-            alt={categoryInfo.name}
+            alt={PDcategoryProducts.category.name}
             decoding="async"
             data-nimg="fill"
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
-            src={categoryInfo.image}
+            src={categoryImageSrc}
             fill
             style={{ position: 'absolute', height: '100%', width: '100%', inset: '0px', color: 'transparent' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-PC-PrimaryDarkness/60 to-PC-Background/80"></div>
           <div className="absolute bottom-0 left-0 p-6 text-PC-TextWhite md:p-8">
             <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              {categoryInfo.name}
+              {PDcategoryProducts.category.name}
             </h1>
           </div>
         </div>
@@ -60,7 +65,7 @@ export default async function CategoryProductsPage({
         <div className="py-8 px-PC-3">
           <div className="prose prose-lg max-w-none text-PC-Text">
             <span data-mce-fragment="1">
-              {categoryInfo.description}
+              ({PDcategoryProducts.category.stats.productCount}){PDcategoryProducts.category.name} 
             </span>
           </div>
         </div>

@@ -7,9 +7,7 @@ import {
 } from '@heroicons/react/24/outline' // TODO: Remove this
 /* ------------------------------------------JS--------------------*/
 import React from "react";
-/* ------------------------------------------Type------------------*/
-
-/* ------------------------------------------Data------------------*/
+/* ------------------------------------------Data & Type ----------*/
 import { PIlayout } from "@/data/layout";
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
@@ -17,7 +15,7 @@ import * as P from '@/components/Playout'
 
 /* ------------------------------------------Run-------------------*/
 
-export default function Footer({ data }: { data: PIlayout[keyof PIlayout] }) {
+export default function Footer({ data }: { data: PIlayout }) {
 
   return (
 

@@ -3,13 +3,21 @@ import { getTranslations } from "next-intl/server";
 import { cache } from "react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { Metadata } from "next";
 import Link from "next/link";
-/* ------------------------------------------Type------------------*/
-import { PIproduct } from "@/type/product";
-import { PImedia } from "@/type/media";
-/* ------------------------------------------Data------------------*/
+/* ------------------------------------------Data & Type-----------*/
+import { PIproduct} from "@/data/products/productsPage";
+import { GetAPI } from "@/components/function/getAPI";
 
+const getCachedProduct = cache(async (slug: string, locale: string) => {
+  // example // import { example } from "@/data/products/productsPage";
+  // const test = "dev"
+  // if (test == "dev") {
+  //   return example[locale as keyof typeof example];
+  // }
+  const baseUrl = process.env.API_PUBLIC_BASE_URL ;
+  const url = baseUrl + "/products/page/" + locale + "/" + slug.toLowerCase().replace(/%20/g, "-");
+  return await GetAPI(url);
+});
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 import Container from "@/components/Layouts/Pcomponents/product/Container";
@@ -21,87 +29,11 @@ import VideoLightbox from "@/components/Layouts/Pcomponents/VideoLightbox";
 import CommentRating from "@/components/Layouts/Pcomponents/CommentRating";
 import Faq from "@/components/Layouts/Pcomponents/Faq";
 /* ------------------------------------------Function--------------*/
-import { GetPelaktAPI } from "@/components/function/getPelaktAPI";
-
-async function getProductGallery(productMedia: PImedia[]) {
+async function getProductGallery(productMedia: PIproduct["media"]) {
   const mainImage = productMedia.find((item) => item.type === "m");
   const gallery = productMedia.filter((item) => item.type === "g");
   const productImages = mainImage ? [mainImage, ...gallery] : gallery;
   return productImages;
-}
-
-const getCachedProduct = cache(async (slug: string, locale: string) => {
-  return await GetPelaktAPI(slug.toLowerCase().replace(/%20/g, "-"), locale, "product");
-});
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const PDproduct: PIproduct = await getCachedProduct(slug, locale);
-
-  if (PDproduct === null) {
-    redirect("/");
-  } // TODO Check
-
-  const mainUrlGlobal = (await getTranslations("mainLayout")).raw("mainUrl");
-
-  return {
-    title: PDproduct.seoMeta.title,
-    description: PDproduct.seoMeta.description,
-    keywords: PDproduct.seoMeta.keywords,
-    authors: [{ name: PDproduct.seoMeta.author, url: mainUrlGlobal }],
-    alternates: {
-      canonical: PDproduct.seoMeta.alternates.canonical,
-      languages: {
-        en: PDproduct.seoMeta.alternates.languages[0],
-        ru: PDproduct.seoMeta.alternates.languages[1],
-        ar: PDproduct.seoMeta.alternates.languages[2],
-        fa: PDproduct.seoMeta.alternates.languages[3],
-      },
-    },
-    openGraph: PDproduct.seoMeta.openGraph, // TODO : add article type in openGraph
-    // twitter: PDproduct.seoMeta.twitter,
-    // pagination: PDproduct.seoMeta.pagination,
-    other: {
-      "script:ld+json": JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Product",
-        headline: PDproduct.seoMeta.title,
-        description: PDproduct.seoMeta.description,
-        keywords: PDproduct.seoMeta.keywords,
-      }),
-    },
-    // TODO : redesign https://schema.org
-    // NewsArticle
-    // 0 ERRORS
-    // 0 WARNINGS
-    // expand_less
-    // @type
-    // NewsArticle
-    // headline
-    // Record-breaking divers are pushing human limits and reshaping scientists' view of our species
-    // description
-    // Humans have a long history of diving to forage from the seabed and today elite freedivers are reaching greater depths than ever. Some researchers argue humans belong in the sea.
-    // image
-    // https://ychef.files.bbci.co.uk/1280x720/p0ls0lsx.jpg
-    // datePublished
-    // 2025-07-26T09:00:58+00:00
-    // dateModified
-    // 2025-07-26T09:00:22+00:00
-    // author
-    // @type
-    // Person
-    // name
-    // Katherine Latham
-    // publisher
-    // @type
-    // Organization
-    // name
-    // BBC
-  };
 }
 /* ------------------------------------------Run-------------------*/
 export default async function productPage({
@@ -113,8 +45,9 @@ export default async function productPage({
   const PDproduct: PIproduct = await getCachedProduct(slug, locale);
 
   if (PDproduct === null) {
-    redirect("/");
-  } // TODO Check
+    redirect("/products");
+    // XXX : notFound products and redirect to products page
+  } 
 
   const otherCompanyProductsTitleGlobal = (
     await getTranslations("product")
