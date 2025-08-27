@@ -4,13 +4,10 @@ import { routing } from '@/i18n/routing';
 /* ------------------------------------------JS--------------------*/
 import type { Metadata } from "next";
 import "@/app/globals.css";
-/* ------------------------------------------Type------------------*/
-
-/* ------------------------------------------Data------------------*/
+/* ------------------------------------------Data & Type-----------*/
 import { layout } from '@/data/layout'
 /* ------------------------------------------Components------------*/
-import { Header } from '@/components/Layouts'
-import Footer from '@/components/Page/Footer'
+import { Header, Footer } from '@/components/Layouts'
 /* ------------------------------------------Function--------------*/
 export const metadata: Metadata = {
   verification: { google: "1234567890", yandex: "1234567890", "me": "1234567890" },

@@ -34,7 +34,7 @@ const aligns = {
   end: ["flex-row-reverse justify-between    gap-2", "justify-end"],
 };
 
-interface TagProps extends React.LinkHTMLAttributes<HTMLLabelElement> {
+interface TagProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   UI?: keyof typeof UIs;
   align?: keyof typeof aligns;
@@ -78,6 +78,7 @@ export default function Tag({
       svgIconClassName={svgIconClassName}
       svgIconSize={svgIconSize}
       svgIconStroke={svgIconStroke}
+      {...props}
     >
       {children}
     </LinkComponent>

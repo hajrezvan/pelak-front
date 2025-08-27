@@ -1,16 +1,14 @@
 
 /* ------------------------------------------JS--------------------*/
 
-/* ------------------------------------------Type------------------*/
-import { PIabout } from '@/data/homePage'
-/* ------------------------------------------Data------------------*/
-
+/* ------------------------------------------Data & Type-----------*/
+import { PIhomePage } from '@/data/homePage'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function About({ data }: { data: PIabout }) {
+export default function About({ data }: { data: PIhomePage["about"] }) {
 
   return (
     <>

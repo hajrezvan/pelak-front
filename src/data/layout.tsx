@@ -1,50 +1,46 @@
+export type PTlayoutExample = {
+  [key: string]: PIlayout
+}
+
 export interface PIlayout {
-  [key: string]: {
     language: string
     lang: string
     direction: string
-    main: PImain
-    header: PIheader
-    footer: PIfooter
-  };
+    main: {
+      siteName: string
+      url: string
+      logo: {
+        src: string
+        alt: string
+      }
+      icon: {
+        src: string
+        alt: string
+      }
+    }
+    header: {
+      menuButtonOpen: string
+      menuButtonClose: string
+      phoneNumber: string
+      login: {
+        name: string
+        href: string
+        icon: string
+      }
+    }
+    footer: {
+      about: React.ReactNode
+      phone: string
+      phoneNumber: string
+      email: string
+      emailAddress: string
+      address: string
+      addressLocation: string
+      copyrightText: string
+    }
 }
 
-export interface PImain {
-  siteName: string
-  url: string
-  logo: {
-    src: string
-    alt: string
-  }
-  icon: {
-    src: string
-    alt: string
-  }
-}
-
-export interface PIheader {
-  menuButtonOpen: string
-  menuButtonClose: string
-  phoneNumber: string
-  login: {
-    name: string
-    href: string
-    icon: string
-  }
-}
-
-export interface PIfooter {
-  about: React.ReactNode
-  phone: string
-  phoneNumber: string
-  email: string
-  emailAddress: string
-  address: string
-  addressLocation: string
-  copyrightText: string
-}
-
-export const layout: PIlayout = {
+export const layout: PTlayoutExample = {
   "en": {
     language: "English",
     lang: "en",

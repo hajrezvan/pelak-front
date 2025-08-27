@@ -193,3 +193,55 @@ Address : No. 185, Sani Street, Tehran, Iran
 
 IranExportal.com
 
+
+
+
+
+GNU nano 7.2                                                   docker-compose.yml                                                            
+services:
+  api:
+    image: hajrezvan/api:latest
+    container_name: pelak-api
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+    environment:
+      - DB_HOST=194.5.206.70
+      - DB_PORT=5432
+      - DB_NAME=pelakdb
+      - DB_USER=majid
+      - DB_PASSWORD=12345qwert!
+      - PORT=8000
+      - NODE_ENV=development
+      - JWT_SECRET=iranexportal_H@J1379_secret
+      - BASE_URL=https://api.iranexportal.com
+      - S3_URL=https://exportal.storage.c2.liara.space
+      - LIARA_ENDPOINT=https://storage.c2.liara.space
+      - LIARA_BUCKET_NAME=exportal
+      - LIARA_ACCESS_KEY=br32paueetciip0i
+      - LIARA_SECRET_KEY=dbc7b19f-dbd3-41c1-bc92-156b4853e459
+      - LIARA_REGION=default
+      - OPENAI_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NjdlZTQyN2IwN2NlNzQ4OGFhMzExOGIiLCJ0eXBlIjoiYXV0aCIsImlhdCI6MTc1NT>
+      - OPENAI_BASE_URL=https://ai.liara.ir/api/v1/68a457e18cbb78a7ee41474d
+      - MODEL_ID=openai/gpt-4o-mini
+    networks:
+      - api-network
+
+  front:
+    image: m9020120014/pelak:latest
+    container_name: pelak-front
+    ports:
+      - "3005:3000"
+    restart: unless-stopped
+    networks:
+      - api-network
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api:8000
+      - API_PUBLIC_BASE_URL=https://api.iranexportal.com
+      - NEXT_PUBLIC_STORAGE_HOSTNAME=exportal.storage.c2.liara.space
+      - DOCKER_HUB_USERNAME=m9020120014
+      - NEXT_PUBLIC_BASE_URL=demo.iranexportal.com
+
+networks:
+  api-network:
+    driver: bridge

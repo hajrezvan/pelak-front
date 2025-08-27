@@ -1,16 +1,14 @@
 
 /* ------------------------------------------JS--------------------*/
 
-/* ------------------------------------------Type------------------*/
-import { PIarticles } from '@/data/homePage'
-/* ------------------------------------------Data------------------*/
-
+/* ------------------------------------------Data & Type-----------*/
+import { PIhomePage } from '@/data/homePage'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function Articles({ data }: { data: PIarticles }) {
+export default function Articles({ data }: { data: PIhomePage["articles"] }) {
 
   return (
     <>

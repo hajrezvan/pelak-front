@@ -1,84 +1,77 @@
+export type PThomePageExample = {
+  [key: string]: PIhomePage
+}
+
 export interface PIhomePage {
-  [key: string]: {
-    hero: PIhero
-    about: PIabout
-    articles: PIarticles
-    testimonials: PItestimonials
-    howItWorksFaq: PIhowItWorksFaq
+  hero: {
+    media: {
+      id: number
+      src: string
+      alt: string
+      title: string
+      type: string
+    }[];
+    mainTitle: React.ReactNode;
+    mainDescription: React.ReactNode;
+    searchPlaceholder: string;
+    searchButton: string;
+    PopularSearchesTitle: string;
+    tags: string[];
+    poweredByTitle: string;
+    poweredBy: {
+      icon: string;
+      number: string;
+      text: string;
+    }[];
   }
-}
-
-export interface PIhero {
-  media: {
-    id: number
-    src: string
-    alt: string
-    title: string
-    type: string
-  }[];
-  mainTitle: React.ReactNode;
-  mainDescription: React.ReactNode;
-  searchPlaceholder: string;
-  searchButton: string;
-  PopularSearchesTitle: string;
-  tags: string[];
-  poweredByTitle: string;
-  poweredBy: {
-    icon: string;
-    number: string;
-    text: string;
-  }[];
-}
-
-export interface PIabout {
-  title: React.ReactNode;
-  description: React.ReactNode;
-  cards: {
+  about: {
     title: React.ReactNode;
-  }[];
-}
-
-export interface PIarticles {
-  title: React.ReactNode;
-  description: React.ReactNode;
+    description: React.ReactNode;
+    cards: {
+      title: React.ReactNode;
+    }[];
+  }
   articles: {
     title: React.ReactNode;
     description: React.ReactNode;
-    image: string;
-    links: {
-      text: string;
-      href: string;
-      title: string;
+    articles: {
+      title: React.ReactNode;
+      description: React.ReactNode;
+      image: string;
+      links: {
+        text: string;
+        href: string;
+        title: string;
+      }[];
     }[];
-  }[];
-}
-
-export interface PItestimonials {
-  title: React.ReactNode;
-  description: React.ReactNode;
+  }
   testimonials: {
-    id: number;
-    name: string;
-    company: string;
-    location: string;
-    rating: number;
-    content: React.ReactNode;
-    avatar: string;
-  }[];
+    title: React.ReactNode;
+    description: React.ReactNode;
+    testimonials: {
+      id: number;
+      name: string;
+      company: string;
+      location: string;
+      rating: number;
+      content: React.ReactNode;
+      avatar: string;
+    }[];
+  }
+  howItWorksFaq: {
+    title: string;
+    subtitle: string;
+    description: string;
+    faqItems: {
+      id: number;
+      title: string;
+      content: string;
+    }[];
+    image: string;
+  }
 }
 
-export interface PIhowItWorksFaq {
-  title: string;
-  subtitle: string;
-  description: string;
-  faqItems: {
-    id: number;
-    title: string;
-    content: string;
-  }[];
-  image: string;
-}
-export const homePage: PIhomePage = {
+export const homePage: PThomePageExample = {
   "en": {
     hero: {
       mainTitle: (<>

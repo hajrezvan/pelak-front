@@ -1,16 +1,14 @@
 
 /* ------------------------------------------JS--------------------*/
 
-/* ------------------------------------------Type------------------*/
-import { PIhero } from '@/data/homePage'
-/* ------------------------------------------Data------------------*/
-
+/* ------------------------------------------Data & Type-----------*/
+import { PIhomePage } from '@/data/homePage'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function Hero({ data }: { data: PIhero }) {
+export default function Hero({ data }: { data: PIhomePage["hero"] }) {
 
   return (
     <>
@@ -19,8 +17,8 @@ export default function Hero({ data }: { data: PIhero }) {
 
           <P.Box size='2/5' className='p-4 justify-center'>
             <P.VideoDialog
-              video={data.media.find(media => media.type === 'v') as PIhero['media'][number]}
-              poster={data.media.find(media => media.type === 'p') as PIhero['media'][number]}
+              video={data.media.find(media => media.type === 'v') as PIhomePage["hero"]["media"][number]}
+              poster={data.media.find(media => media.type === 'p') as PIhomePage["hero"]["media"][number]}
             />
           </P.Box>
 

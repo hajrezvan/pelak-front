@@ -17,6 +17,7 @@ export default function LinkComponent({
     svgIconClassName,
     svgIconSize,
     svgIconStroke,
+    ...props
 }: Readonly<
     LinkProps
     >) {
@@ -25,6 +26,7 @@ export default function LinkComponent({
         href={href || "/"}
         className={className}
         title={title}
+        {...props}
         >
             {children}
             {svgIcon && <SvgIcon svgName={svgIcon} svgClassName={svgIconClassName} svgSize={svgIconSize} svgStroke={svgIconStroke}/>}

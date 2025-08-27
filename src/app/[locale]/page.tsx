@@ -1,9 +1,7 @@
 
 /* ------------------------------------------JS--------------------*/
 
-/* ------------------------------------------Type------------------*/
-
-/* ------------------------------------------Data------------------*/
+/* ------------------------------------------Data & Type-----------*/
 import { categories } from '@/data/categories'
 import { homePage } from '@/data/homePage'
 /* ------------------------------------------Components------------*/
@@ -11,8 +9,8 @@ import Hero from '@/components/pages/home/Hero'
 import Categories from '@/components/pages/home/Categories'
 import About from '@/components/pages/home/About'
 import Articles from '@/components/pages/home/Articles'
+import HowItWorksFaq from '@/components/pages/home/HowItWorksFaq'
 import Testimonials from '@/components/pages/home/Testimonials'
-import HowItWorksFaq from '@/components/Layouts/Pcomponents/HowItWorksFaq'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

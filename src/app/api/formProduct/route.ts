@@ -1,15 +1,22 @@
-import { NextRequest, NextResponse } from 'next/server';
 
+/* ------------------------------------------JS--------------------*/
+import { NextRequest, NextResponse } from 'next/server';
+/* ------------------------------------------Data & Type-----------*/
+
+/* ------------------------------------------Components------------*/
+
+/* ------------------------------------------Function--------------*/
+
+/* ------------------------------------------Run-------------------*/
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    console.log("body ==================================================================> ", body);
     return NextResponse.json({ 
       success: true, 
       message: 'Form submitted successfully' 
     });
     
   } catch (error) {
+    console.log("request ==================================================================> ", request);
     console.error('Error in formProduct API:', error);
     return NextResponse.json(
       { error: 'Internal server error' },

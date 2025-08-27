@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PIcategoryProducts } from "@/data/product/productPage";
+import { PIcategoryProducts } from "@/data/products/categoryProducts";
 
 // products: {
 //   id: number

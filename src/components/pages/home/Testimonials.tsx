@@ -2,16 +2,14 @@
 /* ------------------------------------------JS--------------------*/
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-/* ------------------------------------------Type------------------*/
-import {  PItestimonials } from '@/data/homePage'
-/* ------------------------------------------Data------------------*/
-
+/* ------------------------------------------Data & Type-----------*/
+import {  PIhomePage } from '@/data/homePage'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function Testimonials({ data }: { data: PItestimonials }) {
+export default function Testimonials({ data }: { data: PIhomePage["testimonials"] }) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
@@ -22,17 +20,11 @@ export default function Testimonials({ data }: { data: PItestimonials }) {
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -48,7 +40,6 @@ export default function Testimonials({ data }: { data: PItestimonials }) {
     if (!emblaApi) return;
 
     onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList());
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
 
@@ -57,39 +48,6 @@ export default function Testimonials({ data }: { data: PItestimonials }) {
       emblaApi.off('reInit', onSelect);
     };
   }, [emblaApi, onSelect]);
-
-  const tradePractices = [
-    {
-      name: 'Transparent Pricing',
-      description: 'Clear and competitive pricing for all Iranian products with no hidden fees. We provide detailed cost breakdowns including production, shipping, and customs costs',
-      rating: '9.8/10',
-      learnMoreUrl: '/trade-practices/transparent-pricing'
-    },
-    {
-      name: 'Quality Assurance',
-      description: 'Rigorous quality control processes including factory audits, product testing, and certification verification to ensure international standards compliance',
-      rating: '9.9/10',
-      learnMoreUrl: '/trade-practices/quality-assurance'
-    },
-    {
-      name: 'Supplier Verification',
-      description: 'Comprehensive verification of Iranian suppliers including business licenses, production capacity, and export history for reliable partnerships',
-      rating: '9.7/10',
-      learnMoreUrl: '/trade-practices/supplier-verification'
-    },
-    {
-      name: 'Export Documentation',
-      description: 'Complete export documentation support including certificates of origin, commercial invoices, and customs declarations for smooth international trade',
-      rating: '9.6/10',
-      learnMoreUrl: '/trade-practices/export-documentation'
-    },
-    {
-      name: 'Logistics Support',
-      description: 'End-to-end logistics coordination including shipping arrangements, customs clearance, and delivery tracking for seamless export operations',
-      rating: '9.5/10',
-      learnMoreUrl: '/trade-practices/logistics-support'
-    }
-  ];
 
   return (
     <P.Section className="bg-PC-BackgroundPanel py-PC-10">

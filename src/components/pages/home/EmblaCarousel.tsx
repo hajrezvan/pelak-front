@@ -1,8 +1,14 @@
 "use client";
-
+/* ------------------------------------------JS--------------------*/
 import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
 import Link from 'next/link';
+/* ------------------------------------------Data & Type-----------*/
+
+/* ------------------------------------------Components------------*/
+import useEmblaCarousel from 'embla-carousel-react';
+/* ------------------------------------------Function--------------*/
+
+/* ------------------------------------------Run-------------------*/
 
 const OpenSource: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -14,17 +20,11 @@ const OpenSource: React.FC = () => {
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -40,7 +40,6 @@ const OpenSource: React.FC = () => {
     if (!emblaApi) return;
 
     onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList());
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
 
@@ -81,7 +80,7 @@ const OpenSource: React.FC = () => {
       rating: '9.5/10',
       learnMoreUrl: '/trade-practices/logistics-support'
     }
-  ];
+  ]
 
   return (
     <section className="bg-PC-BackgroundPanel">
