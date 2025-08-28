@@ -1,4 +1,4 @@
-import { PIproduct } from "@/data/products/productsPage";
+import { PIproduct } from "@/data/pages/products/productsPage";
 import Link from "next/link";
 import * as P from '@/components/Playout'
 

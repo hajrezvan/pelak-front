@@ -1,5 +1,5 @@
 "use client"
-import { PIproduct } from "@/data/products/productsPage";
+import { PIproduct } from "@/data/pages/products/productsPage";
 import Container from "@/components/Layouts/Pcomponents/product/Container";
 
 export default function HeroHeader({ children, className, featuredImage }: Readonly<{ children: React.ReactNode; className?: string; featuredImage?: PIproduct["media"][number] }>) {

@@ -1,5 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { PIproduct } from "@/data/products/productsPage";
+import { PIproduct } from "@/data/pages/products/productsPage";
 import * as P from '@/components/Playout'
 import { faqTitle } from "@/data/components/faqTitle";
 export default async function Faq({ faqs, locale }: { faqs: PIproduct["productData"]["faq"], locale: string }) {

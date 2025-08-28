@@ -2,7 +2,7 @@
 /* ------------------------------------------JS--------------------*/
 import { useState } from 'react';
 /* ------------------------------------------Data & Type-----------*/
-import { PIhomePage } from '@/data/homePage';
+import { PIhomePage } from '@/data/pages/home';
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout';
 /* ------------------------------------------Function--------------*/

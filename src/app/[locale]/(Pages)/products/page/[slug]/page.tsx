@@ -5,7 +5,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 /* ------------------------------------------Data & Type-----------*/
-import { PIproduct} from "@/data/products/productsPage";
+import { PIproduct} from "@/data/pages/products/productsPage";
 import { GetAPI } from "@/components/function/getAPI";
 
 const getCachedProduct = cache(async (slug: string, locale: string) => {

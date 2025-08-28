@@ -38,7 +38,7 @@ export const categories: PTcategoriesExample = {
         description: 'Fresh produce, processed foods, and quality beverages',
         href: '/products/food-beverages',
         slug: 'food-beverages',
-        image: '/image/products/Food-&-Beverages.png',
+        image: '/image/category/food-beverages.png',
         count: '2,500+',
         color: 'bg-PC-SuccessLightness text-PC-Success',
         icon: 'food'
@@ -47,7 +47,7 @@ export const categories: PTcategoriesExample = {
         description: 'Industrial chemicals and petroleum derivatives',
         href: '/products/chemicals-petrochemicals',
         slug: 'chemicals-petrochemicals',
-        image: '/image/products/Chemicals-&-Petrochemicals.png',
+        image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
         color: 'bg-PC-SecondaryLightness text-PC-Secondary',
         icon: 'beaker'
@@ -56,7 +56,7 @@ export const categories: PTcategoriesExample = {
         description: 'Construction materials and building supplies',
         href: '/products/building-materials',
         slug: 'building-materials',
-        image: '/image/products/Building-Materials.png',
+        image: '/image/category/building-materials.png',
         count: '1,800+',
         color: 'bg-PC-WarningLightness text-PC-Warning',
         icon: 'building'
@@ -65,7 +65,7 @@ export const categories: PTcategoriesExample = {
         description: 'Fabrics, clothing, and fashion accessories',
         href: '/products/textiles-apparel',
         slug: 'textiles-apparel',
-        image: '/image/products/Textiles-&-Apparel.png',
+        image: '/image/category/textiles-apparel.png',
         count: '3,200+',
         color: 'bg-PC-ErrorLightness text-PC-Error',
         icon: 'apparel'
@@ -74,7 +74,7 @@ export const categories: PTcategoriesExample = {
         description: 'Industrial equipment and professional tools',
         href: '/products/machinery-tools',
         slug: 'machinery-tools',
-        image: '/image/products/Machinery-&-Tools.png',
+        image: '/image/category/machinery-tools.png',
         count: '900+',
         color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
         icon: 'tool'
@@ -83,7 +83,7 @@ export const categories: PTcategoriesExample = {
         description: 'Healthcare equipment and medical supplies',
         href: '/products/medicine-cosmetics-personal-care',
         slug: 'medicine-cosmetics-personal-care',
-        image: '/image/products/Medical-&-Health-Products.png',
+        image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
         color: 'bg-PC-PrimaryLightness text-PC-Primary',
         icon: 'medical'
@@ -92,7 +92,7 @@ export const categories: PTcategoriesExample = {
         description: 'Household items and kitchen essentials',
         href: '/products/home-kitchen-products',
         slug: 'home-kitchen-products',
-        image: '/image/products/Home-&-Kitchen-Products.png',
+        image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
         color: 'bg-PC-WarningLightness text-PC-WarningDark',
         icon: 'home'
@@ -101,7 +101,7 @@ export const categories: PTcategoriesExample = {
         description: 'Traditional crafts and artistic creations',
         href: '/products/handicrafts-art',
         slug: 'handicrafts-art',
-        image: '/image/products/Handicrafts-&-Art.png',
+        image: '/image/category/handicrafts-art.png',
         count: '1,200+',
         color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
         icon: 'palette'
@@ -129,7 +129,7 @@ export const categories: PTcategoriesExample = {
         description: 'Свежие продукты, переработанные продукты питания и качественные напитки',
         href: '/products/food-beverages',
         slug: 'food-beverages',
-        image: '/image/products/Food-&-Beverages.png',
+        image: '/image/category/food-beverages.png',
         count: '2,500+',
         color: 'bg-PC-SuccessLightness text-PC-Success',
         icon: 'food'
@@ -138,7 +138,7 @@ export const categories: PTcategoriesExample = {
         description: 'Промышленные химикаты и нефтепродукты',
         href: '/products/chemicals-petrochemicals',
         slug: 'chemicals-petrochemicals',
-        image: '/image/products/Chemicals-&-Petrochemicals.png',
+        image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
         color: 'bg-PC-SecondaryLightness text-PC-Secondary',
         icon: 'beaker'
@@ -147,7 +147,7 @@ export const categories: PTcategoriesExample = {
         description: 'Строительные материалы и строительные принадлежности',
         href: '/products/building-materials',
         slug: 'building-materials',
-        image: '/image/products/Building-Materials.png',
+        image: '/image/category/building-materials.png',
         count: '1,800+',
         color: 'bg-PC-WarningLightness text-PC-Warning',
         icon: 'building'
@@ -156,7 +156,7 @@ export const categories: PTcategoriesExample = {
         description: 'Ткани, одежда и модные аксессуары',
         href: '/products/textiles-apparel',
         slug: 'textiles-apparel',
-        image: '/image/products/Textiles-&-Apparel.png',
+        image: '/image/category/textiles-apparel.png',
         count: '3,200+',
         color: 'bg-PC-ErrorLightness text-PC-Error',
         icon: 'apparel'
@@ -165,7 +165,7 @@ export const categories: PTcategoriesExample = {
         description: 'Промышленное оборудование и профессиональные инструменты',
         href: '/products/machinery-tools',
         slug: 'machinery-tools',
-        image: '/image/products/Machinery-&-Tools.png',
+        image: '/image/category/machinery-tools.png',
         count: '900+',
         color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
         icon: 'tool'
@@ -174,7 +174,7 @@ export const categories: PTcategoriesExample = {
         description: 'Медицинское оборудование и медицинские принадлежности',
         href: '/products/medicine-cosmetics-personal-care',
         slug: 'medicine-cosmetics-personal-care',
-        image: '/image/products/Medical-&-Health-Products.png',
+        image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
         color: 'bg-PC-PrimaryLightness text-PC-Primary',
         icon: 'medical'
@@ -183,7 +183,7 @@ export const categories: PTcategoriesExample = {
         description: 'Предметы домашнего обихода и кухонные принадлежности',
         href: '/products/home-kitchen-products',
         slug: 'home-kitchen-products',
-        image: '/image/products/Home-&-Kitchen-Products.png',
+        image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
         color: 'bg-PC-WarningLightness text-PC-WarningDark',
         icon: 'home'
@@ -192,7 +192,7 @@ export const categories: PTcategoriesExample = {
         description: 'Традиционные ремесла и художественные произведения',
         href: '/products/handicrafts-art',
         slug: 'handicrafts-art',
-        image: '/image/products/Handicrafts-&-Art.png',
+        image: '/image/category/handicrafts-art.png',
         count: '1,200+',
         color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
         icon: 'palette'
@@ -220,7 +220,7 @@ export const categories: PTcategoriesExample = {
         description: 'المنتجات الطازجة والأغذية المصنعة والمشروبات عالية الجودة',
         href: '/products/food-beverages',
         slug: 'food-beverages',
-        image: '/image/products/Food-&-Beverages.png',
+        image: '/image/category/food-beverages.png',
         count: '2,500+',
         color: 'bg-PC-SuccessLightness text-PC-Success',
         icon: 'food'
@@ -229,7 +229,7 @@ export const categories: PTcategoriesExample = {
         description: 'المواد الكيميائية الصناعية ومشتقات البترول',
         href: '/products/chemicals-petrochemicals',
         slug: 'chemicals-petrochemicals',
-        image: '/image/products/Chemicals-&-Petrochemicals.png',
+        image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
         color: 'bg-PC-SecondaryLightness text-PC-Secondary',
         icon: 'beaker'
@@ -238,7 +238,7 @@ export const categories: PTcategoriesExample = {
         description: 'مواد البناء والإمدادات الإنشائية',
         href: '/products/building-materials',
         slug: 'building-materials',
-        image: '/image/products/Building-Materials.png',
+        image: '/image/category/building-materials.png',
         count: '1,800+',
         color: 'bg-PC-WarningLightness text-PC-Warning',
         icon: 'building'
@@ -247,7 +247,7 @@ export const categories: PTcategoriesExample = {
         description: 'الأقمشة والملابس والإكسسوارات الأنيقة',
         href: '/products/textiles-apparel',
         slug: 'textiles-apparel',
-        image: '/image/products/Textiles-&-Apparel.png',
+        image: '/image/category/textiles-apparel.png',
         count: '3,200+',
         color: 'bg-PC-ErrorLightness text-PC-Error',
         icon: 'apparel'
@@ -256,7 +256,7 @@ export const categories: PTcategoriesExample = {
         description: 'المعدات الصناعية والأدوات المهنية',
         href: '/products/machinery-tools',
         slug: 'machinery-tools',
-        image: '/image/products/Machinery-&-Tools.png',
+        image: '/image/category/machinery-tools.png',
         count: '900+',
         color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
         icon: 'tool'
@@ -265,7 +265,7 @@ export const categories: PTcategoriesExample = {
         description: 'المعدات الطبية والإمدادات الطبية',
         href: '/products/medicine-cosmetics-personal-care',
         slug: 'medicine-cosmetics-personal-care',
-        image: '/image/products/Medical-&-Health-Products.png',
+        image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
         color: 'bg-PC-PrimaryLightness text-PC-Primary',
         icon: 'medical'
@@ -274,7 +274,7 @@ export const categories: PTcategoriesExample = {
         description: 'الأدوات المنزلية والضروريات المطبخية',
         href: '/products/home-kitchen-products',
         slug: 'home-kitchen-products',
-        image: '/image/products/Home-&-Kitchen-Products.png',
+        image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
         color: 'bg-PC-WarningLightness text-PC-WarningDark',
         icon: 'home'
@@ -283,7 +283,7 @@ export const categories: PTcategoriesExample = {
         description: 'الحرف التقليدية والإبداعات الفنية',
         href: '/products/handicrafts-art',
         slug: 'handicrafts-art',
-        image: '/image/products/Handicrafts-&-Art.png',
+        image: '/image/category/handicrafts-art.png',
         count: '1,200+',
         color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
         icon: 'palette'
@@ -311,7 +311,7 @@ export const categories: PTcategoriesExample = {
         description: 'محصولات تازه، غذاهای فرآوری شده و نوشیدنی‌های با کیفیت',
         href: '/products/food-beverages',
         slug: 'food-beverages',
-        image: '/image/products/Food-&-Beverages.png',
+        image: '/image/category/food-beverages.png',
         count: '2,500+',
         color: 'bg-PC-SuccessLightness text-PC-Success',
         icon: 'food'
@@ -320,7 +320,7 @@ export const categories: PTcategoriesExample = {
         description: 'مواد شیمیایی صنعتی و مشتقات نفتی',
         href: '/products/chemicals-petrochemicals',
         slug: 'chemicals-petrochemicals',
-        image: '/image/products/Chemicals-&-Petrochemicals.png',
+        image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
         color: 'bg-PC-SecondaryLightness text-PC-Secondary',
         icon: 'beaker'
@@ -329,7 +329,7 @@ export const categories: PTcategoriesExample = {
         description: 'مواد ساختمانی و تدارکات ساخت و ساز',
         href: '/products/building-materials',
         slug: 'building-materials',
-        image: '/image/products/Building-Materials.png',
+        image: '/image/category/building-materials.png',
         count: '1,800+',
         color: 'bg-PC-WarningLightness text-PC-Warning',
         icon: 'building'
@@ -338,7 +338,7 @@ export const categories: PTcategoriesExample = {
         description: 'پارچه‌ها، لباس و لوازم جانبی مد',
         href: '/products/textiles-apparel',
         slug: 'textiles-apparel',
-        image: '/image/products/Textiles-&-Apparel.png',
+        image: '/image/category/textiles-apparel.png',
         count: '3,200+',
         color: 'bg-PC-ErrorLightness text-PC-Error',
         icon: 'apparel'
@@ -347,7 +347,7 @@ export const categories: PTcategoriesExample = {
         description: 'تجهیزات صنعتی و ابزار حرفه‌ای',
         href: '/products/machinery-tools',
         slug: 'machinery-tools',
-        image: '/image/products/Machinery-&-Tools.png',
+        image: '/image/category/machinery-tools.png',
         count: '900+',
         color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
         icon: 'tool'
@@ -356,7 +356,7 @@ export const categories: PTcategoriesExample = {
         description: 'تجهیزات بهداشتی و لوازم پزشکی',
         href: '/products/medicine-cosmetics-personal-care',
         slug: 'medicine-cosmetics-personal-care',
-        image: '/image/products/Medical-&-Health-Products.png',
+        image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
         color: 'bg-PC-PrimaryLightness text-PC-Primary',
         icon: 'medical'
@@ -365,7 +365,7 @@ export const categories: PTcategoriesExample = {
         description: 'لوازم خانگی و ضروریات آشپزخانه',
         href: '/products/home-kitchen-products',
         slug: 'home-kitchen-products',
-        image: '/image/products/Home-&-Kitchen-Products.png',
+        image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
         color: 'bg-PC-WarningLightness text-PC-WarningDark',
         icon: 'home'
@@ -374,7 +374,7 @@ export const categories: PTcategoriesExample = {
         description: 'صنایع دستی سنتی و آثار هنری',
         href: '/products/handicrafts-art',
         slug: 'handicrafts-art',
-        image: '/image/products/Handicrafts-&-Art.png',
+        image: '/image/category/handicrafts-art.png',
         count: '1,200+',
         color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
         icon: 'palette'

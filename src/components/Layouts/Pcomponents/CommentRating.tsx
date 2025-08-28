@@ -9,7 +9,7 @@ import {
   ListboxOptions,
 } from "@headlessui/react";
 import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
-import { PIproduct } from "@/data/products/productsPage";
+import { PIproduct } from "@/data/pages/products/productsPage";
 import Image from "next/image";
 import { commentRating } from "@/data/components/commentRating";
 

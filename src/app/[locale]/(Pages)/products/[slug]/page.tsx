@@ -3,7 +3,7 @@ import Image from "next/image";
 import { cache } from "react";
 import { redirect } from "next/navigation";
 /* ------------------------------------------Data & Type-----------*/
-import { PIcategoryProducts } from "@/data/products/categoryProducts";
+import { PIcategoryProducts } from "@/data/pages/products/categoryProducts";
 import { GetAPI } from "@/components/function/getAPI";
 
 const getCachedCategoryProducts = cache(async (slug: string, locale: string) => {

@@ -11,7 +11,7 @@ import {
     useEffect 
 } from "react";
 /* ------------------------------------------Type------------------*/
-import { PIproduct } from "@/data/products/productsPage";
+import { PIproduct } from "@/data/pages/products/productsPage";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/

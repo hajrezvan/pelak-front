@@ -1,7 +1,17 @@
 import createMiddleware from 'next-intl/middleware';
 import {routing} from './i18n/routing';
- 
-export default createMiddleware(routing);
+import { NextRequest, NextResponse } from 'next/server';
+
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+  const response = intlMiddleware(request);
+  
+  // Add current URL to headers for not-found page
+  response.headers.set('x-current-url', request.nextUrl.pathname);
+  
+  return response;
+}
  
 export const config = {
   // Match all pathnames except for

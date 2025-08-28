@@ -3,7 +3,7 @@
 
 /* ------------------------------------------Data & Type-----------*/
 import { categories } from '@/data/categories'
-import { homePage } from '@/data/homePage'
+import { homePage } from '@/data/pages/home'
 /* ------------------------------------------Components------------*/
 import Hero from '@/components/pages/home/Hero'
 import Categories from '@/components/pages/home/Categories'
