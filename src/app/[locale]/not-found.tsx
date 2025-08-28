@@ -55,9 +55,6 @@ export default async function NotFound() {
   const locale = "en";
 
   return (
-    <html lang={locale}>
-      <body>
-        {/* Hero Section */}
         <div className="mx-auto max-w-7xl">
           <div className="relative aspect-[1/1] w-full overflow-hidden rounded-b-xl sm:aspect-[3/2] md:aspect-[2/1] lg:aspect-[3/1]">
             <Image
@@ -83,7 +80,5 @@ export default async function NotFound() {
             <Button href="/" UI="primary">{data[locale].button}</Button>
           </div>
         </div>
-      </body>
-    </html>
   );
 }
