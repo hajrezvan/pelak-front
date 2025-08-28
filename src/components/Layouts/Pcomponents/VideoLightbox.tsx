@@ -9,7 +9,7 @@ import {
     useState, 
 } from "react";
 /* ------------------------------------------Type------------------*/
-import { PImedia } from "@/type/media";
+import { PIproduct } from "@/data/products/productsPage";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
@@ -17,7 +17,7 @@ import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function VideoLightbox({video, poster, className}: Readonly<{ video: PImedia, poster: PImedia, className?: string}>) {
+export default function VideoLightbox({video, poster, className}: Readonly<{ video: PIproduct["media"][number], poster: PIproduct["media"][number], className?: string}>) {
 
     const [isOpen, setIsOpen] = useState(false);
     return (

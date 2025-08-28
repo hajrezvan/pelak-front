@@ -14,10 +14,10 @@ import {
 
 // Components
 import ImageLightbox from "@/components/Layouts/Pcomponents/product/ImageLightbox"
-import { PImedia } from "@/type/media";
+import { PIproduct } from "@/data/products/productsPage";
 
 // Start
-export default function ImageGallery({ className, item }: Readonly<{ className?: string; item: PImedia[] }>) {
+export default function ImageGallery({ className, item }: Readonly<{ className?: string; item: PIproduct["media"] }>) {
 
 	return (
 		<>

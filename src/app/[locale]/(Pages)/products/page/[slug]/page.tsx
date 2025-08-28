@@ -239,12 +239,12 @@ export default async function productPage({
 
       <div className="flex w-full bg-PC-Bborder-PC-BackgroundBorder">
         <Container>
-          <CommentRating comments={PDproduct.comments} />
+          <CommentRating comments={PDproduct.comments} locale={locale}/>
         </Container>
       </div>
 
       <Container>
-        <Faq faqs={PDproduct.productData.faq} />
+        <Faq faqs={PDproduct.productData.faq} locale={locale} />
       </Container>
     </>
   );

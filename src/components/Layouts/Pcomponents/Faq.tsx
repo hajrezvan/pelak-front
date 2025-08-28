@@ -1,17 +1,15 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { PIfaq } from '@/type/faq';
-import { getTranslations } from 'next-intl/server';
+import { PIproduct } from "@/data/products/productsPage";
 import * as P from '@/components/Playout'
-export default async function Faq({ faqs }: { faqs: PIfaq[] }) {
-
-    const faqTitleglobal = (await getTranslations('other')).raw('faqTitle');
+import { faqTitle } from "@/data/components/faqTitle";
+export default async function Faq({ faqs, locale }: { faqs: PIproduct["productData"]["faq"], locale: string }) {
 
   return (
     <div className="bg-PC-Background">
       <div className="mx-auto max-w-7xl px-3 py-34">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-4xl font-semibold tracking-tight text-PC-Text sm:text-5xl">
-            {faqTitleglobal}
+            {faqTitle[locale].title}
           </h2>
           <dl className="mt-16 divide-y divide-PC-BackgroundBorder">
             {faqs.map((faq) => (

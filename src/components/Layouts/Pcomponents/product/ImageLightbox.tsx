@@ -11,7 +11,7 @@ import {
     useEffect 
 } from "react";
 /* ------------------------------------------Type------------------*/
-import { PImedia } from "@/type/media"
+import { PIproduct } from "@/data/products/productsPage";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
@@ -19,7 +19,7 @@ import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function ImageLightbox({index,item}: Readonly<{index: number; item: PImedia[]}>) {
+export default function ImageLightbox({index,item}: Readonly<{index: number; item: PIproduct["media"]}>) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [current, setCurrent] = useState(index);

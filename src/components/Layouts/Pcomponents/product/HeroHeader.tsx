@@ -1,8 +1,8 @@
 "use client"
-import { PImedia } from '@/type/media';
+import { PIproduct } from "@/data/products/productsPage";
 import Container from "@/components/Layouts/Pcomponents/product/Container";
 
-export default function HeroHeader({ children, className, featuredImage }: Readonly<{ children: React.ReactNode; className?: string; featuredImage?: PImedia }>) {
+export default function HeroHeader({ children, className, featuredImage }: Readonly<{ children: React.ReactNode; className?: string; featuredImage?: PIproduct["media"][number] }>) {
 
     return (
         <div className='relative flex w-full h-[432px] bg-PC-Primary overflow-hidden'>
