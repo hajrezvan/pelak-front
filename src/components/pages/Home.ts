@@ -1,0 +1,7 @@
+export { default as About } from './home/About'
+export { default as Articles } from './home/Articles'
+export { default as Categories } from './home/Categories'
+export { default as EmblaCarousel } from './home/EmblaCarousel'
+export { default as Hero } from './home/Hero'
+export { default as HowItWorksFaq } from './home/HowItWorksFaq'
+export { default as Testimonials } from './home/Testimonials'

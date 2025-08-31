@@ -1,4 +1,4 @@
-export type PTfaqTitleExample = {
+export type PTfaqTitle = {
   [key: string]: PIfaqTitle
 }
 
@@ -6,7 +6,7 @@ export interface PIfaqTitle {
   title: string
 }
 
-export const faqTitle: PTfaqTitleExample = {
+export const PDfaqTitle: PTfaqTitle = {
   "en": {
     title: "FAQ",
   },

@@ -12,6 +12,8 @@ export default function middleware(request: NextRequest) {
   
   return response;
 }
+
+// export default createMiddleware(routing);
  
 export const config = {
   // Match all pathnames except for

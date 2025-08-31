@@ -1,4 +1,4 @@
-export type PThomePageExample = {
+export type PThomePage = {
   [key: string]: PIhomePage
 }
 
@@ -6,7 +6,7 @@ export interface PIhomePage {
   hero: {
     media: {
       id: number
-      src: string
+      address: string
       alt: string
       title: string
       type: string
@@ -71,7 +71,7 @@ export interface PIhomePage {
   }
 }
 
-export const homePage: PThomePageExample = {
+export const PDhomePage: PThomePage = {
   "en": {
     hero: {
       mainTitle: (<>
@@ -103,13 +103,13 @@ export const homePage: PThomePageExample = {
       media: [
         {
           "id": 21,
-          "src": "/video/IranExportalEN.mp4",
+          "address": "/video/IranExportalEN.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
           "id": 6,
-          "src": "/image/IranExportalVideo.png",
+          "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
           "type": "p"
@@ -337,13 +337,13 @@ export const homePage: PThomePageExample = {
       media: [
         {
           "id": 21,
-          "src": "/video/IranExportalRU.mp4",
+          "address": "/video/IranExportalRU.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
           "id": 6,
-          "src": "/image/IranExportalVideo.png",
+          "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
           "type": "p"
@@ -571,13 +571,13 @@ export const homePage: PThomePageExample = {
       media: [
         {
           "id": 21,
-          "src": "/video/IranExportalAR.mp4",
+          "address": "/video/IranExportalAR.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
           "id": 6,
-          "src": "/image/IranExportalVideo.png",
+          "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
           "type": "p"
@@ -805,13 +805,13 @@ export const homePage: PThomePageExample = {
       media: [
         {
           "id": 21,
-          "src": "/video/IranExportalEN.mp4",
+          "address": "/video/IranExportalEN.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
           "id": 6,
-          "src": "/image/IranExportalVideo.png",
+          "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
           "type": "p"

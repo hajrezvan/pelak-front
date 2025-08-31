@@ -4,7 +4,7 @@ import { cache } from "react";
 import { redirect } from "next/navigation";
 /* ------------------------------------------Data & Type-----------*/
 import { PIcategoryProducts } from "@/data/pages/products/categoryProducts";
-import { GetAPI } from "@/components/function/getAPI";
+import { GetAPI } from "@/components/function/GetAPI";
 
 const getCachedCategoryProducts = cache(async (slug: string, locale: string) => {
   // example // import { example } from "@/data/products/categoryProducts.tsx";
@@ -17,7 +17,7 @@ const getCachedCategoryProducts = cache(async (slug: string, locale: string) => 
   return await GetAPI(url);
 });
 /* ------------------------------------------Components------------*/
-import ProductCard from "@/components/Layouts/Pcomponents/ProductCard";
+import ProductCard from "@/components/layouts/Pcomponents/ProductCard";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

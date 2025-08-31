@@ -1,4 +1,4 @@
-export type PTlayoutExample = {
+export type PTlayout = {
   [key: string]: PIlayout
 }
 
@@ -40,7 +40,7 @@ export interface PIlayout {
     }
 }
 
-export const layout: PTlayoutExample = {
+export const PDlayout: PTlayout = {
   "en": {
     language: "English",
     lang: "en",

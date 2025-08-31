@@ -31,22 +31,22 @@ import { PIcategoryProducts } from "@/data/pages/products/categoryProducts";
 //   }
 // }
 
-export default function ProductCard({ product }: {product: PIcategoryProducts["products"][number]}) {
+export default function ProductCard({ product }: { product: PIcategoryProducts["products"][number] }) {
   return (
     <Link
       className="group flex w-full flex-col overflow-hidden rounded-lg h-full"
       aria-label={`Visit product: ${product.title}`}
-      href={`/product/${product.slug}`}
+      href={`/products/page/${product.slug}`}
     >
       <div className="relative aspect-square overflow-hidden">
         <Image
-          alt={product.description}
+          alt={product.title}
           loading="lazy"
           decoding="async"
           data-nimg="fill"
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
           sizes="100vw"
-          src={product.images.main}
+          src={"https://exportal.storage.c2.liara.space" + product.media.find((item) => item.type === "m")?.address || ""} // todo {product.media.src}
           fill
           style={{ position: 'absolute', height: '100%', width: '100%', inset: '0px', color: 'transparent' }}
         />
@@ -56,15 +56,17 @@ export default function ProductCard({ product }: {product: PIcategoryProducts["p
           {product.title}
         </h3>
         <div className="flex flex-col pt-1">
-          <p className="text-sm text-PC-TextMiddle">Iran Exportal</p>
+          <p className="text-sm text-PC-TextMiddle"
+          dangerouslySetInnerHTML={{
+            __html: (() => {
+              const match = (product.description as string).match(/<[^>]+>(.*?)<\/[^>]+>/);
+              return match ? match[1] : '';
+            })().slice(0, 72)
+          }} />
           <div className="flex flex-wrap items-center gap-1"></div>
         </div>
         <div className="mt-auto flex flex-col pt-10">
-          <p className="text-sm text-PC-TextMiddle">6 variants</p>
-          <div className="flex w-full items-baseline justify-between text-sm">
-            <span className="text-PC-PrimaryLightness/50">From</span>
-            <span className="text-base font-semibold md:text-lg text-PC-Text">$120.00</span>
-          </div>
+          <p className="text-sm text-PC-TextMiddle">{product.author.name}</p>
         </div>
       </div>
     </Link>

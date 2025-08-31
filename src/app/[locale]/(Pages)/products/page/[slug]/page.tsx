@@ -1,12 +1,11 @@
-import { getTranslations } from "next-intl/server";
+
 /* ------------------------------------------JS--------------------*/
 import { cache } from "react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 /* ------------------------------------------Data & Type-----------*/
-import { PIproduct} from "@/data/pages/products/productsPage";
-import { GetAPI } from "@/components/function/getAPI";
+import { PIproduct, PDproductsPage} from "@/data/pages/products/productsPage";
 
 const getCachedProduct = cache(async (slug: string, locale: string) => {
   // example // import { example } from "@/data/products/productsPage";
@@ -20,15 +19,16 @@ const getCachedProduct = cache(async (slug: string, locale: string) => {
 });
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
-import Container from "@/components/Layouts/Pcomponents/product/Container";
-import ImageGallery from "@/components/Layouts/Pcomponents/product/ImageGallery";
-import HeroHeader from "@/components/Layouts/Pcomponents/product/HeroHeader";
-import TagLabel from "@/components/Layouts/Pcomponents/TagLabel";
-import ProductPageClient from "@/components/Layouts/Pcomponents/ProductPageClient";
-import VideoLightbox from "@/components/Layouts/Pcomponents/VideoLightbox";
-import CommentRating from "@/components/Layouts/Pcomponents/CommentRating";
-import Faq from "@/components/Layouts/Pcomponents/Faq";
+import Container from "@/components/layouts/Pcomponents/product/Container";
+import ImageGallery from "@/components/layouts/Pcomponents/product/ImageGallery";
+import HeroHeader from "@/components/layouts/Pcomponents/product/HeroHeader";
+import TagLabel from "@/components/layouts/Pcomponents/TagLabel";
+import ProductPageClient from "@/components/layouts/Pcomponents/ProductPageClient";
+import VideoLightbox from "@/components/layouts/Pcomponents/VideoLightbox";
+import CommentRating from "@/components/layouts/Pcomponents/CommentRating";
+import Faq from "@/components/layouts/Pcomponents/Faq";
 /* ------------------------------------------Function--------------*/
+import { GetAPI } from "@/components/function/GetAPI";
 async function getProductGallery(productMedia: PIproduct["media"]) {
   const mainImage = productMedia.find((item) => item.type === "m");
   const gallery = productMedia.filter((item) => item.type === "g");
@@ -48,10 +48,6 @@ export default async function productPage({
     redirect("/products");
     // XXX : notFound products and redirect to products page
   } 
-
-  const otherCompanyProductsTitleGlobal = (
-    await getTranslations("product")
-  ).raw("otherCompanyProductsTitle");
 
   const cover = await PDproduct.media.find((item) => item.type === "c");
   const video = await PDproduct.media.find((item) => item.type === "v");
@@ -112,7 +108,7 @@ export default async function productPage({
               </div>
             ))}
           </div>
-          <ProductPageClient productTitle={PDproduct.productData.title} />
+          <ProductPageClient productTitle={PDproduct.productData.title} callToActionTitle={locale=="fa" ? "ثبت درخواست" : (locale=="ar" ? "إرسال طلبية" : (locale=="ru" ? "Отправить заявку" : "Submit Request"))} />
         </div>
       </Container>
 
@@ -137,7 +133,7 @@ export default async function productPage({
             />
 
             <h3 className="font-bold my-2">
-              {otherCompanyProductsTitleGlobal}
+              {PDproductsPage[locale as keyof typeof PDproductsPage].title}
             </h3>
 
             <div className=" h-34 bg-PC-Background rounded-xl">
@@ -152,7 +148,7 @@ export default async function productPage({
                       <div className="relative w-30 h-30 row-span-3">
                         <Image
                           alt={product.media?.title || ""}
-                          src={product.media?.src || ""} //todo {product.media.src}
+                          src={product.media?.address || ""} //todo {product.media.src}
                           className="object-cover rounded"
                           fill
                         />
@@ -160,8 +156,14 @@ export default async function productPage({
                       <h4 className="col-span-2 content-end overflow-y-hidden leading-5">
                         {product.title}
                       </h4>
-                      <p className="col-span-2 row-span-2 overflow-y-hidden leading-4 text-justify">
-                        {product.description}
+                      <p className="col-span-2 row-span-2 overflow-y-hidden leading-4 text-justify"
+                               dangerouslySetInnerHTML={{
+                                __html: (() => {
+                                  const match = (product.description as string).match(/<[^>]+>(.*?)<\/[^>]+>/);
+                                  return match ? match[1] : '';
+                                })().slice(0, 72)
+                              }}
+                      >
                       </p>
                     </Link>
                   ))}
@@ -205,7 +207,7 @@ export default async function productPage({
             <div className="relative aspect-square size-full bg-PC-Bborder-PC-BackgroundBorder rounded-lg">
               <Image
                 alt={cover?.alt || ""}
-                src={cover?.src || ""}
+                src={cover?.address || ""}
                 title={cover?.title || ""}
                 className=" object-cover rounded-lg"
                 fill
@@ -232,7 +234,7 @@ export default async function productPage({
                 </div>
               ))}
             </div>
-            <ProductPageClient productTitle={PDproduct.productData.title} />
+            <ProductPageClient productTitle={PDproduct.productData.title}  callToActionTitle={locale=="fa" ? "ثبت درخواست" : (locale=="ar" ? "إرسال طلبية" : (locale=="ru" ? "Отправить заявку" : "Submit Request"))} />
           </div>
         </div>
       </Container>

@@ -1,4 +1,4 @@
-export type PTcommentRatingExample = {
+export type PTcommentRating = {
   [key: string]: PIcommentRating
 }
 
@@ -12,7 +12,7 @@ export interface PIcommentRating {
   submitButton: string
 }
 
-export const commentRating: PTcommentRatingExample = {
+export const PDcommentRating: PTcommentRating = {
   "en": {
     title: "Comment Rating",
     newCommentTitle: "New Comment",

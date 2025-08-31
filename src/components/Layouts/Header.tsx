@@ -16,7 +16,7 @@ import {
 } from '@headlessui/react'
 /* ------------------------------------------Data & Type ----------*/
 import { PIlayout } from "@/data/layout";
-import { categories } from '@/data/categories'
+import { PDcategories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
 import * as P from '@/components/Playout'
 import Link from "next/link";
@@ -24,8 +24,6 @@ import Link from "next/link";
 
 /* ------------------------------------------Run-------------------*/
 export default function HeaderLayout({ data }: { data: PIlayout}) {
-
-	const PDcategories = categories[data.lang];
 
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [isSmall, setIsSmall] = useState(false);
@@ -82,7 +80,7 @@ export default function HeaderLayout({ data }: { data: PIlayout}) {
 							<Popover>
 
 								<PopoverButton className="group flex items-center    px-PC-4 py-PC-2    rounded-PC-2    transition    bg-PC-BackgroundPanel hover:bg-PC-Background    text-PC-Primary hover:text-PC-PrimaryDark     underline-offset-4 hover:underline    justify-between    gap-2    cursor-pointer    border-PC-1 border-PC-BackgroundBorder">
-									{PDcategories.name}
+									{PDcategories[data.lang].name}
 									<P.SvgIcon svgName="chevronDown" svgClassName="group-data-open:rotate-180" />
 								</PopoverButton>
 
@@ -93,7 +91,7 @@ export default function HeaderLayout({ data }: { data: PIlayout}) {
 								>
 
 									<P.Container className="grid grid-cols-4 pt-PC-0 pb-PC-3 gap-PC-2">
-										{PDcategories.categories.map((item) => (
+										{PDcategories[data.lang].categories.map((item) => (
 
 											<div key={item.name} className="group relative rounded-lg p-PC-5 text-sm/6 bg-PC-BackgroundPanel hover:bg-PC-PrimaryLightness ring-1 ring-PC-BackgroundBorder">
 												<div className="flex size-11 items-center justify-center rounded-lg bg-PC-PrimaryLightness group-hover:bg-PC-Primary">
@@ -112,7 +110,7 @@ export default function HeaderLayout({ data }: { data: PIlayout}) {
 									<div className="bg-PC-PrimaryLightness border-t-PC-1 border-PC-BackgroundBorder">
 										<P.Container >
 											<P.Box size="full" className="grid grid-cols-1 divide-x divide-PC-BackgroundBorder border-x border-PC-BackgroundBorder">
-												{PDcategories.otherItem.map((item) => (
+												{PDcategories[data.lang].otherItem.map((item) => (
 													<Link
 														target="_blank"
 														key={item.name}
@@ -184,12 +182,12 @@ export default function HeaderLayout({ data }: { data: PIlayout}) {
 							<Disclosure as="div">
 
 								<DisclosureButton className="group flex w-full items-center justify-between rounded-lg p-2 text-base/7 font-semibold text-PC-Text hover:bg-PC-BackgroundPanel">
-									{PDcategories.name}
+									{PDcategories[data.lang].name}
 									<P.SvgIcon svgName="chevronDown" svgClassName="group-data-open:rotate-180" />
 								</DisclosureButton>
 
 								<DisclosurePanel className="mt-2 space-y-3">
-									{[...PDcategories.categories].map((item) => (
+									{[...PDcategories[data.lang].categories].map((item) => (
 										<DisclosureButton
 											key={item.name}
 											as="a"
@@ -202,7 +200,7 @@ export default function HeaderLayout({ data }: { data: PIlayout}) {
 									))}
 								</DisclosurePanel>
 
-								{PDcategories.otherItem.map((item) => (
+								{PDcategories[data.lang].otherItem.map((item) => (
 										<DisclosureButton
 											key={item.name}
 											as="a"

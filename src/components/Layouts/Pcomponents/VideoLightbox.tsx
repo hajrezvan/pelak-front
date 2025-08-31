@@ -26,7 +26,7 @@ export default function VideoLightbox({video, poster, className}: Readonly<{ vid
         <div onClick={() => setIsOpen(true)} className={`relative flex justify-center items-center ${className} cursor-pointer`}>
             <Image 
             alt={poster.alt} 
-            src={poster.src} 
+            src={poster.address} 
             title={poster.title} 
             height={714}
             width={400}
@@ -57,13 +57,13 @@ export default function VideoLightbox({video, poster, className}: Readonly<{ vid
                     className="max-h-[85vh] max-w-[90vw]"
                     width="100%"
                     height="100%"
-                    src={video.src}
-                    poster={poster.src}
+                    src={video.address}
+                    poster={poster.address}
                     controls
                     autoPlay
                     >
                         Sorry  your browser doesn t support embedded videos  but don t worry  you can
-                        <a href={video.src}>download it</a>
+                        <a href={video.address}>download it</a>
                         and watch it with your favorite video player!
                     </video>
                     

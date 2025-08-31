@@ -8,10 +8,10 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/react";
-import SvgIcon from "@/components/Layouts/Pcomponents/SvgIcon";
+import SvgIcon from "@/components/layouts/Pcomponents/SvgIcon";
 import { PIproduct } from "@/data/pages/products/productsPage";
 import Image from "next/image";
-import { commentRating } from "@/data/components/commentRating";
+import { PDcommentRating } from "@/data/components/commentRating";
 
 const moods = [
   {
@@ -63,7 +63,7 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
 
   return (
     <div className=" max-w-4xl mx-auto px-2 py-PC-3">
-      <h2 className="my-5">{commentRating[locale].title}</h2>
+      <h2 className="my-5">{PDcommentRating[locale].title}</h2>
       <ul role="list" className="space-y-6">
         {comments.items.map((item, index) => (
           <li key={item.id} className="relative flex gap-x-4">
@@ -101,7 +101,7 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
         ))}
       </ul>
 
-      {commentRating[locale].newCommentTitle}
+      {PDcommentRating[locale].newCommentTitle}
       <div className="mt-6 flex gap-x-3">
         <Image
           alt=""
@@ -113,7 +113,7 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
         <form action="#" className="relative flex-auto">
           <div className="bg-PC-BackgroundPanel overflow-hidden rounded-lg pb-12 outline-1 -outline-offset-1 outline-PC-BackgroundDark focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-PC-Primary">
             <label htmlFor="comment" className="sr-only">
-              {commentRating[locale].newCommentText}
+              {PDcommentRating[locale].newCommentText}
             </label>
             <textarea
               id="comment"
@@ -137,14 +137,14 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
                     className="mx-1 size-6 order-1 md:order-2"
                   />
                   <span className="sr-only">
-                    {commentRating[locale].attachFile}
+                    {PDcommentRating[locale].attachFile}
                   </span>
                 </button>
               </div>
               <div className="flex items-center">
                 <Listbox value={selected} onChange={setSelected}>
                   <Label className="sr-only">
-                    {commentRating[locale].yourRating}
+                    {PDcommentRating[locale].yourRating}
                   </Label>
                   <div className="relative">
                     <ListboxButton className="relative -m-2.5 flex size-10 items-center justify-center rounded-full text-PC-TextMiddle hover:text-PC-Text">
@@ -156,7 +156,7 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
                               className="mx-1 size-6 order-1 md:order-2"
                             />
                             <span className="sr-only">
-                              {commentRating[locale].addYourRating}
+                              {PDcommentRating[locale].addYourRating}
                             </span>
                           </span>
                         ) : (
@@ -206,7 +206,7 @@ export default function CommentRating({ comments, locale }: { comments: PIproduc
               type="submit"
               className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
             >
-              {commentRating[locale].submitButton}
+              {PDcommentRating[locale].submitButton}
             </button>
           </div>
         </form>

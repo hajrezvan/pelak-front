@@ -17,16 +17,16 @@ import * as P from '@/components/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
-export default function VideoDialog({video, poster, className}: Readonly<{ video: PIproduct["media"][number], poster: PIproduct["media"][number], className?: string}>) {
+export default function VideoDialog({video, poster, className, style}: Readonly<{ video: PIproduct["media"][number], poster: PIproduct["media"][number], className?: string, style?: React.CSSProperties}>) {
 
     const [isOpen, setIsOpen] = useState(false);
     return (
     <>        
 
-        <div onClick={() => setIsOpen(true)} className={`relative flex justify-center items-center ${className} cursor-pointer`}>
+        <div onClick={() => setIsOpen(true)} className={`relative flex justify-center items-center ${className} cursor-pointer`} style={style}>
             <Image 
             alt={poster.alt} 
-            src={poster.src} 
+            src={poster.address} 
             title={poster.title} 
             height={714}
             width={400}
@@ -58,13 +58,13 @@ export default function VideoDialog({video, poster, className}: Readonly<{ video
                     className="max-h-[85vh] max-w-[90vw]"
                     width="100%"
                     height="100%"
-                    src={video.src}
-                    poster={poster.src}
+                    src={video.address}
+                    poster={poster.address}
                     controls
                     autoPlay
                     >
                         Sorry  your browser doesn t support embedded videos  but don t worry  you can
-                        <a href={video.src}>download it</a>
+                        <a href={video.address}>download it</a>
                         and watch it with your favorite video player!
                     </video>
                     

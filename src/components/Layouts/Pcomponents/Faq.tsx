@@ -1,7 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { PIproduct } from "@/data/pages/products/productsPage";
 import * as P from '@/components/Playout'
-import { faqTitle } from "@/data/components/faqTitle";
+import { PDfaqTitle } from "@/data/components/faqTitle";
 export default async function Faq({ faqs, locale }: { faqs: PIproduct["productData"]["faq"], locale: string }) {
 
   return (
@@ -9,7 +9,7 @@ export default async function Faq({ faqs, locale }: { faqs: PIproduct["productDa
       <div className="mx-auto max-w-7xl px-3 py-34">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-4xl font-semibold tracking-tight text-PC-Text sm:text-5xl">
-            {faqTitle[locale].title}
+            {PDfaqTitle[locale].title}
           </h2>
           <dl className="mt-16 divide-y divide-PC-BackgroundBorder">
             {faqs.map((faq) => (

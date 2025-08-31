@@ -2,15 +2,10 @@
 /* ------------------------------------------JS--------------------*/
 
 /* ------------------------------------------Data & Type-----------*/
-import { categories } from '@/data/categories'
-import { homePage } from '@/data/pages/home'
+import { PDcategories } from '@/data/categories'
+import { PDhomePage } from '@/data/pages/home'
 /* ------------------------------------------Components------------*/
-import Hero from '@/components/pages/home/Hero'
-import Categories from '@/components/pages/home/Categories'
-import About from '@/components/pages/home/About'
-import Articles from '@/components/pages/home/Articles'
-import HowItWorksFaq from '@/components/pages/home/HowItWorksFaq'
-import Testimonials from '@/components/pages/home/Testimonials'
+import { Home } from '@/components/Pages'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
@@ -25,12 +20,12 @@ export default async function HomePage({
   return (
     <>
       <main>
-        <Hero data={homePage[locale].hero} />
-        <Categories categories={categories[locale]} />
-        <About data={homePage[locale].about}/>
-        <Articles data={homePage[locale].articles}/>
-        <HowItWorksFaq data={homePage[locale].howItWorksFaq}/>
-        <Testimonials data={homePage[locale].testimonials}/>
+        <Home.Hero data={PDhomePage[locale].hero} />
+        <Home.Categories categories={PDcategories[locale]} />
+        <Home.About data={PDhomePage[locale].about}/>
+        <Home.Articles data={PDhomePage[locale].articles}/>
+        <Home.HowItWorksFaq data={PDhomePage[locale].howItWorksFaq}/>
+        <Home.Testimonials data={PDhomePage[locale].testimonials}/>
       </main>
     </>
   )

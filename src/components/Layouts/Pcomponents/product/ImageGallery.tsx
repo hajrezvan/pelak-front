@@ -13,7 +13,7 @@ import {
 // Data
 
 // Components
-import ImageLightbox from "@/components/Layouts/Pcomponents/product/ImageLightbox"
+import ImageLightbox from "@/components/layouts/Pcomponents/product/ImageLightbox"
 import { PIproduct } from "@/data/pages/products/productsPage";
 
 // Start
@@ -25,7 +25,7 @@ export default function ImageGallery({ className, item }: Readonly<{ className?:
 
 				<TabPanels>
 					{item.map((image, index) => (
-						<TabPanel key={image.src}>
+						<TabPanel key={image.address}>
 							<div className="group relative border border-PC-BackgroundBorder rounded-xl">
 								<ImageLightbox index={index} item={item} />
 							</div>
@@ -41,14 +41,14 @@ export default function ImageGallery({ className, item }: Readonly<{ className?:
                     `}>
 							{item.map((image) => (
 								<Tab
-									key={image.src}
+									key={image.address}
 									className="group relative flex h-24 w-24 m-1 flex-shrink-0 cursor-pointer items-center justify-center sm:rounded-lg bg-PC-Background focus:ring-1"
 								>
 									<span className="sr-only">{image.title}</span>
 									<span className="absolute inset-0 overflow-hidden sm:rounded-lg">
 										<Image
 											alt={image.alt}
-											src={image.src}
+											src={image.address}
 											title={image.title}
 											className="object-cover"
 											fill

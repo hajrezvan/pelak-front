@@ -1,13 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import FormPopup from '@/components/Layouts/Pcomponents/FormPopup';
-import { useTranslations } from 'next-intl';
+import FormPopup from '@/components/layouts/Pcomponents/FormPopup';
 import * as P from '@/components/Playout'
 
-export default function ProductPageClient({productTitle,className}: {productTitle: string,className?: string}) {
+export default function ProductPageClient({
+  productTitle,
+  callToActionTitle,
+  className
+}: {
+  productTitle: string,callToActionTitle: string,className?: string
+}) {
 
-const productGlobal = useTranslations().raw('product');
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -21,8 +25,8 @@ const productGlobal = useTranslations().raw('product');
 
   return (
     <>
-      <P.Button onClick={handleButtonClick} className={className} title={productGlobal.callToActionTitle} >
-        {productGlobal.callToActionText}
+      <P.Button onClick={handleButtonClick} className={className} title={callToActionTitle} >
+        {callToActionTitle}
       </P.Button>
 
       <FormPopup isOpen={isDialogOpen} onClose={handleCloseDialog} productTitle={productTitle} />

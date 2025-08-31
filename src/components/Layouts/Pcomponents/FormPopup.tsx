@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import FormStep1 from '@/components/Layouts/Pcomponents/FormStep1';
-import FormStep2 from '@/components/Layouts/Pcomponents/FormStep2';
+import FormStep1 from '@/components/layouts/Pcomponents/FormStep1';
+import FormStep2 from '@/components/layouts/Pcomponents/FormStep2';
 import * as P from '@/components/Playout'
 
 interface IFormProduct {

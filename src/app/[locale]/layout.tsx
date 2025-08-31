@@ -4,7 +4,7 @@ import { routing } from '@/i18n/routing';
 /* ------------------------------------------JS--------------------*/
 
 /* ------------------------------------------Data & Type-----------*/
-import { layout } from '@/data/layout'
+import { PDlayout } from '@/data/layout'
 /* ------------------------------------------Components------------*/
 import { Header, Footer } from '@/components/Layouts'
 /* ------------------------------------------Function--------------*/
@@ -28,11 +28,11 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
 
-          <Header data={layout[locale]} aria-label="Global" />
+          <Header data={PDlayout[locale]} aria-label="Global" />
 
           {children}
 
-          <Footer data={layout[locale]} aria-label="Footer" />
+          <Footer data={PDlayout[locale]} aria-label="Footer" />
 
         </NextIntlClientProvider>
       </body>

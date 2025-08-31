@@ -1,4 +1,4 @@
-export type PTproductExample = {
+export type PTproduct = {
   [key: string]: PIproduct
 }
 
@@ -10,7 +10,9 @@ export interface PIproduct {
     author: string
     alternates: {
       canonical: string
-      languages: string[]
+      languages: {
+        [key: string]: string
+      }
     }
     openGraph: {
       title: string
@@ -25,7 +27,7 @@ export interface PIproduct {
   }
   media: {
     id: number
-    src: string
+    address: string
     alt: string
     title: string
     type: string
@@ -63,7 +65,7 @@ export interface PIproduct {
     description: string
     media: {
       id: number
-      src: string
+      address: string
       alt: string
       title: string
       type: string
@@ -84,23 +86,43 @@ export interface PIproduct {
   }
 }
 
-// export const example: PIproductExample = {
+export type PTproductsPage = {
+  [key: string]: PIproductsPage
+}
+
+export interface PIproductsPage {
+  title: string
+}
+
+export const PDproductsPage = {
+  "en": {
+    title: "Other Company Products",
+  },
+  "ru": {
+    title: "Продукция других компаний",
+  },
+  "ar": {
+    title: "منتجات شركات أخرى",
+  },
+  "fa": {
+    title: "محصولات دیگر شرکت‌",
+  }
+}
+
+// export const PDproduct: PTproduct = {
 //   "en": {
 //     seoMeta: {
 //       title: "Premium Roasted Salted Saffron Pistachios",
 //       description: "Premium quality roasted salted saffron pistachios from Iran...",
 //       keywords: "pistachios, saffron, iranian, premium",
-//       authors: [{
-//         name: "John Doe",
-//         url: "http://localhost:3000/author/johndoe"
-//       }],
+//       author: "John Doe",
 //       alternates: {
 //         canonical: "http://localhost:3000/en/premium-roasted-salted-saffron-pistachios",
 //         languages: {
-//           "http://localhost:3000/en/premium-roasted-salted-saffron-pistachios",
-//           "http://localhost:3000/ru/premium-roasted-salted-saffron-pistachios",
-//           "http://localhost:3000/ar/premium-roasted-salted-saffron-pistachios",
-//           "http://localhost:3000/fa/premium-roasted-salted-saffron-pistachios"
+//           en: "http://localhost:3000/en/premium-roasted-salted-saffron-pistachios",
+//           ru: "http://localhost:3000/ru/premium-roasted-salted-saffron-pistachios",
+//           ar: "http://localhost:3000/ar/premium-roasted-salted-saffron-pistachios",
+//           fa: "http://localhost:3000/fa/premium-roasted-salted-saffron-pistachios"
 //         }
 //       },
 //       openGraph: {
@@ -112,61 +134,49 @@ export interface PIproduct {
 //         type: "article"
 //       }
 //     },
-//     featuredImage: {
-//       src: "/images/main.jpg",
+//     media: [{
+//       id: 1,
+//       src: "/images/IranExportalVideo.png",
 //       alt: "Premium Roasted Salted Saffron Pistachios",
 //       title: "Premium Roasted Salted Saffron Pistachios",
-//       caption: "Premium quality roasted salted saffron pistachios from Iran"
-//     },
-//     productImages: [
-//       {
-//         src: "/images/1.jpg",
-//         alt: "alt Image Gallery 1",
-//         title: "title Image Gallery 1",
-//         caption: "Caption for Image Gallery 1"
-//       }
-//     ],
-//     productData: {
+//       type: "c"
+//     },{
+//       id: 2,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
 //       title: "Premium Roasted Salted Saffron Pistachios",
-//       tags: [
-//           {
-//             name: "Agri-Food & Processed Food",
-//             href: "/tag/agri-food",
-//             description: "Product Description",
-//             icon: "xMark"
-//           }
-//         ],
-//         descriptionTitle: "Product Description",
-//         isVerified: true,
-//         separators: [
-//           {
-//             id: 1,
-//             title: "Akbari",
-//             description: "Rank A pistachios"
-//           }
-//         ],
-//         authorDescription: "John Doe",
-//         aboutProductTitle: "About Product",
-//         aboutProduct: "Premium quality roasted salted saffron pistachios from Iran...",
-//         aboutCompanyTitle: "About Company",
-//         aboutCompany: "Premium quality roasted salted saffron pistachios from Iran..."
-//       },
-//       faq: [
-//         {
-//           id: 1,
-//           question: "What are the health benefits of saffron pistachios?",
-//           answer: "Saffron pistachios are rich in antioxidants, vitamins, and minerals. They contain high levels of vitamin E, B6, and essential fatty acids that promote heart health and boost immunity."
-//         },
-//         {
-//           id: 2,
-//           question: "How should I store these pistachios?",
-//           answer: "Store in an airtight container in a cool, dry place. For best freshness, keep them in the refrigerator or freezer. They can last up to 6 months when properly stored."
-//         },
-//         {
-//           id: 3,
-//           question: "Are these pistachios suitable for vegetarians?",
-//           answer: "Yes, these pistachios are 100% vegetarian and vegan-friendly. They contain no animal products or by-products."
-//         }
-//       ]
+//       type: "p"
+//     },{
+//       id: 3,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
+//       title: "Premium Roasted Salted Saffron Pistachios",
+//       type: "v"
+//     },{
+//       id: 4,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
+//       title: "Premium Roasted Salted Saffron Pistachios",
+//       type: "m"
+//     },{
+//       id: 5,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
+//       title: "Premium Roasted Salted Saffron Pistachios",
+//       type: "g"
+//     },{
+//       id: 6,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
+//       title: "Premium Roasted Salted Saffron Pistachios",
+//       type: "g"
+//     },{
+//       id: 7,
+//       src: "/images/IranExportalVideo.png",
+//       alt: "Premium Roasted Salted Saffron Pistachios",
+//       title: "Premium Roasted Salted Saffron Pistachios",
+//       type: "g"
+//     }],
+    
 //   }
 // }

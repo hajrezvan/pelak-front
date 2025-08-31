@@ -2,9 +2,9 @@
 /* ------------------------------------------JS--------------------*/
 import Image from "next/image";
 /* ------------------------------------------Data & Type-----------*/
-import { categories } from "@/data/categories";
+import { PDcategories } from "@/data/categories";
 /* ------------------------------------------Components------------*/
-import CategoryCard from "@/components/Layouts/Pcomponents/CategoryCard";
+import CategoryCard from "@/components/layouts/Pcomponents/CategoryCard";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
@@ -14,7 +14,6 @@ export default async function ProductsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const data = categories[locale];
 
   return (
     <>
@@ -34,7 +33,7 @@ export default async function ProductsPage({
           <div className="absolute inset-0 bg-gradient-to-t from-PC-PrimaryDarkness/60 to-PC-Background/80"></div>
           <div className="absolute bottom-0 left-0 p-6 text-PC-TextWhite md:p-8">
             <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              {data.title}
+              {PDcategories[locale].title}
             </h1>
           </div>
         </div>
@@ -43,7 +42,7 @@ export default async function ProductsPage({
         <div className="py-8 px-PC-3">
           <div className="prose prose-lg max-w-none text-PC-Text">
             <span data-mce-fragment="1">
-              {data.description}
+              {PDcategories[locale].description}
             </span>
           </div>
         </div>
@@ -54,7 +53,7 @@ export default async function ProductsPage({
             Browse by Category
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {data.categories.map((category) => (
+            {PDcategories[locale].categories.map((category) => (
               <CategoryCard key={category.name} category={category} />
             ))}
           </div>

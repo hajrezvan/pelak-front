@@ -16,10 +16,20 @@ export default function Hero({ data }: { data: PIhomePage["hero"] }) {
         <P.Container className=' mt-PC-10 py-PC-10 sm:flex-row-reverse'>{/* sm:flex-row-reverse */}
 
           <P.Box size='2/5' className='p-4 justify-center'>
-            <P.VideoDialog
+            {/* <P.VideoDialog key="hero-video"
               video={data.media.find(media => media.type === 'v') as PIhomePage["hero"]["media"][number]}
               poster={data.media.find(media => media.type === 'p') as PIhomePage["hero"]["media"][number]}
+            /> */}
+            <P.VideoDialog key="hero-video"
+              video={data.media.find(media => media.type === 'v') as PIhomePage["hero"]["media"][number]}
+              poster={data.media.find(media => media.type === 'p') as PIhomePage["hero"]["media"][number]}
+              style={{ clipPath: 'url(#hero-video)' }} // اضافه کردن style
             />
+            <svg height="10" viewBox="0 0 10 10" width="10">
+              <clipPath clipPathUnits="objectBoundingBox" id="hero-video">
+                <path d="M 0,0.5 C 0,0.0575  0.0575,0  0.5,0 0.9425,0  1,0.0575  1,0.5 1,0.9425  0.9425,1  0.5,1 0.0575,1  0,0.9425  0,0.5" />
+              </clipPath>
+            </svg>
           </P.Box>
 
           <P.Box size='3/5' gap='medium'>

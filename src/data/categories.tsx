@@ -1,4 +1,4 @@
-export type PTcategoriesExample = {
+export type PTcategories = {
   [key: string]: PIcategories
 }
 
@@ -23,7 +23,7 @@ export interface PIcategories {
     }[]
 }
 
-export const categories: PTcategoriesExample = {
+export const PDcategories: PTcategories = {
   "en": {
     name: "Categories",
     title: (<>

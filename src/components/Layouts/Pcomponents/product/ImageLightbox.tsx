@@ -42,7 +42,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
         <div className="aspect-square size-full bg-PC-BackgroundPanel sm:rounded-lg">
             <Image 
                 alt={item[current].alt} 
-                src={item[current].src} 
+                src={item[current].address} 
                 title={item[current].title} 
                 onClick={() => setIsOpen(true)}
                 className=" object-cover cursor-zoom-in sm:rounded-lg"
@@ -71,7 +71,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                     <div className="bg-PC-BackgroundDarkness">
                         <Image 
                             alt={item[current].alt} 
-                            src={item[current].src} 
+                            src={item[current].address} 
                             title={item[current].title} 
                             width={1200}
                             height={900}
@@ -130,7 +130,7 @@ export default function ImageLightbox({index,item}: Readonly<{index: number; ite
                             >
                                 <Image 
                                     alt={image.alt} 
-                                    src={image.src} 
+                                    src={image.address} 
                                     title={image.title}
                                     onClick={(e) => {
                                     e.stopPropagation();
