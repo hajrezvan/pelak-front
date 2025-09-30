@@ -1,12 +1,13 @@
+
+/* ------------------------------------------JS--------------------*/
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-/* ------------------------------------------JS--------------------*/
-
 /* ------------------------------------------Data & Type-----------*/
 import { PDlayout } from '@/data/layout'
 /* ------------------------------------------Components------------*/
-import { Header, Footer } from '@/components/Layouts'
+import Header from '@/components/layouts/Header';
+import Footer from '@/components/layouts/Footer';
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

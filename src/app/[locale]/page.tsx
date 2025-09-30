@@ -5,7 +5,7 @@
 import { PDcategories } from '@/data/categories'
 import { PDhomePage } from '@/data/pages/home'
 /* ------------------------------------------Components------------*/
-import { Home } from '@/components/Pages'
+import * as Home from '@/components/layouts/page/Home'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
@@ -25,7 +25,7 @@ export default async function HomePage({
         <Home.About data={PDhomePage[locale].about}/>
         <Home.Articles data={PDhomePage[locale].articles}/>
         <Home.HowItWorksFaq data={PDhomePage[locale].howItWorksFaq}/>
-        <Home.Testimonials data={PDhomePage[locale].testimonials}/>
+        <Home.Testimonials data={PDhomePage[locale].testimonials} locale={locale}/>
       </main>
     </>
   )

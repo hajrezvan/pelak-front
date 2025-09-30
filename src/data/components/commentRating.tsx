@@ -46,7 +46,7 @@ export const PDcommentRating: PTcommentRating = {
     newCommentText: "نظر خود را اضافه کنید...",
     attachFile: "آپلود فایل",
     yourRating: "رای شما",
-    addYourRating: "أضف رای شما",
-    submitButton: "إرسال",
+    addYourRating: "افزودن رای شما",
+    submitButton: "ارسال",
   }
 }

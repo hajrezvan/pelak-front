@@ -8,7 +8,7 @@ import "@/app/globals.css";
 
 /* ------------------------------------------Function--------------*/
 export const metadata: Metadata = {
-  verification: { google: "1234567890", yandex: "1234567890", "me": "1234567890" },
+  verification: { google: "1234567890", yandex: "1234567890", "me": "1234567890" }, //TODO:what is this?
   robots: {
     index: true,
     follow: true

@@ -40,7 +40,7 @@ export const PDcategories: PTcategories = {
         slug: 'food-beverages',
         image: '/image/category/food-beverages.png',
         count: '2,500+',
-        color: 'bg-PC-SuccessLightness text-PC-Success',
+        color: 'bg-P-SuccessLight/10 text-P-Success',
         icon: 'food'
       }, {
         name: 'Chemicals & Petrochemicals',
@@ -49,7 +49,7 @@ export const PDcategories: PTcategories = {
         slug: 'chemicals-petrochemicals',
         image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
-        color: 'bg-PC-SecondaryLightness text-PC-Secondary',
+        color: 'bg-P-SecondaryLight/10 text-P-Secondary',
         icon: 'beaker'
       }, {
         name: 'Building Materials',
@@ -58,7 +58,7 @@ export const PDcategories: PTcategories = {
         slug: 'building-materials',
         image: '/image/category/building-materials.png',
         count: '1,800+',
-        color: 'bg-PC-WarningLightness text-PC-Warning',
+        color: 'bg-P-WarningLight/10 text-P-Warning',
         icon: 'building'
       }, {
         name: 'Textiles & Apparel',
@@ -67,7 +67,7 @@ export const PDcategories: PTcategories = {
         slug: 'textiles-apparel',
         image: '/image/category/textiles-apparel.png',
         count: '3,200+',
-        color: 'bg-PC-ErrorLightness text-PC-Error',
+        color: 'bg-P-ErrorLight/10 text-P-Error',
         icon: 'apparel'
       }, {
         name: 'Machinery & Tools',
@@ -76,7 +76,7 @@ export const PDcategories: PTcategories = {
         slug: 'machinery-tools',
         image: '/image/category/machinery-tools.png',
         count: '900+',
-        color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
+        color: 'bg-P-BackgroundDark/72 text-P-TextMiddle',
         icon: 'tool'
       }, {
         name: 'Medicine, Cosmetics & Personal Care',
@@ -85,7 +85,7 @@ export const PDcategories: PTcategories = {
         slug: 'medicine-cosmetics-personal-care',
         image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
-        color: 'bg-PC-PrimaryLightness text-PC-Primary',
+        color: 'bg-P-PrimaryLight/10 text-P-Primary',
         icon: 'medical'
       }, {
         name: 'Home & Kitchen Products',
@@ -94,7 +94,7 @@ export const PDcategories: PTcategories = {
         slug: 'home-kitchen-products',
         image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
-        color: 'bg-PC-WarningLightness text-PC-WarningDark',
+        color: 'bg-P-WarningLight/10 text-P-WarningDark',
         icon: 'home'
       }, {
         name: 'Handicrafts & Art',
@@ -103,7 +103,7 @@ export const PDcategories: PTcategories = {
         slug: 'handicrafts-art',
         image: '/image/category/handicrafts-art.png',
         count: '1,200+',
-        color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
+        color: 'bg-P-ErrorLight/10 text-P-ErrorDark',
         icon: 'palette'
       }
     ],
@@ -127,74 +127,74 @@ export const PDcategories: PTcategories = {
       {
         name: 'Продукты питания и напитки',
         description: 'Свежие продукты, переработанные продукты питания и качественные напитки',
-        href: '/products/food-beverages',
-        slug: 'food-beverages',
+        href: '/products/продукты-напитки',
+        slug: 'продукты-напитки',
         image: '/image/category/food-beverages.png',
         count: '2,500+',
-        color: 'bg-PC-SuccessLightness text-PC-Success',
+        color: 'bg-P-SuccessLight/10 text-P-Success',
         icon: 'food'
       }, {
         name: 'Химикаты и нефтехимия',
         description: 'Промышленные химикаты и нефтепродукты',
-        href: '/products/chemicals-petrochemicals',
-        slug: 'chemicals-petrochemicals',
+        href: '/products/химикаты-нефтехимия',
+        slug: 'химикаты-нефтехимия',
         image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
-        color: 'bg-PC-SecondaryLightness text-PC-Secondary',
+        color: 'bg-P-SecondaryLight/10 text-P-Secondary',
         icon: 'beaker'
       }, {
         name: 'Строительные материалы',
         description: 'Строительные материалы и строительные принадлежности',
-        href: '/products/building-materials',
-        slug: 'building-materials',
+        href: '/products/строительные-материалы',
+        slug: 'строительные-материалы',
         image: '/image/category/building-materials.png',
         count: '1,800+',
-        color: 'bg-PC-WarningLightness text-PC-Warning',
+        color: 'bg-P-WarningLight/10 text-P-Warning',
         icon: 'building'
       }, {
         name: 'Текстиль и одежда',
         description: 'Ткани, одежда и модные аксессуары',
-        href: '/products/textiles-apparel',
-        slug: 'textiles-apparel',
+        href: '/products/текстиль-одежда',
+        slug: 'текстиль-одежда',
         image: '/image/category/textiles-apparel.png',
         count: '3,200+',
-        color: 'bg-PC-ErrorLightness text-PC-Error',
+        color: 'bg-P-ErrorLight/10 text-P-Error',
         icon: 'apparel'
       }, {
         name: 'Машины и инструменты',
         description: 'Промышленное оборудование и профессиональные инструменты',
-        href: '/products/machinery-tools',
-        slug: 'machinery-tools',
+        href: '/products/машины-инструменты',
+        slug: 'машины-инструменты',
         image: '/image/category/machinery-tools.png',
         count: '900+',
-        color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
+        color: 'bg-P-BackgroundDark/72 text-P-TextMiddle',
         icon: 'tool'
       }, {
         name: 'Медицина, косметика и личная гигиена',
         description: 'Медицинское оборудование и медицинские принадлежности',
-        href: '/products/medicine-cosmetics-personal-care',
-        slug: 'medicine-cosmetics-personal-care',
+        href: '/products/медицина-косметика-гигиена',
+        slug: 'медицина-косметика-гигиена',
         image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
-        color: 'bg-PC-PrimaryLightness text-PC-Primary',
+        color: 'bg-P-PrimaryLight/10 text-P-Primary',
         icon: 'medical'
       }, {
         name: 'Товары для дома и кухни',
         description: 'Предметы домашнего обихода и кухонные принадлежности',
-        href: '/products/home-kitchen-products',
-        slug: 'home-kitchen-products',
+        href: '/products/товары-дом-кухня',
+        slug: 'товары-дом-кухня',
         image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
-        color: 'bg-PC-WarningLightness text-PC-WarningDark',
+        color: 'bg-P-WarningLight/10 text-P-WarningDark',
         icon: 'home'
       }, {
         name: 'Ремесла и искусство',
         description: 'Традиционные ремесла и художественные произведения',
-        href: '/products/handicrafts-art',
-        slug: 'handicrafts-art',
+        href: '/products/ремесла-искусство',
+        slug: 'ремесла-искусство',
         image: '/image/category/handicrafts-art.png',
         count: '1,200+',
-        color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
+        color: 'bg-P-ErrorLight/10 text-P-ErrorDark',
         icon: 'palette'
       }
     ],
@@ -218,74 +218,74 @@ export const PDcategories: PTcategories = {
       {
         name: 'الأغذية والمشروبات',
         description: 'المنتجات الطازجة والأغذية المصنعة والمشروبات عالية الجودة',
-        href: '/products/food-beverages',
-        slug: 'food-beverages',
+        href: '/products/الاغذية-المشروبات',
+        slug: 'الاغذية-المشروبات',
         image: '/image/category/food-beverages.png',
         count: '2,500+',
-        color: 'bg-PC-SuccessLightness text-PC-Success',
+        color: 'bg-P-SuccessLight/10 text-P-Success',
         icon: 'food'
       }, {
         name: 'المواد الكيميائية والبتروكيماويات',
         description: 'المواد الكيميائية الصناعية ومشتقات البترول',
-        href: '/products/chemicals-petrochemicals',
-        slug: 'chemicals-petrochemicals',
+        href: '/products/المواد-الكيميائية-البتروكيماويات',
+        slug: 'المواد-الكيميائية-البتروكيماويات',
         image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
-        color: 'bg-PC-SecondaryLightness text-PC-Secondary',
+        color: 'bg-P-SecondaryLight/10 text-P-Secondary',
         icon: 'beaker'
       }, {
         name: 'مواد البناء',
         description: 'مواد البناء والإمدادات الإنشائية',
-        href: '/products/building-materials',
-        slug: 'building-materials',
+        href: '/products/مواد-البناء',
+        slug: 'مواد-البناء',
         image: '/image/category/building-materials.png',
         count: '1,800+',
-        color: 'bg-PC-WarningLightness text-PC-Warning',
+        color: 'bg-P-WarningLight/10 text-P-Warning',
         icon: 'building'
       }, {
         name: 'المنسوجات والملابس',
         description: 'الأقمشة والملابس والإكسسوارات الأنيقة',
-        href: '/products/textiles-apparel',
-        slug: 'textiles-apparel',
+        href: '/products/المنسوجات-الملابس',
+        slug: 'المنسوجات-الملابس',
         image: '/image/category/textiles-apparel.png',
         count: '3,200+',
-        color: 'bg-PC-ErrorLightness text-PC-Error',
+        color: 'bg-P-ErrorLight/10 text-P-Error',
         icon: 'apparel'
       }, {
         name: 'الآلات والأدوات',
         description: 'المعدات الصناعية والأدوات المهنية',
-        href: '/products/machinery-tools',
-        slug: 'machinery-tools',
+        href: '/products/الالات-الادوات',
+        slug: 'الالات-الادوات',
         image: '/image/category/machinery-tools.png',
         count: '900+',
-        color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
+        color: 'bg-P-BackgroundDark/72 text-P-TextMiddle',
         icon: 'tool'
       }, {
         name: 'الطب ومستحضرات التجميل والعناية الشخصية',
         description: 'المعدات الطبية والإمدادات الطبية',
-        href: '/products/medicine-cosmetics-personal-care',
-        slug: 'medicine-cosmetics-personal-care',
+        href: '/products/الطب-التجميل-العناية',
+        slug: 'الطب-التجميل-العناية',
         image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
-        color: 'bg-PC-PrimaryLightness text-PC-Primary',
+        color: 'bg-P-PrimaryLight/10 text-P-Primary',
         icon: 'medical'
       }, {
         name: 'منتجات المنزل والمطبخ',
         description: 'الأدوات المنزلية والضروريات المطبخية',
-        href: '/products/home-kitchen-products',
-        slug: 'home-kitchen-products',
+        href: '/products/منتجات-المنزل-المطبخ',
+        slug: 'منتجات-المنزل-المطبخ',
         image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
-        color: 'bg-PC-WarningLightness text-PC-WarningDark',
+        color: 'bg-P-WarningLight/10 text-P-WarningDark',
         icon: 'home'
       }, {
         name: 'الحرف اليدوية والفنون',
         description: 'الحرف التقليدية والإبداعات الفنية',
-        href: '/products/handicrafts-art',
-        slug: 'handicrafts-art',
+        href: '/products/الحرف-اليدوية-الفنون',
+        slug: 'الحرف-اليدوية-الفنون',
         image: '/image/category/handicrafts-art.png',
         count: '1,200+',
-        color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
+        color: 'bg-P-ErrorLight/10 text-P-ErrorDark',
         icon: 'palette'
       }
     ],
@@ -309,74 +309,74 @@ export const PDcategories: PTcategories = {
       {
         name: 'مواد غذایی و نوشیدنی',
         description: 'محصولات تازه، غذاهای فرآوری شده و نوشیدنی‌های با کیفیت',
-        href: '/products/food-beverages',
-        slug: 'food-beverages',
+        href: '/products/مواد-غذایی-نوشیدنی',
+        slug: 'مواد-غذایی-نوشیدنی',
         image: '/image/category/food-beverages.png',
         count: '2,500+',
-        color: 'bg-PC-SuccessLightness text-PC-Success',
+        color: 'bg-P-SuccessLight/10 text-P-Success',
         icon: 'food'
       }, {
         name: 'مواد شیمیایی و پتروشیمی',
         description: 'مواد شیمیایی صنعتی و مشتقات نفتی',
-        href: '/products/chemicals-petrochemicals',
-        slug: 'chemicals-petrochemicals',
+        href: '/products/مواد-شیمیایی-پتروشیمی',
+        slug: 'مواد-شیمیایی-پتروشیمی',
         image: '/image/category/chemicals-petrochemicals.png',
         count: '800+',
-        color: 'bg-PC-SecondaryLightness text-PC-Secondary',
+        color: 'bg-P-SecondaryLight/10 text-P-Secondary',
         icon: 'beaker'
       }, {
         name: 'مصالح ساختمانی',
         description: 'مواد ساختمانی و تدارکات ساخت و ساز',
-        href: '/products/building-materials',
-        slug: 'building-materials',
+        href: '/products/مصالح-ساختمانی',
+        slug: 'مصالح-ساختمانی',
         image: '/image/category/building-materials.png',
         count: '1,800+',
-        color: 'bg-PC-WarningLightness text-PC-Warning',
+        color: 'bg-P-WarningLight/10 text-P-Warning',
         icon: 'building'
       }, {
         name: 'منسوجات و پوشاک',
         description: 'پارچه‌ها، لباس و لوازم جانبی مد',
-        href: '/products/textiles-apparel',
-        slug: 'textiles-apparel',
+        href: '/products/منسوجات-پوشاک',
+        slug: 'منسوجات-پوشاک',
         image: '/image/category/textiles-apparel.png',
         count: '3,200+',
-        color: 'bg-PC-ErrorLightness text-PC-Error',
+        color: 'bg-P-ErrorLight/10 text-P-Error',
         icon: 'apparel'
       }, {
         name: 'ماشین‌آلات و ابزار',
         description: 'تجهیزات صنعتی و ابزار حرفه‌ای',
-        href: '/products/machinery-tools',
-        slug: 'machinery-tools',
+        href: '/products/ماشین-آلات-ابزار',
+        slug: 'ماشین-آلات-ابزار',
         image: '/image/category/machinery-tools.png',
         count: '900+',
-        color: 'bg-PC-BackgroundDark text-PC-TextMiddle',
+        color: 'bg-P-BackgroundDark/72 text-P-TextMiddle',
         icon: 'tool'
       }, {
         name: 'پزشکی، آرایشی و بهداشتی',
         description: 'تجهیزات بهداشتی و لوازم پزشکی',
-        href: '/products/medicine-cosmetics-personal-care',
-        slug: 'medicine-cosmetics-personal-care',
+        href: '/products/پزشکی-آرایشی-بهداشتی',
+        slug: 'پزشکی-آرایشی-بهداشتی',
         image: '/image/category/medicine-cosmetics-personal-care.png',
         count: '600+',
-        color: 'bg-PC-PrimaryLightness text-PC-Primary',
+        color: 'bg-P-PrimaryLight/10 text-P-Primary',
         icon: 'medical'
       }, {
         name: 'محصولات خانگی و آشپزخانه',
         description: 'لوازم خانگی و ضروریات آشپزخانه',
-        href: '/products/home-kitchen-products',
-        slug: 'home-kitchen-products',
+        href: '/products/محصولات-خانگی-آشپزخانه',
+        slug: 'محصولات-خانگی-آشپزخانه',
         image: '/image/category/home-kitchen-products.png',
         count: '1,500+',
-        color: 'bg-PC-WarningLightness text-PC-WarningDark',
+        color: 'bg-P-WarningLight/10 text-P-WarningDark',
         icon: 'home'
       }, {
         name: 'صنایع دستی و هنر',
         description: 'صنایع دستی سنتی و آثار هنری',
-        href: '/products/handicrafts-art',
-        slug: 'handicrafts-art',
+        href: '/products/صنایع-دستی-هنر',
+        slug: 'صنایع-دستی-هنر',
         image: '/image/category/handicrafts-art.png',
         count: '1,200+',
-        color: 'bg-PC-ErrorLightness text-PC-ErrorDark',
+        color: 'bg-P-ErrorLight/10 text-P-ErrorDark',
         icon: 'palette'
       }
     ],

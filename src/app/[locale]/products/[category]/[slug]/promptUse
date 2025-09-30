@@ -1,0 +1,100 @@
+Task: Analyze the following company website and top product/service pages to suggest a list of high-value, SEO-friendly keywords for content creation.  
+
+Inputs:  
+- Company Name: Behrad Royesh Royan Company  
+- Main Website URL: https://behradmedical.ir/en/  
+- Top Product URLs or Brief Description of Products/Services: 
+   https://behradmedical.ir/en/product/embryo-transfer-catheter/
+   https://behradmedical.ir/en/product/embryo-transfer-syringe/
+   https://behradmedical.ir/en/product/iui-catheter/
+   https://behradmedical.ir/en/product/needle-puncture/
+   https://behradmedical.ir/en/product/pipelle-biopsy/
+
+Requirements:  
+1. Suggest at least 15-20 relevant keywords, including long-tail keywords.  
+2. Prioritize keywords based on SEO potential and search trends.  
+3. Categorize keywords by:  
+   - Product/Service specific keywords  
+   - Company/Brand keywords  
+   - Industry/Market-related keywords  
+4. Present keywords in a table format with columns: Keyword | Category | SEO Priority (High/Medium/Low)  
+5. Only output the keyword table, no additional text.  
+
+Output:  
+- A table of recommended keywords ready to use in SEO content creation.
+
+
+
+
+
+
+-----------------------------------------
+
+
+
+-----------------------------------------
+
+
+
+
+
+
+
+
+Topic: Generate a comprehensive, SEO-optimized article about the products and services of a company. The goal is to increase page ranking and attract international customers.  
+
+Inputs (fill in the blanks):  
+- Company Name: Behrad Royesh Royan Company  
+- Main Website URL: https://behradmedical.ir/en/  
+- Top Product URLs or Brief Description of Products/Services: 
+   https://behradmedical.ir/en/product/embryo-transfer-catheter/
+   https://behradmedical.ir/en/product/embryo-transfer-syringe/
+   https://behradmedical.ir/en/product/iui-catheter/
+   https://behradmedical.ir/en/product/needle-puncture/
+   https://behradmedical.ir/en/product/pipelle-biopsy/ 
+- (Optional) Target Keywords: 
+   Infertility medical equipment
+   Obstetrics and gynecology medical equipment
+
+Content Requirements:  
+
+1. **Main Title (H1):**  
+   - Engaging, marketing-oriented, including high-value SEO keywords.  
+
+2. **Article Summary (~200 words):**  
+   - One main heading  
+   - 2-3 subheadings  
+   - Bullet points highlighting the key features of products/services  
+
+3. **Main Content (~3000 words), divided into three sections:**  
+
+   **3.1. Products and Services Overview:**  
+   - At least 7 separate headings for individual products or services  
+   - Full, detailed descriptions, advantages, and use cases  
+   - Use simple tables where needed for clarity  
+
+   **3.2. Company Introduction:**  
+   - General introduction of the company and its field  
+   - Competitive advantages and key strengths  
+   - Certifications, standards, and professional practices  
+
+   **3.3. Additional SEO and Content Enhancements:**  
+   - Extra tips, guides, or details to make the article more complete  
+   - Content that improves SEO and user engagement  
+
+4. **Frequently Asked Questions (FAQ) Section:**  
+   - Common customer questions with short, clear answers  
+
+5. **Tone & Style:**  
+   - Friendly, simple, and easy to understand  
+   - Engaging and reader-focused  
+
+6. **Keywords & SEO Optimization:**  
+   - If target keywords are not provided, identify trending and relevant keywords  
+   - Ensure headings include high-value keywords  
+   - Keep content flowing naturally  
+   - Use bullet points and tables when necessary for clarity  
+
+Expected Output:  
+- A complete, ready-to-publish article for the company’s webpage  
+- Optimized for SEO with marketing-friendly headings, engaging content, and proper structure

@@ -17,14 +17,16 @@ const nextConfig: NextConfig = {
 				hostname: process.env.NEXT_PUBLIC_STORAGE_HOSTNAME || 'exportal.storage.c2.liara.space', // XXX : Configure your own storage hostname
 				port: '',
 				pathname: '/**',
-			}, {
+			},
+			{
 				protocol: 'https',
-				hostname: 'api.majidgoodini.ir', // XXX : Configure your own storage hostnameimages.unsplash.com
+				hostname: 'iranexportal.com',
 				port: '',
 				pathname: '/**',
-			}, {
+			},
+			{
 				protocol: 'https',
-				hostname: 'images.unsplash.com', // XXX : Configure your own storage hostname
+				hostname: 'exportal.storage.c2.liara.space',
 				port: '',
 				pathname: '/**',
 			}

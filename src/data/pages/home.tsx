@@ -6,10 +6,11 @@ export interface PIhomePage {
   hero: {
     media: {
       id: number
-      address: string
-      alt: string
+      active: boolean
+      type: 'c' | 'm' | 'g' | 'v' | 'p'
       title: string
-      type: string
+      address: string
+      alt?: string
     }[];
     mainTitle: React.ReactNode;
     mainDescription: React.ReactNode;
@@ -75,7 +76,7 @@ export const PDhomePage: PThomePage = {
   "en": {
     hero: {
       mainTitle: (<>
-        <span className='text-PC-Primary'>Iran Exportal</span> : Trusted Iran Suppliers for Global Importers
+        <span className='text-P-Primary'>Iran Exportal</span> : Trusted Iran Suppliers for Global Importers
       </>),
       mainDescription: (<>
         Looking to import high-quality products directly from Iran? IranExportal makes it easy to discover and connect with verified Iranian manufacturers and suppliers. From food and textiles to machinery and raw materials - we&apos;re your gateway to Iran&apos;s industrial power.
@@ -102,13 +103,15 @@ export const PDhomePage: PThomePage = {
       ],
       media: [
         {
-          "id": 21,
+          "id": 9999,
+          "active": true,
           "address": "/video/IranExportalEN.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
-          "id": 6,
+          "id": 9998,
+          "active": true,
           "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
@@ -118,7 +121,7 @@ export const PDhomePage: PThomePage = {
     },
     about: {
       title: (<>
-        <span className='text-PC-PrimaryLight'>Why Work with </span> Iran Suppliers Through <span className='text-PC-PrimaryLight'>IranExportal</span>
+        <span className='text-P-PrimaryLight'>Why Work with </span> Iran Suppliers Through <span className='text-P-PrimaryLight'>IranExportal</span>
       </>),
       description: (<>
         We&apos;re more than a directory. We&apos;re your export partner - ensuring every connection is secure, efficient, and tailored to your needs.
@@ -309,7 +312,7 @@ export const PDhomePage: PThomePage = {
   "ru": {
     hero: {
       mainTitle: (<>
-        <span className='text-PC-Primary'>Iran Exportal</span> : Надежные поставщики из Ирана для мировых импортеров
+        <span className='text-P-Primary'>Iran Exportal</span> : Надежные поставщики из Ирана для мировых импортеров
       </>),
       mainDescription: (<>
         Ищете качественные продукты напрямую из Ирана? IranExportal упрощает поиск и связь с проверенными иранскими производителями и поставщиками. От продуктов питания и текстиля до машин и сырья - мы ваш путь к промышленной мощи Ирана.
@@ -336,13 +339,15 @@ export const PDhomePage: PThomePage = {
       ],
       media: [
         {
-          "id": 21,
+          "id": 9999,
+          "active": true,
           "address": "/video/IranExportalRU.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
-          "id": 6,
+          "id": 9998,
+          "active": true,
           "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
@@ -352,7 +357,7 @@ export const PDhomePage: PThomePage = {
     },
     about: {
       title: (<>
-        <span className='text-PC-PrimaryLight'>Почему стоит работать с </span> поставщиками из Ирана через <span className='text-PC-PrimaryLight'>IranExportal</span>
+        <span className='text-P-PrimaryLight'>Почему стоит работать с </span> поставщиками из Ирана через <span className='text-P-PrimaryLight'>IranExportal</span>
       </>),
       description: (<>
         Мы больше, чем каталог. Мы ваш экспортный партнер - обеспечиваем безопасность, эффективность и индивидуальный подход к каждому соединению.
@@ -543,7 +548,7 @@ export const PDhomePage: PThomePage = {
   "ar": {
     hero: {
       mainTitle: (<>
-        <span className='text-PC-Primary'>Iran Exportal</span> : موردون إيرانيون موثوقون للمستوردين العالميين
+        <span className='text-P-Primary'>Iran Exportal</span> : موردون إيرانيون موثوقون للمستوردين العالميين
       </>),
       mainDescription: (<>
         تبحث عن استيراد منتجات عالية الجودة مباشرة من إيران؟ IranExportal يسهل عليك اكتشاف والاتصال بالشركات المصنعة والموردين الإيرانيين المعتمدين. من الأغذية والمنسوجات إلى الآلات والمواد الخام - نحن بوابتك إلى القوة الصناعية الإيرانية.
@@ -570,13 +575,15 @@ export const PDhomePage: PThomePage = {
       ],
       media: [
         {
-          "id": 21,
+          "id": 9999,
+          "active": true,
           "address": "/video/IranExportalAR.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
-          "id": 6,
+          "id": 9998,
+          "active": true,
           "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
@@ -586,7 +593,7 @@ export const PDhomePage: PThomePage = {
     },
     about: {
       title: (<>
-        <span className='text-PC-PrimaryLight'>لماذا العمل مع </span> الموردين الإيرانيين من خلال <span className='text-PrimaryLight'>IranExportal</span>
+        <span className='text-P-PrimaryLight'>لماذا العمل مع </span> الموردين الإيرانيين من خلال <span className='text-PrimaryLight'>IranExportal</span>
       </>),
       description: (<>
         نحن أكثر من دليل. نحن شريكك في التصدير - نضمن أن كل اتصال آمن وفعال ومخصص لاحتياجاتك.
@@ -777,7 +784,7 @@ export const PDhomePage: PThomePage = {
   "fa": {
     hero: {
       mainTitle: (<>
-        <span className='text-PC-Primary'>Iran Exportal</span> : تامین‌کنندگان معتبر ایرانی برای واردکنندگان جهانی
+        <span className='text-P-Primary'>Iran Exportal</span> : تامین‌کنندگان معتبر ایرانی برای واردکنندگان جهانی
       </>),
       mainDescription: (<>
         به دنبال واردات محصولات با کیفیت بالا مستقیماً از ایران هستید؟ IranExportal یافتن و ارتباط با تولیدکنندگان و تامین‌کنندگان تایید شده ایرانی را آسان می‌کند. از مواد غذایی و منسوجات تا ماشین‌آلات و مواد خام - ما دروازه شما به قدرت صنعتی ایران هستیم.
@@ -804,13 +811,15 @@ export const PDhomePage: PThomePage = {
       ],
       media: [
         {
-          "id": 21,
+          "id": 9999,
+          "active": true,
           "address": "/video/IranExportalEN.mp4",
           "alt": "Iran Exportal video",
           "title": "Iran Exportal video",
           "type": "v"
         }, {
-          "id": 6,
+          "id": 9998,
+          "active": true,
           "address": "/image/IranExportalVideo.png",
           "alt": "Iran Exportal Video",
           "title": "Iran Exportal Video",
@@ -820,7 +829,7 @@ export const PDhomePage: PThomePage = {
     },
     about: {
       title: (<>
-        <span className='text-PC-PrimaryLight'>چرا با </span> تامین‌کنندگان ایرانی از طریق <span className='text-PC-PrimaryLight'>IranExportal</span> کار کنیم
+        <span className='text-P-PrimaryLight'>چرا با </span> تامین‌کنندگان ایرانی از طریق <span className='text-P-PrimaryLight'>IranExportal</span> کار کنیم
       </>),
       description: (<>
         ما بیشتر از یک دایرکتوری هستیم. ما شریک صادراتی شما هستیم - اطمینان حاصل می‌کنیم که هر ارتباطی امن، کارآمد و متناسب با نیازهای شما باشد.

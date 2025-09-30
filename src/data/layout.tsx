@@ -3,41 +3,41 @@ export type PTlayout = {
 }
 
 export interface PIlayout {
-    language: string
-    lang: string
-    direction: string
-    main: {
-      siteName: string
-      url: string
-      logo: {
-        src: string
-        alt: string
-      }
-      icon: {
-        src: string
-        alt: string
-      }
+  language: string
+  lang: string
+  direction: string
+  main: {
+    siteName: string
+    url: string
+    logo: {
+      src: string
+      alt: string
     }
-    header: {
-      menuButtonOpen: string
-      menuButtonClose: string
-      phoneNumber: string
-      login: {
-        name: string
-        href: string
-        icon: string
-      }
+    icon: {
+      src: string
+      alt: string
     }
-    footer: {
-      about: React.ReactNode
-      phone: string
-      phoneNumber: string
-      email: string
-      emailAddress: string
-      address: string
-      addressLocation: string
-      copyrightText: string
+  }
+  header: {
+    menuButtonOpen: string
+    menuButtonClose: string
+    phoneNumber: string
+    login: {
+      name: string
+      href: string
+      icon: string
     }
+  }
+  footer: {
+    about: string
+    phone: string
+    phoneNumber: string
+    email: string
+    emailAddress: string
+    address: string
+    addressLocation: string
+    copyrightText: string
+  }
 }
 
 export const PDlayout: PTlayout = {
@@ -60,7 +60,7 @@ export const PDlayout: PTlayout = {
     header: {
       menuButtonOpen: "Open menu",
       menuButtonClose: "Close menu",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       login: {
         name: "Log in",
         href: "/login",
@@ -68,9 +68,9 @@ export const PDlayout: PTlayout = {
       }
     },
     footer: {
-      about: (<>About Us</>),
+      about: "<h4 class='text-P-White'>About Us</h4><p>We specialize in providing innovative solutions for your business needs, from product sourcing to manufacturing and export. Our dedicated team is here to help you grow and succeed globally.</p>",
       phone: "Phone",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       email: "Email",
       emailAddress: "info@iranexportal.com",
       address: "address",
@@ -97,7 +97,7 @@ export const PDlayout: PTlayout = {
     header: {
       menuButtonOpen: "Открыть меню",
       menuButtonClose: "Закрыть меню",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       login: {
         name: "Войти",
         href: "/login",
@@ -105,9 +105,9 @@ export const PDlayout: PTlayout = {
       }
     },
     footer: {
-      about: (<>О нас</>),
+      about: "<h4 class='text-P-White'>О нас</h4><p>Мы специализируемся на предоставлении инновационных решений для ваших бизнес-потребностей, от поиска продуктов до производства и экспорта. Наша преданная команда здесь, чтобы помочь вам расти и добиваться успеха в глобальном масштабе.</p>",
       phone: "Телефон",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       email: "Почта",
       emailAddress: "info@iranexportal.com",
       address: "Адрес",
@@ -134,7 +134,7 @@ export const PDlayout: PTlayout = {
     header: {
       menuButtonOpen: "فتح القائمة",
       menuButtonClose: "إغلاق القائمة",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       login: {
         name: "تسجيل الدخول",
         href: "/login",
@@ -142,9 +142,9 @@ export const PDlayout: PTlayout = {
       }
     },
     footer: {
-      about: (<>من نحن</>),
+      about: "<h4 class='text-P-White'>معلومات عنا</h4><p>نحن متخصصون في تقديم حلول مبتكرة لاحتياجات عملك، من توريد المنتجات إلى التصنيع والتصدير. فريقنا المتفاني هنا لمساعدتك على النمو والنجاح عالمياً.</p>",
       phone: "الهاتف",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       email: "البريد الإلكتروني",
       emailAddress: "info@iranexportal.com",
       address: "العنوان",
@@ -171,7 +171,7 @@ export const PDlayout: PTlayout = {
     header: {
       menuButtonOpen: "باز کردن منو",
       menuButtonClose: "بستن منو",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       login: {
         name: "ورود",
         href: "/login",
@@ -179,9 +179,9 @@ export const PDlayout: PTlayout = {
       }
     },
     footer: {
-      about: (<>درباره ما</>),
+      about: "<h4 class='text-P-White'>درباره ما</h4><p>ما در ارائه راه‌حل‌های نوآورانه برای نیازهای تجاری شما تخصص داریم، از تامین محصولات گرفته تا تولید و صادرات. تیم متخصص ما اینجاست تا به شما کمک کند در سطح جهانی رشد کنید و موفق شوید.</p>",
       phone: "شماره تلفن",
-      phoneNumber: "+98-2178581122",
+      phoneNumber: "98-2178581122",
       email: "ایمیل",
       emailAddress: "info@iranexportal.com",
       address: "آدرس",

@@ -1,0 +1,88 @@
+  "use client";
+/* ------------------------------------------JS--------------------*/
+import Image from "next/image";
+import { 
+    Dialog, 
+    DialogPanel 
+} from "@headlessui/react";
+import { 
+    useState, 
+} from "react";
+/* ------------------------------------------Type------------------*/
+import { PIproduct } from "@/data/pages/product";
+/* ------------------------------------------Data------------------*/
+
+/* ------------------------------------------Components------------*/
+import * as P from '@/components/layouts/Playout'
+/* ------------------------------------------Function--------------*/
+
+/* ------------------------------------------Run-------------------*/
+export default function VideoDialog({video, poster, className, style}: Readonly<{ video: PIproduct["media"][number], poster: PIproduct["media"][number], className?: string, style?: React.CSSProperties}>) {
+
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+    <>        
+
+        <div onClick={() => setIsOpen(true)} className={`relative flex justify-center items-center ${className} cursor-pointer`} style={style}>
+            <Image 
+            alt={poster.alt ?? ''} 
+            src={poster.address} 
+            title={poster.title} 
+            height={714}
+            width={400}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+            className="rounded-lg"
+            />
+            <p className="text-P-Background absolute flex items-center gap-P-2 bg-P-Text/80 rounded-P-4 p-P-2"> 
+            <P.SvgIcon svgName="video" svgSize="large" />
+            {video.title}
+            </p>
+        </div>
+
+        <Dialog 
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          className="fixed inset-0 z-[99992] flex items-center justify-center"
+        >
+
+            <div className="fixed inset-0 bg-P-Black/90 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+
+
+            <DialogPanel className="relative">
+
+                <div className="flex justify-center items-center">
+
+
+                    <video
+                    className="max-h-[85vh] max-w-[90vw]"
+                    width="100%"
+                    height="100%"
+                    src={video.address}
+                    poster={poster.address}
+                    controls
+                    autoPlay
+                    >
+                        Sorry  your browser doesn t support embedded videos  but don t worry  you can
+                        <a href={video.address}>download it</a>
+                        and watch it with your favorite video player!
+                    </video>
+                    
+                    <button
+                        onClick={(e) => {
+                        e.stopPropagation();
+                        setIsOpen(false);
+                        }}
+                        className="absolute top-3 right-3 p-1 bg-P-BackgroundDark/72 hover:bg-P-Background/72 rounded-full pointer-events-auto"
+                    >
+                        <P.SvgIcon svgName="xCircle" svgSize="large" svgClassName=" p-P-1" />
+                    </button>
+
+                </div>
+
+            </DialogPanel>
+
+        </Dialog>
+    </> 
+    );
+}
