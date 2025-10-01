@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import FormPopup from '@/components/layouts/page/FormPopup';
-import * as P from '@/components/layouts/Playout'
+import FormPopup from '@/components/Layouts/page/FormPopup';
+import * as P from '@/components/Layouts/Playout'
 
 export default function ProductPageClient({
   productTitle,

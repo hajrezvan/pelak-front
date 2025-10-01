@@ -1,4 +1,4 @@
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 import { PIcategory } from '@/data/pages/category';
 
 import { getMedia } from "@/components/function/page/GetMedia";

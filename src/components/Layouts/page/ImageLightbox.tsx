@@ -15,7 +15,7 @@ import { PIproduct } from "@/data/pages/product";
 /* ------------------------------------------Data------------------*/
 
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

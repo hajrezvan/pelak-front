@@ -19,7 +19,7 @@ const getCachedProduct = cache(async (locale: string, category: string) => {
   return data;
 });
 /* ------------------------------------------Components------------*/
-import ProductCard from "@/components/layouts/page/ProductCard";
+import ProductCard from "@/components/Layouts/page/ProductCard";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

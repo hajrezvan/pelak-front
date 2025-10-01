@@ -4,7 +4,7 @@ import Image from "next/image";
 /* ------------------------------------------Data & Type-----------*/
 import { PDcategories } from "@/data/categories";
 /* ------------------------------------------Components------------*/
-import CategoryCard from "@/components/layouts/page/CategoryCard";
+import CategoryCard from "@/components/Layouts/page/CategoryCard";
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

@@ -1,4 +1,4 @@
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 
 interface CategoryCardProps {
   category: {

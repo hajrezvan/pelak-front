@@ -6,8 +6,8 @@ import { routing } from '@/i18n/routing';
 /* ------------------------------------------Data & Type-----------*/
 import { PDlayout } from '@/data/layout'
 /* ------------------------------------------Components------------*/
-import Header from '@/components/layouts/Header';
-import Footer from '@/components/layouts/Footer';
+import Header from '@/components/Layouts/Header';
+import Footer from '@/components/Layouts/Footer';
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

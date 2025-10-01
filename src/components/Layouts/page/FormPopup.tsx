@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import FormStep1 from '@/components/layouts/page/FormStep1';
-import FormStep2 from '@/components/layouts/page/FormStep2';
-import * as P from '@/components/layouts/Playout'
+import FormStep1 from '@/components/Layouts/page/FormStep1';
+import FormStep2 from '@/components/Layouts/page/FormStep2';
+import * as P from '@/components/Layouts/Playout'
 
 interface IFormProduct {
   name: string;

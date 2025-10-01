@@ -4,7 +4,7 @@
 /* ------------------------------------------Data & Type-----------*/
 import { PIcategories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

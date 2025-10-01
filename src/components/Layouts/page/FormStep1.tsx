@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 
 interface IFormProduct {
   name: string;

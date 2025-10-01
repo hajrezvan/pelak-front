@@ -17,8 +17,8 @@ const getCachedProduct = cache(async (locale: string, articles: string, slug: st
   return data[0];
 });
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/layouts/Playout'
-import CommentRating from "@/components/layouts/page/CommentRating";
+import * as P from '@/components/Layouts/Playout'
+import CommentRating from "@/components/Layouts/page/CommentRating";
 /* ------------------------------------------Function--------------*/
 import { getMedia } from "@/components/function/page/GetMedia";
 /* ------------------------------------------Run-------------------*/

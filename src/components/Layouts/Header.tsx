@@ -19,7 +19,7 @@ import Link from "next/link";
 import { PIlayout } from "@/data/layout";
 import { PDcategories } from '@/data/categories'
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

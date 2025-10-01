@@ -1,0 +1,11 @@
+{
+  "/[locale]/[articles]/[slug]/page": "/[locale]/[articles]/[slug]",
+  "/[locale]/[articles]/page": "/[locale]/[articles]",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/products/[category]/[slug]/page": "/[locale]/products/[category]/[slug]",
+  "/[locale]/products/[category]/page": "/[locale]/products/[category]",
+  "/[locale]/products/page": "/[locale]/products",
+  "/[locale]/ui/page": "/[locale]/ui",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico"
+}

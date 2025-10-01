@@ -5,7 +5,7 @@ import React from "react";
 /* ------------------------------------------Data & Type ----------*/
 import { PIlayout } from "@/data/layout";
 /* ------------------------------------------Components------------*/
-import * as P from '@/components/layouts/Playout'
+import * as P from '@/components/Layouts/Playout'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/

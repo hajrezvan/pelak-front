@@ -13,7 +13,7 @@ import {
 // Data
 
 // Components
-import ImageLightbox from "@/components/layouts/page/ImageLightbox"
+import ImageLightbox from "@/components/Layouts/page/ImageLightbox"
 import { PIproduct } from "@/data/pages/product";
 
 // Start

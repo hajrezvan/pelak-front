@@ -5,7 +5,7 @@
 import { PDcategories } from '@/data/categories'
 import { PDhomePage } from '@/data/pages/home'
 /* ------------------------------------------Components------------*/
-import * as Home from '@/components/layouts/page/Home'
+import * as Home from '@/components/Layouts/page/Home'
 /* ------------------------------------------Function--------------*/
 
 /* ------------------------------------------Run-------------------*/
