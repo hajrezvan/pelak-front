@@ -1,3 +1,0 @@
-module.exports=[27572,a=>{"use strict";a.s(["default",()=>d,"metadata",()=>c]);var b=a.i(7997);let c={verification:{google:"1234567890",yandex:"1234567890",me:"1234567890"},robots:{index:!0,follow:!0},icons:[{rel:"icon",url:"/favicon-32x32.png",sizes:"32x32",type:"image/png"},{rel:"icon",url:"/favicon-128x128.png",sizes:"128x128",type:"image/png"},{rel:"apple-touch-icon",url:"/favicon-128x128.png",sizes:"128x128"},{rel:"apple-touch-icon",url:"/favicon-192x192.png",sizes:"192x192"}]};async function d({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}}];
-
-//# sourceMappingURL=src_app_layout_tsx_cc8184fa._.js.map
