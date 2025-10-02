@@ -433,7 +433,7 @@ h6 {
 p {
   font-size: var(--text-P-P);
   line-height: 140%;
-  padding-block: var(--spacing-P-3);
+  padding-block: var(--spacing-P-2);
 }
 
 

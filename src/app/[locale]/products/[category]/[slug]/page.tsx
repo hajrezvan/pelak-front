@@ -70,18 +70,13 @@ export default async function ProductPage({
       </main>
 
       <P.Container className="flex px-P-3 sm:px-P-2 2xl:px-P-0 py-P-3">
-        <div className="flex flex-row gap-5">
 
-          <div className="lg:order-1 flex flex-col w-full">
-
-            <div
+            <div className="flex flex-col w-full max-w-4xl mx-auto"
               dangerouslySetInnerHTML={{
                 __html: PDproduct.description,
               }}
             />
 
-          </div>
-        </div>
       </P.Container>
 
         <P.Container>

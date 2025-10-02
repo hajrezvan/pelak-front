@@ -35,7 +35,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         {category.name}
       </h3>
 
-      <p className="text-PC-TextMiddle text-sm border-t-P-2 border-P-BackgroundBorder pt-P-2" style={{ lineHeight: '120%' }}>
+      <p className="text-PC-TextMiddle text-sm border-t-P-2 border-P-BackgroundBorder pt-P-2 mt-P-2" style={{ lineHeight: '120%' }}>
         {category.description}
       </p>
     </P.Tag>
