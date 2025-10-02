@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKER_IMAGE: m9020120014/pelak
+  DOCKER_IMAGE: hajrezvan/pelak-front
   SERVICE_NAME: front
   NEXT_TELEMETRY_DISABLED: '1'
 
